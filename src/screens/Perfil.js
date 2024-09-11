@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
-export default function Rotina() {
+export default function Perfil() {
   return (
     <View style={styles.container}>
-      <Text>Rotina</Text>
+      <Text>Perfil</Text>
     </View>
   );
 }
