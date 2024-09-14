@@ -37,6 +37,8 @@ export default function App() {
         screenOptions={{
           tabBarStyle: {
             backgroundColor: "#ffff",
+            height: 55,
+            borderTopColor: "#B1AFAF",
           },
         }}
       >
@@ -76,20 +78,35 @@ export default function App() {
           }}
         />
         <Tab.Screen
-          name=" "
+          name="Nova"
           component={Nova}
           options={{
             headerShown: false,
-            tabBarIcon: ({ focused, size }) => (
-              <MaterialCommunityIcons
-                name="plus-circle"
-                size={40}
-                color={focused ? "#756AB6" : "#B1AFAF"}
-              />
+            tabBarIcon: ({ focused }) => (
+              <View
+                style={{
+                  width: 70,
+                  height: 70,
+                  backgroundColor: "#ffff",
+                  borderRadius: 35,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 55,
+                  borderColor: "#B1AFAF",
+                  borderTopWidth: 0.5,
+                  borderBottomWidth: 0.5,
+                  borderStartWidth: 0.5,
+                  borderEndWidth: 0.5,
+                }}
+              >
+                <MaterialCommunityIcons
+                  name="plus-circle"
+                  size={50}
+                  color={focused ? "#756AB6" : "#B1AFAF"}
+                />
+              </View>
             ),
-
-            tabBarActiveTintColor: "#756AB6",
-            tabBarInactiveTintColor: "#B1AFAF",
+            tabBarLabel: () => null,
           }}
         />
         <Tab.Screen
