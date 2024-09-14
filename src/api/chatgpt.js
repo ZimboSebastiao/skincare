@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const apiKey = "SUA_API_KEY_AQUI";
+import { OPENAI_API_KEY } from "@env";
 
 const sendMessageToChatGPT = async (message) => {
   try {
@@ -12,7 +11,7 @@ const sendMessageToChatGPT = async (message) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
           "Content-Type": "application/json",
         },
       }
