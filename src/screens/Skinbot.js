@@ -1,20 +1,21 @@
-// src/screens/Skinbot
+// src/screens/Skinbot.js
 import { View, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
-import { sendMessageToChatGPT } from "../api/chatgpt";
+import { sendMessageToChatGemini } from "../api/gemini.js";
 
 export default function Skinbot() {
   const [messages, setMessages] = useState([]);
 
   const onSend = async (newMessages = []) => {
-    try {
-      setMessages((previousMessages) =>
-        GiftedChat.append(previousMessages, newMessages)
-      );
+    setMessages((previousMessages) =>
+      GiftedChat.append(previousMessages, newMessages)
+    );
 
-      const userMessage = newMessages[0].text;
-      const botResponse = await sendMessageToChatGPT(userMessage);
+    const userMessage = newMessages[0].text;
+
+    try {
+      const botResponse = await sendMessageToChatGemini(userMessage);
 
       const botMessage = {
         _id: Math.random().toString(),
@@ -54,3 +55,8 @@ export default function Skinbot() {
     />
   );
 }
+
+// Estilos (opcional)
+const styles = StyleSheet.create({
+  // Adicione seus estilos aqui, se necessário
+});

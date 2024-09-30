@@ -1,44 +1,43 @@
-// src/api/chatgpt.js
 import axios from "axios";
-import { OPENAI_API_KEY } from "@env";
+import { API_KEY } from "@env";
 
 // Função de espera
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const sendMessageToChatGPT = async (message, retries = 3) => {
+export const sendMessageToChatGemini = async (message, retries = 3) => {
   while (retries > 0) {
     try {
       const response = await axios.post(
-        "https://api.openai.com/v1/chat/completions",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`,
         {
-          model: "gpt-3.5-turbo",
-          messages: [
+          contents: [
             {
-              role: "system",
-              content:
-                "Você é um assistente de skincare. Dê dicas de produtos de skincare, seu modo de uso, benefícios, desvantagens e vantagens, nada mais.",
-            },
-            {
-              role: "user",
-              content: message,
+              parts: [
+                {
+                  text: `Você é um assistente de skincare que só fala em português. Dê dicas, benefícios, vantagens e desvantagens de produtos de skincare. Usuário: ${message}`,
+                },
+              ],
             },
           ],
-          max_tokens: 150,
-          temperature: 0.5,
         },
         {
           headers: {
-            Authorization: `Bearer ${OPENAI_API_KEY}`,
             "Content-Type": "application/json",
           },
         }
       );
 
       // Log da resposta da API para depuração
-      console.log("Resposta da API:", response.data);
+      console.log("Resposta da API:", JSON.stringify(response.data, null, 2));
 
-      if (response.data.choices && response.data.choices.length > 0) {
-        return response.data.choices[0].message.content.trim();
+      // Verifica se há candidatos e se o conteúdo está presente
+      if (response.data.candidates && response.data.candidates.length > 0) {
+        const parts = response.data.candidates[0].content.parts;
+        if (parts && parts.length > 0) {
+          return parts[0].text.trim();  // Acessa o texto corretamente
+        } else {
+          throw new Error("Conteúdo não encontrado.");
+        }
       } else {
         throw new Error("Resposta inválida da API.");
       }
