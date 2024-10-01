@@ -10,6 +10,7 @@ import {
   Animated,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { globalStyles } from "../utils/globalStyles";
 
 const { width, height } = Dimensions.get("window");
 
@@ -95,9 +96,14 @@ const Onboarding = ({ navigation }) => {
           style={[styles.animationContainer, { transform: [{ translateY }] }]}
         >
           <Image
-            source={require("../../assets/images/logo.png")} // Imagem que aparecerá na animação
+            source={require("../../assets/images/brown.png")}
             style={styles.animationImage}
           />
+          <View>
+            <Text style={[globalStyles.semiBoldText]}>
+              Transforme sua pele com cuidados personalizados
+            </Text>
+          </View>
         </Animated.View>
       ) : (
         <>
