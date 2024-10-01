@@ -39,7 +39,7 @@ const Onboarding = ({ navigation }) => {
       }).start(() => {
         setTimeout(() => {
           setIsAnimating(false);
-        }, 4000); // 4 segundos
+        }, 94000); // 4 segundos
       });
     }
   }, [isAnimating, translateY]);
@@ -96,12 +96,24 @@ const Onboarding = ({ navigation }) => {
           style={[styles.animationContainer, { transform: [{ translateY }] }]}
         >
           <Image
-            source={require("../../assets/images/brown.png")}
+            source={require("../../assets/images/logo_transparent.png")}
             style={styles.animationImage}
           />
-          <View>
-            <Text style={[globalStyles.semiBoldText]}>
-              Transforme sua pele com cuidados personalizados
+          <View style={styles.inicialImagem}>
+            <Image
+              source={require("../../assets/images/brown.png")}
+              style={styles.animationImage}
+            />
+          </View>
+          <View style={styles.viewInicial}>
+            <Text style={[globalStyles.semiBoldText, styles.textoInicial]}>
+              Transforme Sua Pele
+            </Text>
+            <Text style={[globalStyles.semiBoldText, styles.textoInicial]}>
+              Com Cuidados
+            </Text>
+            <Text style={[globalStyles.semiBoldText, styles.textoInicial]}>
+              Personalizados
             </Text>
           </View>
         </Animated.View>
@@ -156,6 +168,7 @@ const styles = StyleSheet.create({
     width: 200, // Ajuste a largura da imagem de animação conforme necessário
     height: 200, // Ajuste a altura da imagem de animação conforme necessário
     resizeMode: "contain",
+    borderRadius: 100,
   },
   flatListContainer: {
     flexGrow: 1,
@@ -198,6 +211,20 @@ const styles = StyleSheet.create({
   },
   inactiveDot: {
     backgroundColor: "#c2bebe",
+  },
+  textoInicial: {
+    color: "#ff80c3",
+    fontSize: 23,
+  },
+  viewInicial: {
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 30,
+  },
+  inicialImagem: {
+    backgroundColor: "#fafafa",
+    padding: 10,
+    borderRadius: 100,
   },
 });
 
