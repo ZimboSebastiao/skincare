@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-
+import * as Font from "expo-font";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Splash from "./src/screens/Splash";
