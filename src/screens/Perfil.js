@@ -1,41 +1,26 @@
 import { View, Text, StyleSheet, Button } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
 import * as ImagePicker from "expo-image-picker";
-import { Avatar } from "react-native-paper";
+import { pickImageFromGallery } from "../helpers/imagePickerHelper";
 import CustomAvatar from "../components/CustomAvatar";
+import { ImageContext } from "../context/ImageContext";
 
 export default function Perfil() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const { selectedImage, setSelectedImage } = useContext(ImageContext);
 
-  // Função para abrir a galeria e selecionar a imagem
-  const pickImage = async () => {
-    // Pedir permissão para acessar a galeria
-    const permissionResult =
-      await ImagePicker.requestMediaLibraryPermissionsAsync();
-
-    if (permissionResult.granted === false) {
-      alert("Permissão para acessar as fotos é necessária!");
-      return;
-    }
-
-    // Abrir a galeria e selecionar a imagem
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    });
-
-    if (!result.canceled) {
-      setSelectedImage(result.assets[0].uri); // Armazena a URI da imagem selecionada
+  const handlePickImage = async () => {
+    const imageUri = await pickImageFromGallery();
+    if (imageUri) {
+      setSelectedImage(imageUri); // Atualiza a imagem no contexto
     }
   };
+
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <CustomAvatar imageUri={selectedImage} />
-
-        <Button title="Selecionar Foto" onPress={pickImage} />
+        <Button title="Selecionar Foto" onPress={handlePickImage} />
       </View>
     </View>
   );

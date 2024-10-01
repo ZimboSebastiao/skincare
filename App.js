@@ -17,6 +17,7 @@ import {
   Poppins_500Medium,
   Poppins_600SemiBold,
 } from "./src/utils/fonts";
+import { ImageProvider } from "./src/context/ImageContext";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -54,105 +55,107 @@ export default function App() {
 
   // Retorna a navegação com as fontes carregadas
   return (
-    <NavigationContainer style={styles.container}>
-      <Tab.Navigator
-        initialRouteName={Home}
-        screenOptions={{
-          tabBarStyle: {
-            backgroundColor: "#ffff",
-            height: 55,
-            borderTopColor: "#c2bebe",
-          },
-        }}
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused, size }) => (
-              <MaterialCommunityIcons
-                name="home"
-                size={30}
-                color={focused ? "#ff80c3" : "#c2bebe"}
-              />
-            ),
-            tabBarLabelStyle: { fontSize: 13.4 },
-            tabBarActiveTintColor: "#ff80c3",
-            tabBarInactiveTintColor: "#c2bebe",
+    <ImageProvider>
+      <NavigationContainer style={styles.container}>
+        <Tab.Navigator
+          initialRouteName={Home}
+          screenOptions={{
+            tabBarStyle: {
+              backgroundColor: "#ffff",
+              height: 55,
+              borderTopColor: "#c2bebe",
+            },
           }}
-        />
+        >
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({ focused, size }) => (
+                <MaterialCommunityIcons
+                  name="home"
+                  size={30}
+                  color={focused ? "#ff80c3" : "#c2bebe"}
+                />
+              ),
+              tabBarLabelStyle: { fontSize: 13.4 },
+              tabBarActiveTintColor: "#ff80c3",
+              tabBarInactiveTintColor: "#c2bebe",
+            }}
+          />
 
-        <Tab.Screen
-          name="Rotina"
-          component={Rotina}
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused, size }) => (
-              <MaterialCommunityIcons
-                name="clipboard-list"
-                size={30}
-                color={focused ? "#ff80c3" : "#c2bebe"}
-              />
-            ),
-            tabBarLabelStyle: { fontSize: 13.4 },
-            tabBarActiveTintColor: "#ff80c3",
-            tabBarInactiveTintColor: "#c2bebe",
-          }}
-        />
-        <Tab.Screen
-          name="Nova"
-          component={Nova}
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused }) => (
-              <MaterialCommunityIcons
-                name="plus-circle"
-                size={50}
-                color={focused ? "#ff80c3" : "#c2bebe"}
-              />
-            ),
-            tabBarLabel: () => null,
-          }}
-        />
-        <Tab.Screen
-          name="SkinBot"
-          component={Skinbot}
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused, size }) => (
-              <MaterialCommunityIcons
-                name="discord"
-                size={30}
-                color={focused ? "#ff80c3" : "#c2bebe"}
-              />
-            ),
-            tabBarLabelStyle: { fontSize: 13.4 },
+          <Tab.Screen
+            name="Rotina"
+            component={Rotina}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({ focused, size }) => (
+                <MaterialCommunityIcons
+                  name="clipboard-list"
+                  size={30}
+                  color={focused ? "#ff80c3" : "#c2bebe"}
+                />
+              ),
+              tabBarLabelStyle: { fontSize: 13.4 },
+              tabBarActiveTintColor: "#ff80c3",
+              tabBarInactiveTintColor: "#c2bebe",
+            }}
+          />
+          <Tab.Screen
+            name="Nova"
+            component={Nova}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({ focused }) => (
+                <MaterialCommunityIcons
+                  name="plus-circle"
+                  size={50}
+                  color={focused ? "#ff80c3" : "#c2bebe"}
+                />
+              ),
+              tabBarLabel: () => null,
+            }}
+          />
+          <Tab.Screen
+            name="SkinBot"
+            component={Skinbot}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({ focused, size }) => (
+                <MaterialCommunityIcons
+                  name="discord"
+                  size={30}
+                  color={focused ? "#ff80c3" : "#c2bebe"}
+                />
+              ),
+              tabBarLabelStyle: { fontSize: 13.4 },
 
-            tabBarActiveTintColor: "#ff80c3",
-            tabBarInactiveTintColor: "#c2bebe",
-          }}
-        />
-        <Tab.Screen
-          name="Perfil"
-          component={Perfil}
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused, size }) => (
-              <MaterialCommunityIcons
-                name="account"
-                size={30}
-                color={focused ? "#ff80c3" : "#c2bebe"}
-              />
-            ),
-            tabBarLabelStyle: { fontSize: 13.4 },
+              tabBarActiveTintColor: "#ff80c3",
+              tabBarInactiveTintColor: "#c2bebe",
+            }}
+          />
+          <Tab.Screen
+            name="Perfil"
+            component={Perfil}
+            options={{
+              headerShown: false,
+              tabBarIcon: ({ focused, size }) => (
+                <MaterialCommunityIcons
+                  name="account"
+                  size={30}
+                  color={focused ? "#ff80c3" : "#c2bebe"}
+                />
+              ),
+              tabBarLabelStyle: { fontSize: 13.4 },
 
-            tabBarActiveTintColor: "#ff80c3",
-            tabBarInactiveTintColor: "#c2bebe",
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+              tabBarActiveTintColor: "#ff80c3",
+              tabBarInactiveTintColor: "#c2bebe",
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </ImageProvider>
   );
 }
 

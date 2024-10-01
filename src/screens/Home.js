@@ -1,12 +1,14 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import React, { useState, useContext } from "react";
 import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
 import { globalStyles } from "../utils/globalStyles";
-
-import { Avatar } from "react-native-paper";
+import CustomAvatar from "../components/CustomAvatar";
+import { ImageContext } from "../context/ImageContext";
 
 export default function Home() {
+  const { selectedImage } = useContext(ImageContext);
+
   const currentDate = getCurrentDate();
   const greeting = getGreeting();
 
@@ -16,6 +18,7 @@ export default function Home() {
         <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
           Hoje é, {currentDate}
         </Text>
+        <CustomAvatar imageUri={selectedImage} />
       </View>
     </View>
   );
