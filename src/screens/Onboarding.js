@@ -39,7 +39,7 @@ const Onboarding = ({ navigation }) => {
       }).start(() => {
         setTimeout(() => {
           setIsAnimating(false);
-        }, 94000); // 4 segundos
+        }, 4000); // 4 segundos
       });
     }
   }, [isAnimating, translateY]);
@@ -160,13 +160,13 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: height, // Define a altura da animação
+    height: height,
     alignItems: "center",
     justifyContent: "center",
   },
   animationImage: {
-    width: 200, // Ajuste a largura da imagem de animação conforme necessário
-    height: 200, // Ajuste a altura da imagem de animação conforme necessário
+    width: 200,
+    height: 200,
     resizeMode: "contain",
     borderRadius: 100,
   },
