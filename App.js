@@ -38,7 +38,7 @@ export default function App() {
           tabBarStyle: {
             backgroundColor: "#ffff",
             height: 55,
-            borderTopColor: "#B1AFAF",
+            borderTopColor: "#c2bebe",
           },
         }}
       >
@@ -51,12 +51,12 @@ export default function App() {
               <MaterialCommunityIcons
                 name="home"
                 size={30}
-                color={focused ? "#756AB6" : "#B1AFAF"}
+                color={focused ? "#ff80c3" : "#c2bebe"}
               />
             ),
             tabBarLabelStyle: { fontSize: 13.4 },
-            tabBarActiveTintColor: "#756AB6",
-            tabBarInactiveTintColor: "#B1AFAF",
+            tabBarActiveTintColor: "#ff80c3",
+            tabBarInactiveTintColor: "#c2bebe",
           }}
         />
 
@@ -69,12 +69,12 @@ export default function App() {
               <MaterialCommunityIcons
                 name="clipboard-list"
                 size={30}
-                color={focused ? "#756AB6" : "#B1AFAF"}
+                color={focused ? "#ff80c3" : "#c2bebe"}
               />
             ),
             tabBarLabelStyle: { fontSize: 13.4 },
-            tabBarActiveTintColor: "#756AB6",
-            tabBarInactiveTintColor: "#B1AFAF",
+            tabBarActiveTintColor: "#ff80c3",
+            tabBarInactiveTintColor: "#c2bebe",
           }}
         />
         <Tab.Screen
@@ -83,28 +83,11 @@ export default function App() {
           options={{
             headerShown: false,
             tabBarIcon: ({ focused }) => (
-              <View
-                style={{
-                  width: 70,
-                  height: 70,
-                  backgroundColor: "#ffff",
-                  borderRadius: 35,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 55,
-                  borderColor: "#B1AFAF",
-                  borderTopWidth: 0.5,
-                  borderBottomWidth: 0.5,
-                  borderStartWidth: 0.5,
-                  borderEndWidth: 0.5,
-                }}
-              >
-                <MaterialCommunityIcons
-                  name="plus-circle"
-                  size={50}
-                  color={focused ? "#756AB6" : "#B1AFAF"}
-                />
-              </View>
+              <MaterialCommunityIcons
+                name="plus-circle"
+                size={50}
+                color={focused ? "#ff80c3" : "#c2bebe"}
+              />
             ),
             tabBarLabel: () => null,
           }}
@@ -118,13 +101,13 @@ export default function App() {
               <MaterialCommunityIcons
                 name="discord"
                 size={30}
-                color={focused ? "#756AB6" : "#B1AFAF"}
+                color={focused ? "#ff80c3" : "#c2bebe"}
               />
             ),
             tabBarLabelStyle: { fontSize: 13.4 },
 
-            tabBarActiveTintColor: "#756AB6",
-            tabBarInactiveTintColor: "#B1AFAF",
+            tabBarActiveTintColor: "#ff80c3",
+            tabBarInactiveTintColor: "#c2bebe",
           }}
         />
         <Tab.Screen
@@ -136,13 +119,13 @@ export default function App() {
               <MaterialCommunityIcons
                 name="account"
                 size={30}
-                color={focused ? "#756AB6" : "#B1AFAF"}
+                color={focused ? "#ff80c3" : "#c2bebe"}
               />
             ),
             tabBarLabelStyle: { fontSize: 13.4 },
 
-            tabBarActiveTintColor: "#756AB6",
-            tabBarInactiveTintColor: "#B1AFAF",
+            tabBarActiveTintColor: "#ff80c3",
+            tabBarInactiveTintColor: "#c2bebe",
           }}
         />
       </Tab.Navigator>
