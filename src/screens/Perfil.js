@@ -12,7 +12,7 @@ export default function Perfil() {
   const handlePickImage = async () => {
     const imageUri = await pickImageFromGallery();
     if (imageUri) {
-      setSelectedImage(imageUri); // Atualiza a imagem no contexto
+      setSelectedImage(imageUri); // Isso também salva no AsyncStorage
     }
   };
 
