@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, Button } from "react-native";
 import React, { useState, useContext } from "react";
 
-import * as ImagePicker from "expo-image-picker";
 import { pickImageFromGallery } from "../helpers/imagePickerHelper";
 import CustomAvatar from "../components/CustomAvatar";
 import { ImageContext } from "../context/ImageContext";
@@ -12,7 +11,7 @@ export default function Perfil() {
   const handlePickImage = async () => {
     const imageUri = await pickImageFromGallery();
     if (imageUri) {
-      setSelectedImage(imageUri); // Isso também salva no AsyncStorage
+      setSelectedImage(imageUri);
     }
   };
 

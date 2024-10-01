@@ -18,7 +18,17 @@ export default function Home() {
         <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
           Hoje é, {currentDate}
         </Text>
-        <CustomAvatar imageUri={selectedImage} />
+        <View style={styles.viewImagem}>
+          <CustomAvatar imageUri={selectedImage} size={80} />
+          <View>
+            <Text style={[globalStyles.semiBoldText, styles.textoImagem]}>
+              {greeting},
+            </Text>
+            <Text style={[globalStyles.semiBoldText, styles.textoImagem]}>
+              Aicha
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -36,5 +46,15 @@ const styles = StyleSheet.create({
   textoMenu: {
     fontSize: 15,
     color: "#a6a2a2",
+  },
+  viewImagem: {
+    width: "52%",
+    paddingTop: 14,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  textoImagem: {
+    fontSize: 16,
   },
 });
