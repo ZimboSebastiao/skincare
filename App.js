@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import * as Font from "expo-font";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -12,13 +12,30 @@ import Rotina from "./src/screens/Rotina";
 import Nova from "./src/screens/Nova";
 import Skinbot from "./src/screens/Skinbot";
 import Perfil from "./src/screens/Perfil";
+import {
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+} from "./src/utils/fonts";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
   const Tab = createBottomTabNavigator();
 
-  // Configuração do Splash
+  // Carregar fontes e Splash
   useEffect(() => {
+    const loadResources = async () => {
+      await Font.loadAsync({
+        "Poppins-Regular": Poppins_400Regular,
+        "Poppins-Medium": Poppins_500Medium,
+        "Poppins-SemiBold": Poppins_600SemiBold,
+      });
+      setFontsLoaded(true);
+    };
+
+    loadResources();
+
     const timer = setTimeout(() => {
       setShowSplash(false);
     }, 4300);
@@ -26,10 +43,16 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Exibir o splash ou o indicador de carregamento enquanto as fontes são carregadas
   if (showSplash) {
     return <Splash />;
   }
 
+  if (!fontsLoaded) {
+    return <ActivityIndicator size="large" />;
+  }
+
+  // Retorna a navegação com as fontes carregadas
   return (
     <NavigationContainer style={styles.container}>
       <Tab.Navigator

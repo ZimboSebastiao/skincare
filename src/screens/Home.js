@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
+import { globalStyles } from "../utils/globalStyles";
 
 export default function Home() {
   const currentDate = getCurrentDate();
@@ -10,7 +11,9 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.viewMenu}>
-        <Text style={styles.textoMenu}>Hoje é, {currentDate}</Text>
+        <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
+          Hoje é, {currentDate}
+        </Text>
       </View>
     </View>
   );
