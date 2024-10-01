@@ -4,6 +4,8 @@ import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
 import { globalStyles } from "../utils/globalStyles";
 
+import { Avatar } from "react-native-paper";
+
 export default function Home() {
   const currentDate = getCurrentDate();
   const greeting = getGreeting();
