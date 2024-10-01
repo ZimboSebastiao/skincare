@@ -56,19 +56,22 @@ const Onboarding = ({ navigation }) => {
   const onboardingData = [
     {
       key: "1",
-      title: "Bem-vindo ao App!",
-      description: "Descubra a melhor forma de cuidar da sua pele.",
-      image: require("../../assets/images/logo.png"),
+      title: ["Descubra Sua Rotina", "De Cuidados Com A ", "Pele Perfeita"],
+      image: require("../../assets/images/casual.png"),
     },
     {
       key: "2",
-      title: "Ritual Personalizado",
-      description: "Receba dicas personalizadas para a sua rotina de skincare.",
-      image: require("../../assets/images/favicon.png"),
+      title: [
+        "Receba Dicas ",
+        "Personalizadas para a ",
+        " sua rotina De Skincare",
+      ],
+
+      image: require("../../assets/images/face-scan.png"),
     },
     {
       key: "3",
-      title: "Mantenha-se Atualizado",
+      title: ["Ritual Personalizado", "Para Sua Rotina", "De Skincare!"],
       description: "Fique por dentro das últimas novidades e tendências.",
     },
   ];
@@ -76,7 +79,11 @@ const Onboarding = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <View style={styles.page}>
       <Image source={item.image} style={styles.image} />
-      <Text style={styles.title}>{item.title}</Text>
+      {item.title.map((line, index) => (
+        <Text key={index} style={styles.title}>
+          {line}
+        </Text>
+      ))}
       <Text style={styles.description}>{item.description}</Text>
       {item.key === "3" && (
         <Button title="Começar" onPress={handleFinishOnboarding} />
@@ -183,12 +190,15 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 250,
     resizeMode: "contain",
-    marginBottom: 20,
+    marginBottom: 50,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginTop: 6,
+    color: "#ff80c3",
+    justifyContent: "center",
+    alignItems: "center",
   },
   description: {
     fontSize: 16,
