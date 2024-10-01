@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
+import { getCurrentDate } from "../utils/dateUtils";
+import { getGreeting } from "../utils/greetingUtils";
 
 export default function Home() {
   return (
