@@ -8,6 +8,7 @@ import {
   FlatList,
   Dimensions,
   Animated,
+  Pressable,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { globalStyles } from "../utils/globalStyles";
@@ -90,7 +91,10 @@ const Onboarding = ({ navigation }) => {
       ))}
       <Text style={styles.description}>{item.description}</Text>
       {item.key === "3" && (
-        <Button title="Começar" onPress={handleFinishOnboarding} />
+        // <Button title="Começar" onPress={handleFinishOnboarding} />
+        <Pressable style={styles.botaoComecar} onPress={handleFinishOnboarding}>
+          <Text style={styles.textoComecar}>Começar</Text>
+        </Pressable>
       )}
     </View>
   );
@@ -239,6 +243,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#fafafa",
     padding: 10,
     borderRadius: 100,
+  },
+  botaoComecar: {
+    backgroundColor: "#6a9ca7",
+    width: "70%",
+    padding: 15,
+    borderRadius: 25,
+    marginTop: 60,
+  },
+  textoComecar: {
+    fontSize: 20,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "#ffff",
   },
 });
 
