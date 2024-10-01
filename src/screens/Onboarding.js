@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   View,
   Text,
@@ -7,14 +7,17 @@ import {
   Image,
   FlatList,
   Dimensions,
+  Animated,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 
 const Onboarding = ({ navigation }) => {
   const [hasSeenOnboarding, setHasSeenOnboarding] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0); // Estado para armazenar o índice da página atual
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true); // Estado para controlar a animação
+  const translateY = useRef(new Animated.Value(-height)).current; // Inicializa a animação fora da tela
 
   useEffect(() => {
     const checkOnboarding = async () => {
@@ -26,13 +29,27 @@ const Onboarding = ({ navigation }) => {
     checkOnboarding();
   }, []);
 
+  useEffect(() => {
+    if (isAnimating) {
+      Animated.timing(translateY, {
+        toValue: height / 14,
+        duration: 1800,
+        useNativeDriver: true,
+      }).start(() => {
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 4000); // 4 segundos
+      });
+    }
+  }, [isAnimating, translateY]);
+
   const handleFinishOnboarding = async () => {
     await AsyncStorage.setItem("@has_seen_onboarding", "true");
-    navigation.replace("Home"); // Navega para a tela principal do app
+    navigation.replace("Home");
   };
 
   if (hasSeenOnboarding) {
-    return null; // Não exibe nada se já passou pelo onboarding
+    return null;
   }
 
   const onboardingData = [
@@ -66,37 +83,51 @@ const Onboarding = ({ navigation }) => {
     </View>
   );
 
-  // Função para atualizar o índice da página atual
   const onViewRef = React.useRef(({ viewableItems }) => {
-    setCurrentIndex(viewableItems[0].index); // Atualiza o índice da página
+    setCurrentIndex(viewableItems[0].index);
   });
   const viewConfigRef = React.useRef({ viewAreaCoveragePercentThreshold: 50 });
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={onboardingData}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.key}
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.flatListContainer}
-        style={{ width }} // Definindo a largura da FlatList
-        onViewableItemsChanged={onViewRef.current} // Atualiza o índice ao mudar de página
-        viewabilityConfig={viewConfigRef.current} // Configuração de visibilidade
-      />
-      <View style={styles.dotsContainer}>
-        {onboardingData.map((_, index) => (
-          <View
-            key={index}
-            style={[
-              styles.dot,
-              currentIndex === index ? styles.activeDot : styles.inactiveDot,
-            ]}
+      {isAnimating ? (
+        <Animated.View
+          style={[styles.animationContainer, { transform: [{ translateY }] }]}
+        >
+          <Image
+            source={require("../../assets/images/logo.png")} // Imagem que aparecerá na animação
+            style={styles.animationImage}
           />
-        ))}
-      </View>
+        </Animated.View>
+      ) : (
+        <>
+          <FlatList
+            data={onboardingData}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.key}
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.flatListContainer}
+            style={{ width }}
+            onViewableItemsChanged={onViewRef.current}
+            viewabilityConfig={viewConfigRef.current}
+          />
+          <View style={styles.dotsContainer}>
+            {onboardingData.map((_, index) => (
+              <View
+                key={index}
+                style={[
+                  styles.dot,
+                  currentIndex === index
+                    ? styles.activeDot
+                    : styles.inactiveDot,
+                ]}
+              />
+            ))}
+          </View>
+        </>
+      )}
     </View>
   );
 };
@@ -106,11 +137,25 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "center",
   },
+  animationContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: height, // Define a altura da animação
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  animationImage: {
+    width: 200, // Ajuste a largura da imagem de animação conforme necessário
+    height: 200, // Ajuste a altura da imagem de animação conforme necessário
+    resizeMode: "contain",
+  },
   flatListContainer: {
     flexGrow: 1,
   },
   page: {
-    width, // Cada página ocupa a largura total da tela
+    width,
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
@@ -143,10 +188,10 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   activeDot: {
-    backgroundColor: "#ff80c3", // Cor do ponto ativo
+    backgroundColor: "#ff80c3",
   },
   inactiveDot: {
-    backgroundColor: "#c2bebe", // Cor do ponto inativo
+    backgroundColor: "#c2bebe",
   },
 });
 
