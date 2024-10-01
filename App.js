@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
+import { StyleSheet, ActivityIndicator } from "react-native";
 import * as Font from "expo-font";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import Onboarding from "./src/screens/Onboarding";
 import Splash from "./src/screens/Splash";
 import Home from "./src/screens/Home";
 import Rotina from "./src/screens/Rotina";
@@ -18,11 +19,14 @@ import {
   Poppins_600SemiBold,
 } from "./src/utils/fonts";
 import { ImageProvider } from "./src/context/ImageContext";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const Tab = createBottomTabNavigator();
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasSeenOnboarding, setHasSeenOnboarding] = useState(false);
 
   // Carregar fontes e Splash
   useEffect(() => {
@@ -44,116 +48,127 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Verificação do Onboarding
+  useEffect(() => {
+    const checkOnboarding = async () => {
+      const value = await AsyncStorage.getItem("@has_seen_onboarding");
+      setHasSeenOnboarding(value === "true");
+      setIsLoading(false); // Atualiza o estado após a verificação
+    };
+    checkOnboarding();
+  }, []);
+
   // Exibir o splash ou o indicador de carregamento enquanto as fontes são carregadas
   if (showSplash) {
     return <Splash />;
   }
 
-  if (!fontsLoaded) {
-    return <ActivityIndicator size="large" />;
+  if (!fontsLoaded || isLoading) {
+    return <ActivityIndicator size="large" />; // Mostra um carregando enquanto verifica
   }
 
   // Retorna a navegação com as fontes carregadas
   return (
     <ImageProvider>
       <NavigationContainer style={styles.container}>
-        <Tab.Navigator
-          initialRouteName={Home}
-          screenOptions={{
-            tabBarStyle: {
-              backgroundColor: "#ffff",
-              height: 55,
-              borderTopColor: "#c2bebe",
-            },
-          }}
-        >
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ focused, size }) => (
-                <MaterialCommunityIcons
-                  name="home"
-                  size={30}
-                  color={focused ? "#ff80c3" : "#c2bebe"}
-                />
-              ),
-              tabBarLabelStyle: { fontSize: 13.4 },
-              tabBarActiveTintColor: "#ff80c3",
-              tabBarInactiveTintColor: "#c2bebe",
+        {hasSeenOnboarding ? (
+          <Tab.Navigator
+            initialRouteName="Home"
+            screenOptions={{
+              tabBarStyle: {
+                backgroundColor: "#ffff",
+                height: 55,
+                borderTopColor: "#c2bebe",
+              },
             }}
-          />
-
-          <Tab.Screen
-            name="Rotina"
-            component={Rotina}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ focused, size }) => (
-                <MaterialCommunityIcons
-                  name="clipboard-list"
-                  size={30}
-                  color={focused ? "#ff80c3" : "#c2bebe"}
-                />
-              ),
-              tabBarLabelStyle: { fontSize: 13.4 },
-              tabBarActiveTintColor: "#ff80c3",
-              tabBarInactiveTintColor: "#c2bebe",
-            }}
-          />
-          <Tab.Screen
-            name="Nova"
-            component={Nova}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ focused }) => (
-                <MaterialCommunityIcons
-                  name="plus-circle"
-                  size={50}
-                  color={focused ? "#ff80c3" : "#c2bebe"}
-                />
-              ),
-              tabBarLabel: () => null,
-            }}
-          />
-          <Tab.Screen
-            name="SkinBot"
-            component={Skinbot}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ focused, size }) => (
-                <MaterialCommunityIcons
-                  name="discord"
-                  size={30}
-                  color={focused ? "#ff80c3" : "#c2bebe"}
-                />
-              ),
-              tabBarLabelStyle: { fontSize: 13.4 },
-
-              tabBarActiveTintColor: "#ff80c3",
-              tabBarInactiveTintColor: "#c2bebe",
-            }}
-          />
-          <Tab.Screen
-            name="Perfil"
-            component={Perfil}
-            options={{
-              headerShown: false,
-              tabBarIcon: ({ focused, size }) => (
-                <MaterialCommunityIcons
-                  name="account"
-                  size={30}
-                  color={focused ? "#ff80c3" : "#c2bebe"}
-                />
-              ),
-              tabBarLabelStyle: { fontSize: 13.4 },
-
-              tabBarActiveTintColor: "#ff80c3",
-              tabBarInactiveTintColor: "#c2bebe",
-            }}
-          />
-        </Tab.Navigator>
+          >
+            <Tab.Screen
+              name="Home"
+              component={Home}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="home"
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+              }}
+            />
+            <Tab.Screen
+              name="Rotina"
+              component={Rotina}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="clipboard-list"
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+              }}
+            />
+            <Tab.Screen
+              name="Nova"
+              component={Nova}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="plus-circle"
+                    size={50}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabel: () => null,
+              }}
+            />
+            <Tab.Screen
+              name="SkinBot"
+              component={Skinbot}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="discord"
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+              }}
+            />
+            <Tab.Screen
+              name="Perfil"
+              component={Perfil}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="account"
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+              }}
+            />
+          </Tab.Navigator>
+        ) : (
+          <Onboarding />
+        )}
       </NavigationContainer>
     </ImageProvider>
   );
