@@ -4,9 +4,12 @@ import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
 
 export default function Home() {
+  const currentDate = getCurrentDate();
+  const greeting = getGreeting();
+
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <Text>Hoje é, {currentDate}</Text>
     </View>
   );
 }

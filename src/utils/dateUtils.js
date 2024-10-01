@@ -3,5 +3,5 @@ export function getCurrentDate() {
   const day = today.getDate();
   const month = today.toLocaleString("pt-BR", { month: "long" });
 
-  return `${day}, ${month.charAt(0).toUpperCase() + month.slice(1)}`;
+  return `${day} de ${month.charAt(0).toUpperCase() + month.slice(1)}`;
 }
