@@ -71,8 +71,12 @@ const Onboarding = ({ navigation }) => {
     },
     {
       key: "3",
-      title: ["Ritual Personalizado", "Para Sua Rotina", "De Skincare!"],
-      description: "Fique por dentro das últimas novidades e tendências.",
+      title: [
+        "Conheça SkinBot: Seu",
+        "Assistente Inteligente",
+        "De Cuidados Com A Pele",
+      ],
+      image: require("../../assets/images/chatbot.png"),
     },
   ];
 
