@@ -94,6 +94,19 @@ export default function Home() {
 
       <View style={styles.jornada}> 
         <Text style={[globalStyles.mediumText, styles.textoJornada]}>Acompanhe suas metas diárias</Text>
+
+      <View style={styles.jornadaFeitas}>
+
+        <View style={styles.feito}>
+          <Text>Feito</Text>
+        </View>
+
+        <View style={styles.feito}>
+          <Text>Feito</Text>
+        </View>
+
+      </View>
+
       </View>
     </View>
   );
@@ -152,12 +165,20 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   jornada: {
-    backgroundColor: "red",
     marginTop: 100,
     padding: 10
     
   }, 
   textoJornada: {
     fontSize: 17
+  },
+  jornadaFeitas: {
+    backgroundColor: "yellow",
+    flexDirection: "row",
+    justifyContent: "space-between"
+
+  },
+  feito:{
+    backgroundColor: "orange"
   }
 });
