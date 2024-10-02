@@ -105,7 +105,7 @@ export default function Home() {
           <Text>Feito</Text>
         </View>
 
-        <View style={styles.feito}>
+        <View style={styles.feito2}>
         <Image
               source={require("../../assets/images/clock.png")}
               style={styles.animationImage}
@@ -183,11 +183,17 @@ const styles = StyleSheet.create({
   jornadaFeitas: {
     backgroundColor: "yellow",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    padding: 6
 
   },
   feito:{
-    backgroundColor: "orange",
+    backgroundColor: "#F1DAEA",
+    padding: 36
+    
+  },
+  feito2:{
+    backgroundColor: "#FFE5E5",
     padding: 36
     
   },
