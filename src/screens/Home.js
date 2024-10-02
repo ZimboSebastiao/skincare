@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
 import { globalStyles } from "../utils/globalStyles";
 import CustomAvatar from "../components/CustomAvatar";
 import { ImageContext } from "../context/ImageContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Svg, { Polygon } from 'react-native-svg';
 
 export default function Home() {
   const { selectedImage } = useContext(ImageContext);
@@ -29,47 +30,69 @@ export default function Home() {
               Aicha
             </Text>
           </View>
-
         </View>
       </View>
 
-        <View style={styles.viewPaginas}>
-
-          <View style={styles.viewPagina}>
-            <Pressable style={styles.viewBotao1}> 
-            <MaterialCommunityIcons
-                    name="clipboard-check-outline"
-                    size={50}
-                    color={"#ff80c3"}
-                  />
-            </Pressable>
-                <Text>Diário</Text>
-          </View>
-
-          <View style={styles.viewPagina}>
-            <Pressable style={styles.viewBotao2}>
-              
-            <MaterialCommunityIcons
-                    name="emoticon-outline"
-                    size={50}
-                    color={"#ff80c3"}
-                  />
-            </Pressable>
-                <Text>Humor</Text>
-          </View>
-
-          <View style={styles.viewPagina}> 
-            <Pressable style={styles.viewBotao3}> 
-            <MaterialCommunityIcons
-                    name="star-shooting-outline"
-                    size={50}
-                    color={"#ff80c3"}
-                  />
-            </Pressable>
-                <Text>Percepções</Text>
-          </View>
-
+      <View style={styles.viewPaginas}>
+        <View style={styles.viewPagina}>
+          <Pressable style={styles.buttonWrapper}>
+            <Svg height="100" width="100">
+              <Polygon
+                points="0,0 100,0 100,100 0,100 
+                        0,0 56,79 98,65 72,29
+                        39,1 21,-11 12,-14 56,79"
+                fill="black"
+              />
+            </Svg>
+            <View style={styles.buttonContent}>
+              <MaterialCommunityIcons
+                name="clipboard-check-outline"
+                size={50}
+                color={"#ff80c3"}
+              />
+            </View>
+              <Text style={styles.buttonText}>Diário</Text>
+          </Pressable>
         </View>
+
+        <View style={styles.viewPagina}>
+          <Pressable style={styles.buttonWrapper}>
+            <Svg height="100" width="100">
+              <Polygon
+                points="30,0 100,70 50,100 0,50"
+                fill="blue"
+              />
+            </Svg>
+            <View style={styles.buttonContent}>
+              <MaterialCommunityIcons
+                name="emoticon-outline"
+                size={50}
+                color={"#ff80c3"}
+              />
+            </View>
+              <Text style={styles.buttonText}>Humor</Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.viewPagina}>
+          <Pressable style={styles.buttonWrapper}>
+            <Svg height="100" width="100">
+              <Polygon
+                points="50,0 100,100 0,100"
+                fill="orange"
+              />
+            </Svg>
+            <View style={styles.buttonContent}>
+              <MaterialCommunityIcons
+                name="star-shooting-outline"
+                size={50}
+                color={"#ff80c3"}
+              />
+            </View>
+              <Text style={styles.buttonText}>Percepções</Text>
+          </Pressable>
+        </View>
+      </View>
     </View>
   );
 }
@@ -100,34 +123,27 @@ const styles = StyleSheet.create({
   viewPaginas: {
     flexDirection: "row",
     justifyContent: "space-around",
-  }
-  ,
+  },
   viewPagina: {
     justifyContent: "center",
-    alignItems: "center"
-    
-  }
-  ,
-  viewBotao1: {
-    backgroundColor: "black",
+    alignItems: "center",
+  },
+  buttonWrapper: {
+    position: 'relative', // Permite sobreposição de conteúdo
+    width: 100,
+    height: 100,
     justifyContent: "center",
     alignItems: "center",
-    width: 100,
-    height: 100, 
-    borderRadius: 5, 
-  
   },
-  viewBotao2: {
-    backgroundColor: "blue",
+  buttonContent: {
+    position: 'absolute', // Sobrepõe o conteúdo dentro do botão
     justifyContent: "center",
-    alignItems: "center"
-    
-  }
-  ,
-  viewBotao3: {
-    backgroundColor: "orange",
-    justifyContent: "center",
-    alignItems: "center"
-    
-  }
+    alignItems: "center",
+    width: '100%',
+    height: '100%',
+  },
+  buttonText: {
+    color: "#ff80c3",
+    marginTop: 5,
+  },
 });
