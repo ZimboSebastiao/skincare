@@ -158,6 +158,6 @@ const styles = StyleSheet.create({
     
   }, 
   textoJornada: {
-    fontSize: 16
+    fontSize: 17
   }
 });
