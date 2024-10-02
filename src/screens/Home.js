@@ -181,7 +181,6 @@ const styles = StyleSheet.create({
     fontSize: 17
   },
   jornadaFeitas: {
-    backgroundColor: "yellow",
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 6
