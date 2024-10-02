@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   viewImagem: {
     width: "52%",
     paddingTop: 14,
+    paddingBottom: 50,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
