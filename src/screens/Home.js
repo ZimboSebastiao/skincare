@@ -106,6 +106,10 @@ export default function Home() {
         </View>
 
         <View style={styles.feito}>
+        <Image
+              source={require("../../assets/images/clock.png")}
+              style={styles.animationImage}
+            />
           <Text>Feito</Text>
         </View>
 
@@ -184,16 +188,18 @@ const styles = StyleSheet.create({
   },
   feito:{
     backgroundColor: "orange",
-    padding: 6
+    padding: 36
+    
   },
   animationImage: {
-    width: 70,
-    height: 70,
+    width: 50,
+    height: 50,
     resizeMode: "contain",
     borderRadius: 100,
-    borderWidth: 1,
+    // borderWidth: 2,
     borderColor: "#ffff",
     backgroundColor: "#ffff",
+    // margin: 20
     
   },
 });
