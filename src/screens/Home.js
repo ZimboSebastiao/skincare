@@ -111,10 +111,12 @@ const styles = StyleSheet.create({
   viewBotao1: {
     backgroundColor: "black",
     justifyContent: "center",
-    alignItems: "center"
-    
-  }
-  ,
+    alignItems: "center",
+    width: 100,
+    height: 100, 
+    borderRadius: 5, 
+  
+  },
   viewBotao2: {
     backgroundColor: "blue",
     justifyContent: "center",
