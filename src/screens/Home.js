@@ -178,7 +178,8 @@ const styles = StyleSheet.create({
     
   }, 
   textoJornada: {
-    fontSize: 17
+    fontSize: 19,
+    paddingBottom: 20
   },
   jornadaFeitas: {
     flexDirection: "row",
