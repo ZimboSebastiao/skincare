@@ -8,6 +8,7 @@ import { ImageContext } from "../context/ImageContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Svg, { Path  } from 'react-native-svg';
 import { Checkbox } from 'react-native-paper';
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 
 export default function Home() {
   const { selectedImage } = useContext(ImageContext);
@@ -15,6 +16,15 @@ export default function Home() {
 
   const currentDate = getCurrentDate();
   const greeting = getGreeting();
+
+  const theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: '#6200ee',
+      accent: '#03dac4',
+    },
+  };
 
   return (
     <View style={styles.container}>
@@ -124,7 +134,9 @@ export default function Home() {
               style={styles.animationImage}
             />
             <View style={styles.viewBox}>
+            <PaperProvider theme={theme}>
               
+            </PaperProvider>
             <Checkbox
       status={checked ? 'checked' : 'unchecked'}
       onPress={() => {
