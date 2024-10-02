@@ -110,6 +110,8 @@ export default function Home() {
       onPress={() => {
         setChecked(!checked);
       }}
+      uncheckedColor="#ffff" 
+      color="red"
     />
           <Text>Feito</Text>
         </View>
@@ -122,12 +124,16 @@ export default function Home() {
               style={styles.animationImage}
             />
             <View style={styles.viewBox}>
+              
             <Checkbox
       status={checked ? 'checked' : 'unchecked'}
       onPress={() => {
         setChecked(!checked);
       }}
       style={styles.boxCheck}
+      uncheckedColor="#ffff" 
+      color="red"
+      
       
     />
           <Text>Feito</Text>
@@ -241,5 +247,13 @@ const styles = StyleSheet.create({
     color: "gray",
     fontSize: 12,
     textAlign: "center"
-  }
+  },
+  checkboxContainer: {
+    borderWidth: 2, // Largura da borda
+    borderColor: '#6200ee', // Cor da borda
+    borderRadius: 8, // Bordas arredondadas
+    padding: 4, // Espaçamento interno
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
