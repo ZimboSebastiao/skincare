@@ -93,7 +93,7 @@ export default function Home() {
       </View>
 
       <View style={styles.jornada}> 
-        <Text style={[globalStyles.semiBoldText]}>Acompanhe suas metas diárias</Text>
+        <Text style={[globalStyles.mediumText, styles.textoJornada]}>Acompanhe suas metas diárias</Text>
       </View>
     </View>
   );
@@ -157,6 +157,6 @@ const styles = StyleSheet.create({
     
   }, 
   textoJornada: {
-
+    fontSize: 16
   }
 });
