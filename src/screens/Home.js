@@ -16,6 +16,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
+
       <View style={styles.viewMenu}>
         <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
           Hoje é, {currentDate}
@@ -90,6 +91,10 @@ export default function Home() {
           </Pressable>
         </View>
       </View>
+
+      <View style={styles.jornada}> 
+        <Text>Acompanhe suas metas diárias</Text>
+      </View>
     </View>
   );
 }
@@ -126,22 +131,29 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonWrapper: {
-    position: 'relative', // Permite sobreposição de conteúdo
+    position: 'relative', 
     width: 100,
     height: 100,
     justifyContent: "center",
     alignItems: "center",
   },
   buttonContent: {
-    position: 'absolute', // Sobrepõe o conteúdo dentro do botão
+    position: 'absolute', 
     justifyContent: "center",
     alignItems: "center",
     width: '100%',
     height: '100%',
+    paddingBottom: 30
   },
   buttonText: {
     color: "#2D2D2D",
     marginTop: 15,
     fontSize: 16.5
   },
+  jornada: {
+    backgroundColor: "red",
+    marginTop: 100,
+    padding: 10
+    
+  }
 });
