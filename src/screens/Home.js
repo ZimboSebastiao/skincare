@@ -189,13 +189,14 @@ const styles = StyleSheet.create({
   },
   feito:{
     backgroundColor: "#F1DAEA",
-    padding: 36
+    padding: 46,
+    borderRadius: 15,
     
   },
   feito2:{
     backgroundColor: "#FFE5E5",
-    padding: 36
-    
+    padding: 46,
+    borderRadius: 15,
   },
   animationImage: {
     width: 50,
