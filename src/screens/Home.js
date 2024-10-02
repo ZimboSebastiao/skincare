@@ -199,14 +199,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   animationImage: {
-    width: 50,
-    height: 50,
+    width: 80,
+    height: 80,
     resizeMode: "contain",
     borderRadius: 100,
-    // borderWidth: 2,
+
     borderColor: "#ffff",
     backgroundColor: "#ffff",
-    // margin: 20
+   
     
   },
 });
