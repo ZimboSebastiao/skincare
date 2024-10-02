@@ -35,7 +35,7 @@ const Onboarding = ({ navigation }) => {
     if (isAnimating) {
       Animated.timing(translateY, {
         toValue: height / 14,
-        duration: 1800,
+        duration: 1000,
         useNativeDriver: true,
       }).start(() => {
         setTimeout(() => {
