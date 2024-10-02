@@ -34,39 +34,41 @@ export default function Home() {
       </View>
 
         <View style={styles.viewPaginas}>
-          <View>
-            <Pressable>
-              
+
+          <View style={styles.viewPagina}>
+            <Pressable style={styles.viewBotao1}> 
             <MaterialCommunityIcons
                     name="clipboard-check-outline"
                     size={50}
                     color={"#ff80c3"}
                   />
-                  <Text>Diário</Text>
             </Pressable>
+                <Text>Diário</Text>
           </View>
-          <View>
-            <Pressable>
+
+          <View style={styles.viewPagina}>
+            <Pressable style={styles.viewBotao2}>
               
             <MaterialCommunityIcons
                     name="emoticon-outline"
                     size={50}
                     color={"#ff80c3"}
                   />
-                  <Text>Humor</Text>
             </Pressable>
+                <Text>Humor</Text>
           </View>
-          <View>
-            <Pressable>
-              
+
+          <View style={styles.viewPagina}> 
+            <Pressable style={styles.viewBotao3}> 
             <MaterialCommunityIcons
                     name="star-shooting-outline"
                     size={50}
                     color={"#ff80c3"}
                   />
-                  <Text>Percepções</Text>
             </Pressable>
+                <Text>Percepções</Text>
           </View>
+
         </View>
     </View>
   );
@@ -96,6 +98,34 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   viewPaginas: {
-    backgroundColor: "red"
+    flexDirection: "row",
+    justifyContent: "space-around",
+  }
+  ,
+  viewPagina: {
+    justifyContent: "center",
+    alignItems: "center"
+    
+  }
+  ,
+  viewBotao1: {
+    backgroundColor: "black",
+    justifyContent: "center",
+    alignItems: "center"
+    
+  }
+  ,
+  viewBotao2: {
+    backgroundColor: "blue",
+    justifyContent: "center",
+    alignItems: "center"
+    
+  }
+  ,
+  viewBotao3: {
+    backgroundColor: "orange",
+    justifyContent: "center",
+    alignItems: "center"
+    
   }
 });
