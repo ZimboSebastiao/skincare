@@ -47,7 +47,7 @@ export default function Home() {
               <MaterialCommunityIcons
                 name="clipboard-check-outline"
                 size={50}
-                color={"#ff80c3"}
+                color={"#2D2D2D"}
               />
             </View>
               <Text style={styles.buttonText}>Diário</Text>
@@ -65,7 +65,7 @@ export default function Home() {
               <MaterialCommunityIcons
                 name="emoticon-outline"
                 size={50}
-                color={"#ff80c3"}
+                color={"#2D2D2D"}
               />
             </View>
               <Text style={styles.buttonText}>Humor</Text>
@@ -83,7 +83,7 @@ export default function Home() {
               <MaterialCommunityIcons
                 name="star-shooting-outline"
                 size={50}
-                color={"#ff80c3"}
+                color={"#2D2D2D"}
               />
             </View>
               <Text style={styles.buttonText}>Percepções</Text>
