@@ -19,7 +19,12 @@ import {
   Poppins_600SemiBold,
 } from "./src/utils/fonts";
 import { ImageProvider } from "./src/context/ImageContext";
+import FormPage1 from "./src/screens/FormPage1";
+import FormPage2 from "./src/screens/FormPage2";
+import FormPage3 from "./src/screens/FormPage3";
+import FormPage4 from "./src/screens/FormPage4";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
