@@ -113,6 +113,7 @@ export default function Home() {
     />
           <Text>Feito</Text>
         </View>
+        <Text style={styles.quantidade}>12 copos de água</Text>
         </View>
 
         <View style={styles.feito2}>
@@ -130,7 +131,8 @@ export default function Home() {
       
     />
           <Text>Feito</Text>
-            </View>
+          </View>
+          <Text style={styles.quantidade}>8 horas</Text>
         </View>
 
       </View>
@@ -229,9 +231,15 @@ const styles = StyleSheet.create({
   viewBox: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    width: 70
   },
   boxCheck: {
     backgroundColor: "white"
+  },
+  quantidade: {
+    color: "gray",
+    fontSize: 12,
+    textAlign: "center"
   }
 });
