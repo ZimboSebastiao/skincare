@@ -104,7 +104,7 @@ export default function Home() {
               source={require("../../assets/images/water.png")}
               style={styles.animationImage}
             />
-                      <View>
+        <View style={styles.viewBox}>
             <Checkbox
       status={checked ? 'checked' : 'unchecked'}
       onPress={() => {
@@ -112,7 +112,7 @@ export default function Home() {
       }}
     />
           <Text>Feito</Text>
-            </View>
+        </View>
         </View>
 
         <View style={styles.feito2}>
@@ -120,12 +120,13 @@ export default function Home() {
               source={require("../../assets/images/cloud.png")}
               style={styles.animationImage}
             />
-            <View>
+            <View style={styles.viewBox}>
             <Checkbox
       status={checked ? 'checked' : 'unchecked'}
       onPress={() => {
         setChecked(!checked);
       }}
+      style={styles.boxCheck}
       
     />
           <Text>Feito</Text>
@@ -222,10 +223,15 @@ const styles = StyleSheet.create({
     height: 80,
     resizeMode: "contain",
     borderRadius: 100,
-
     borderColor: "#ffff",
-    backgroundColor: "#ffff",
-   
-    
+    backgroundColor: "#ffff"   
   },
+  viewBox: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  boxCheck: {
+    backgroundColor: "white"
+  }
 });
