@@ -99,7 +99,7 @@ export default function Home() {
 
         <View style={styles.feito}>
         <Image
-              source={require("../../assets/images/brown.png")}
+              source={require("../../assets/images/water.png")}
               style={styles.animationImage}
             />
           <Text>Feito</Text>
@@ -183,6 +183,17 @@ const styles = StyleSheet.create({
 
   },
   feito:{
-    backgroundColor: "orange"
-  }
+    backgroundColor: "orange",
+    padding: 6
+  },
+  animationImage: {
+    width: 70,
+    height: 70,
+    resizeMode: "contain",
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: "#ffff",
+    backgroundColor: "#ffff",
+    
+  },
 });
