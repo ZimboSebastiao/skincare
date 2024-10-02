@@ -107,7 +107,7 @@ export default function Home() {
 
         <View style={styles.feito2}>
         <Image
-              source={require("../../assets/images/clock.png")}
+              source={require("../../assets/images/cloud.png")}
               style={styles.animationImage}
             />
           <Text>Feito</Text>
