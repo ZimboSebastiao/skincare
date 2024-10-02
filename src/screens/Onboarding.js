@@ -40,7 +40,7 @@ const Onboarding = ({ navigation }) => {
       }).start(() => {
         setTimeout(() => {
           setIsAnimating(false);
-        }, 4000); // 4 segundos
+        }, 3000); // 3 segundos
       });
     }
   }, [isAnimating, translateY]);
