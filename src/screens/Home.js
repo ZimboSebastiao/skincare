@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import React, { useContext } from "react";
 import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
@@ -98,6 +98,10 @@ export default function Home() {
       <View style={styles.jornadaFeitas}>
 
         <View style={styles.feito}>
+        <Image
+              source={require("../../assets/images/brown.png")}
+              style={styles.animationImage}
+            />
           <Text>Feito</Text>
         </View>
 
