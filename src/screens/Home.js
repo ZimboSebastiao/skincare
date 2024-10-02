@@ -51,7 +51,7 @@ export default function Home() {
                 color={"#2D2D2D"}
               />
             </View>
-              <Text style={styles.buttonText}>Diário</Text>
+              <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
           </Pressable>
         </View>
 
@@ -69,7 +69,7 @@ export default function Home() {
                 color={"#2D2D2D"}
               />
             </View>
-              <Text style={styles.buttonText}>Humor</Text>
+              <Text style={[styles.buttonText, globalStyles.text]}>Humor</Text>
           </Pressable>
         </View>
 
@@ -87,13 +87,13 @@ export default function Home() {
                 color={"#2D2D2D"}
               />
             </View>
-              <Text style={styles.buttonText}>Percepções</Text>
+              <Text style={[styles.buttonText, globalStyles.text]}>Percepções</Text>
           </Pressable>
         </View>
       </View>
 
       <View style={styles.jornada}> 
-        <Text>Acompanhe suas metas diárias</Text>
+        <Text style={[globalStyles.semiBoldText]}>Acompanhe suas metas diárias</Text>
       </View>
     </View>
   );
@@ -148,12 +148,15 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#2D2D2D",
     marginTop: 15,
-    fontSize: 16.5
+    fontSize: 16
   },
   jornada: {
     backgroundColor: "red",
     marginTop: 100,
     padding: 10
     
+  }, 
+  textoJornada: {
+
   }
 });
