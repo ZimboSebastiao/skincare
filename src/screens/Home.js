@@ -140,7 +140,8 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   buttonText: {
-    color: "#ff80c3",
-    marginTop: 5,
+    color: "#2D2D2D",
+    marginTop: 15,
+    fontSize: 16.5
   },
 });
