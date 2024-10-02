@@ -11,6 +11,7 @@ import { Checkbox } from 'react-native-paper';
 
 export default function Home() {
   const { selectedImage } = useContext(ImageContext);
+  const [checked, setChecked] = React.useState(false);
 
   const currentDate = getCurrentDate();
   const greeting = getGreeting();
@@ -103,7 +104,15 @@ export default function Home() {
               source={require("../../assets/images/water.png")}
               style={styles.animationImage}
             />
+                      <View>
+            <Checkbox
+      status={checked ? 'checked' : 'unchecked'}
+      onPress={() => {
+        setChecked(!checked);
+      }}
+    />
           <Text>Feito</Text>
+            </View>
         </View>
 
         <View style={styles.feito2}>
@@ -111,7 +120,16 @@ export default function Home() {
               source={require("../../assets/images/cloud.png")}
               style={styles.animationImage}
             />
+            <View>
+            <Checkbox
+      status={checked ? 'checked' : 'unchecked'}
+      onPress={() => {
+        setChecked(!checked);
+      }}
+      
+    />
           <Text>Feito</Text>
+            </View>
         </View>
 
       </View>
