@@ -24,6 +24,7 @@ import FormPage2 from "./src/screens/FormPage2";
 import FormPage3 from "./src/screens/FormPage3";
 import FormPage4 from "./src/screens/FormPage4";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Diario from "./src/screens/Diario";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -155,6 +156,23 @@ export default function App() {
             <Tab.Screen
               name="Perfil"
               component={Perfil}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="account"
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+              }}
+            />
+            <Tab.Screen
+              name="Diario"
+              component={Diario}
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (

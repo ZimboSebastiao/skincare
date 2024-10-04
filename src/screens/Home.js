@@ -16,8 +16,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Svg, { Path } from "react-native-svg";
 import { Checkbox } from "react-native-paper";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
+import { Navigation } from "lucide-react-native";
 
-export default function Home() {
+export default function Home({navigation}) {
   const { selectedImage } = useContext(ImageContext);
   const [checked, setChecked] = React.useState(false);
 
@@ -54,7 +55,7 @@ export default function Home() {
 
       <View style={styles.viewPaginas}>
         <View style={styles.viewPagina}>
-          <Pressable style={styles.buttonWrapper}>
+          <Pressable style={styles.buttonWrapper} onPress={() => {navigation.navigate("Diario")}}>
             <Svg
               width="109"
               height="123"
