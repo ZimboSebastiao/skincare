@@ -72,31 +72,32 @@ export default function Skinbot() {
   };
 
   return (
-    <GiftedChat
-      messages={messages}
-      onSend={(messages) => onSend(messages)}
-      user={{ _id: 1 }}
-      renderBubble={renderBubble}
-      renderInputToolbar={renderInputToolbar}
-    />
+    <View style={styles.chatContainer}>
+
+      <GiftedChat
+        messages={messages}
+        onSend={(messages) => onSend(messages)}
+        user={{ _id: 1 }}
+        renderBubble={renderBubble}
+        renderInputToolbar={renderInputToolbar}
+        placeholder="Digite sua mensagem..."
+        placeholderTextColor="#5e5f61" 
+        
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   chatContainer: {
     flex: 1,
-    backgroundColor: 'red', // Cor de fundo do chat
+    backgroundColor: 'white', 
   },
   inputContainer: {
     backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: 'red',
-    margin: 45,
-    padding: 10,
-    borderRadius: 35,
-   
-
+    overflow: "hidden"
   },
+
   errorMessage: {
     backgroundColor: '#ffdddd', // Cor de fundo para mensagens de erro
     color: 'red',
