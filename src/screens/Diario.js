@@ -13,6 +13,7 @@ export default function Diario({navigation}) {
           size={35}
         />
         </Pressable>
+        
         <View>
           <Text>DIario</Text>
           <Text>DIario</Text>
@@ -33,5 +34,8 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     marginVertical: 30,
     padding: 15,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "55%"
   }
 });
