@@ -85,6 +85,7 @@ export default function App() {
                 height: 55,
                 borderTopColor: "#c2bebe",
               },
+              
             }}
           >
             <Tab.Screen
@@ -186,7 +187,7 @@ export default function App() {
                 tabBarLabelStyle: { fontSize: 13.4 },
                 tabBarActiveTintColor: "#ff80c3",
                 tabBarInactiveTintColor: "#c2bebe",
-                tabItemStyle: { display: "none" },
+                tabBarButton: () => null,
               }}
             />
           </Tab.Navigator>
