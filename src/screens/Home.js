@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     backgroundColor: "red",
-    width: 100,
+    width: 80,
   },
   boxCheck: {
     backgroundColor: "white",
