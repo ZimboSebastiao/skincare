@@ -73,7 +73,7 @@ const Onboarding = ({ navigation }) => {
     {
       key: "3",
       title: [
-        "Conheça SkinBot: Seu",
+        "Conheça AI Health: Seu",
         "Assistente Inteligente",
         "De Cuidados Com A Pele",
       ],
