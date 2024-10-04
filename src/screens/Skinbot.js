@@ -31,7 +31,6 @@ export default function Skinbot() {
         GiftedChat.append(previousMessages, botMessage)
       );
     } catch (error) {
-      // Exibe uma mensagem para o usuário sobre o limite de requisições
       const errorMessage = {
         _id: Math.random().toString(),
         text: "Limite de requisições da API excedido. Tente novamente mais tarde.",
@@ -47,42 +46,54 @@ export default function Skinbot() {
     }
   };
 
+  const renderBubble = (props) => {
+    return (
+      <Bubble
+        {...props}
+        wrapperStyle={{
+          left: {
+            backgroundColor: '#89b0e0', // Mensagem do bot
+          },
+          right: {
+            backgroundColor: '#cbafed', // Mensagem do usuário
+          },
+        }}
+      />
+    );
+  };
+
+  const renderInputToolbar = (props) => {
+    return (
+      <InputToolbar
+        {...props}
+        containerStyle={styles.inputContainer}
+      />
+    );
+  };
+
   return (
     <GiftedChat
       messages={messages}
       onSend={(messages) => onSend(messages)}
       user={{ _id: 1 }}
+      renderBubble={renderBubble}
+      renderInputToolbar={renderInputToolbar}
     />
   );
 }
-
 
 const styles = StyleSheet.create({
   chatContainer: {
     flex: 1,
     backgroundColor: 'red', // Cor de fundo do chat
   },
-  messageContainer: {
-    backgroundColor: 'red', // Cor de fundo das mensagens
-    borderRadius: 10,
-    padding: 10,
-    marginBottom: 5,
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  userMessage: {
-    backgroundColor: 'red', // Cor de fundo das mensagens do usuário
-  },
-  botMessage: {
-    backgroundColor: '#e0e0e0', // Cor de fundo das mensagens do bot
-  },
   inputContainer: {
-    backgroundColor: '#fff', // Cor de fundo do input
+    backgroundColor: '#ffff', // Cor de fundo do input
     borderTopWidth: 1,
-    borderTopColor: '#ccc',
-  },
-  sendButton: {
-    backgroundColor: '#007aff', // Cor do botão de enviar
+    borderTopColor: '#F3EBFD',
+    margin: 45,
+    padding: 10,
+
   },
   errorMessage: {
     backgroundColor: '#ffdddd', // Cor de fundo para mensagens de erro
