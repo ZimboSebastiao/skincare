@@ -19,9 +19,9 @@ export default function Diario({navigation}) {
         />
         </Pressable>
 
-        <View>
-          <Text style={[globalStyles.mediumText]}>DIario</Text>
-        <Text style={[styles.textoMenu, globalStyles.text]}>
+        <View style={styles.viewTexto}>
+          <Text style={[globalStyles.mediumText]}>Diário</Text>
+        <Text style={[styles.textoMenu, globalStyles.mediumText]}>
           Hoje é, {currentDate}
         </Text>
         </View>
@@ -38,15 +38,19 @@ const styles = StyleSheet.create({
 
   },
   viewMenu: {
-    backgroundColor: "red",
+
     marginVertical: 30,
     padding: 15,
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "55%"
+    width: "73%"
   },
   textoMenu: {
     fontSize: 13,
     color: "#a6a2a2",
   },
+  viewTexto: {
+    justifyContent: "center",
+    alignItems: "center"
+  }
 });
