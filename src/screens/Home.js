@@ -253,14 +253,14 @@ const styles = StyleSheet.create({
   },
   feito: {
     backgroundColor: "#F1DAEA",
-    padding: 30,
+    padding: 33,
     borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
   },
   feito2: {
     backgroundColor: "#FFE5E5",
-    padding: 30,
+    padding: 33,
     borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
@@ -279,8 +279,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 0,
     margin: 0,
-    backgroundColor: "red",
-    width: 80,
+    width: 70,
   },
   boxCheck: {
     backgroundColor: "white",
