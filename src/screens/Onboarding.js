@@ -47,7 +47,7 @@ const Onboarding = ({ navigation }) => {
 
   const handleFinishOnboarding = async () => {
     await AsyncStorage.setItem("@has_seen_onboarding", "true");
-    navigation.replace("App", { screen: "Home" });
+    navigation.navigate("Home");
   };
 
   if (hasSeenOnboarding) {

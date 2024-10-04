@@ -138,7 +138,7 @@ export default function App() {
               }}
             />
             <Tab.Screen
-              name="SkinBot"
+              name="AI Health"
               component={Skinbot}
               options={{
                 headerShown: false,
