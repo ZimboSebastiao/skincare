@@ -42,6 +42,14 @@ export default function Diario({navigation}) {
         </View>
         </Pressable>
       </View>
+
+      <View style={styles.viewSkinInfo}>
+
+        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Como Está Sua Pele Hoje?</Text>
+        <View style={styles.viewSkinOpcao}>
+          
+        </View>
+      </View>
     </View>
   );
 }
@@ -93,5 +101,15 @@ const styles = StyleSheet.create({
   textoImagem: {
  
     margin: 12
-  }
+  },
+  viewSkinInfo: {
+    padding: 16,
+  },
+  viewSkinOpcao: {
+    backgroundColor: "#F6EEFB",
+    padding: 13,
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 15
+  },
 });
