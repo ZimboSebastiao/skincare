@@ -29,7 +29,7 @@ export default function Diario({navigation}) {
       </View>
 
       <View style={styles.viewScan}>
-        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique a saúde da pele</Text>
+        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique A Saúde Da Pele</Text>
 
         <Pressable onPress={() => {console.log("Oi");}}>
 
