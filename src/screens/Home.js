@@ -16,7 +16,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Svg, { Path } from "react-native-svg";
 import { Checkbox } from "react-native-paper";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
-import { Navigation } from "lucide-react-native";
+
 
 export default function Home({navigation}) {
   const { selectedImage } = useContext(ImageContext);
