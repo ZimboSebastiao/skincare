@@ -158,13 +158,18 @@ const styles = StyleSheet.create({
     padding: 13,
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 15
+    borderRadius: 15,
+    flexDirection: "row", 
+  flexWrap: "wrap",     
+  justifyContent: "flex-start", 
   },
   viewSkinTipo:{
     backgroundColor: "transparent",
     borderWidth: 1,
     borderRadius: 20,
     padding: 8,
-
+    width: "30%", 
+    marginBottom: 10, 
+    marginRight: "3%"
   }
 });
