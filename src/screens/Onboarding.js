@@ -63,9 +63,9 @@ const Onboarding = ({ navigation }) => {
     {
       key: "2",
       title: [
-        "Receba Dicas ",
-        "Personalizadas para a ",
-        " sua rotina De Skincare",
+        "Analise Sua Pele Para",
+        "Recomendações De",
+        "Cuidados Personalizados",
       ],
 
       image: require("../../assets/images/isometric.gif"),
