@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffff",
-    alignItems: "center",
-    justifyContent: "center",
+
   },
   viewMenu: {
-    backgroundColor: "red"
+    backgroundColor: "red",
+    marginVertical: 30,
+    padding: 15,
   }
 });
