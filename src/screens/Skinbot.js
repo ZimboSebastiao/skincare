@@ -1,7 +1,7 @@
 // src/screens/Skinbot.js
 import { View, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import { GiftedChat } from "react-native-gifted-chat";
+import { GiftedChat, Bubble, InputToolbar } from "react-native-gifted-chat";
 import { sendMessageToChatGemini } from "../api/gemini.js";
 
 export default function Skinbot() {
@@ -56,7 +56,36 @@ export default function Skinbot() {
   );
 }
 
-// Estilos (opcional)
+
 const styles = StyleSheet.create({
-  // Adicione seus estilos aqui, se necessário
+  chatContainer: {
+    flex: 1,
+    backgroundColor: 'red', // Cor de fundo do chat
+  },
+  messageContainer: {
+    backgroundColor: 'red', // Cor de fundo das mensagens
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 5,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  userMessage: {
+    backgroundColor: 'red', // Cor de fundo das mensagens do usuário
+  },
+  botMessage: {
+    backgroundColor: '#e0e0e0', // Cor de fundo das mensagens do bot
+  },
+  inputContainer: {
+    backgroundColor: '#fff', // Cor de fundo do input
+    borderTopWidth: 1,
+    borderTopColor: '#ccc',
+  },
+  sendButton: {
+    backgroundColor: '#007aff', // Cor do botão de enviar
+  },
+  errorMessage: {
+    backgroundColor: '#ffdddd', // Cor de fundo para mensagens de erro
+    color: 'red',
+  },
 });
