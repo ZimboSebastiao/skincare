@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getCurrentDate } from "../utils/dateUtils";
@@ -30,6 +30,13 @@ export default function Diario({navigation}) {
 
       <View style={styles.viewScan}>
         <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique a saúde da pele</Text>
+        <View>
+        <Image
+              source={require("../../assets/images/cloud.png")}
+              style={styles.animationImage}
+            />
+          <Text>Scan com IA</Text>
+        </View>
       </View>
     </View>
   );
@@ -58,7 +65,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   viewScan:{
-    padding: 16
+    padding: 16,
+    backgroundColor: "red"
   },
   viewTextoScan: {
     fontSize: 16
