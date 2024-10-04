@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Pressable, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Image,
+  ScrollView,
+} from "react-native";
 import React, { useContext } from "react";
 import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
@@ -27,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.viewMenu}>
         <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
           Hoje é, {currentDate}
@@ -174,7 +181,7 @@ export default function Home() {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
