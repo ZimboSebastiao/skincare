@@ -88,11 +88,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'red', // Cor de fundo do chat
   },
   inputContainer: {
-    backgroundColor: '#ffff', // Cor de fundo do input
-    borderTopWidth: 1,
-    borderTopColor: '#F3EBFD',
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: 'red',
     margin: 45,
     padding: 10,
+    borderRadius: 35,
+   
 
   },
   errorMessage: {
