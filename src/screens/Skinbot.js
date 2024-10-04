@@ -82,7 +82,11 @@ export default function Skinbot() {
   };
 
   return (
+    
     <View style={styles.chatContainer}>
+      <Text style={styles.alertText}>
+        Esta consulta de saúde com IA não é uma opinião médica. Consulte seu médico para um diagnóstico e prescrição precisos.
+      </Text>
       <GiftedChat
         messages={messages}
         onSend={(messages) => onSend(messages)}
@@ -118,5 +122,13 @@ const styles = StyleSheet.create({
   errorMessage: {
     backgroundColor: '#ffdddd', 
     color: 'red',
+  },
+  alertText: {
+    color: '#3b393a',
+    fontWeight: "bold",
+    padding: 20,
+    textAlign: 'center',
+    fontSize: 16,
+    marginTop: 20
   },
 });
