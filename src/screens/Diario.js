@@ -32,7 +32,7 @@ export default function Diario({navigation}) {
         <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique a saúde da pele</Text>
         <View>
         <Image
-              source={require("../../assets/images/cloud.png")}
+              source={require("../../assets/images/face-scan.png")}
               style={styles.animationImage}
             />
           <Text>Scan com IA</Text>
@@ -70,5 +70,13 @@ const styles = StyleSheet.create({
   },
   viewTextoScan: {
     fontSize: 16
-  }
+  },
+  animationImage: {
+    width: 60,
+    height: 60,
+    resizeMode: "contain",
+    borderRadius: 100,
+    borderColor: "#ffff",
+    backgroundColor: "#ffff",
+  },
 });

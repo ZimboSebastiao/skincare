@@ -68,7 +68,7 @@ const Onboarding = ({ navigation }) => {
         " sua rotina De Skincare",
       ],
 
-      image: require("../../assets/images/face-scan.png"),
+      image: require("../../assets/images/isometric.gif"),
     },
     {
       key: "3",
