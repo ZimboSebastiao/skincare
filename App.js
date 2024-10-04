@@ -183,6 +183,7 @@ export default function App() {
                     size={30}
                     color={focused ? "#ff80c3" : "#c2bebe"}
                   />
+                  
                 ),
                 tabBarLabelStyle: { fontSize: 13.4 },
                 tabBarActiveTintColor: "#ff80c3",
