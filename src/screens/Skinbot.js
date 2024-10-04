@@ -1,7 +1,7 @@
 // src/screens/Skinbot.js
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { GiftedChat, Bubble, InputToolbar } from "react-native-gifted-chat";
+import { GiftedChat, Bubble, InputToolbar, Send } from "react-native-gifted-chat";
 import { sendMessageToChatGemini } from "../api/gemini.js";
 
 export default function Skinbot() {
@@ -62,6 +62,16 @@ export default function Skinbot() {
     );
   };
 
+  const renderSend = (props) => {
+    return (
+      <Send {...props}>
+        <View style={styles.sendContainer}>
+          <Text style={styles.sendText}>Enviar</Text>
+        </View>
+      </Send>
+    );
+  };
+
   const renderInputToolbar = (props) => {
     return (
       <InputToolbar
@@ -73,16 +83,15 @@ export default function Skinbot() {
 
   return (
     <View style={styles.chatContainer}>
-
       <GiftedChat
         messages={messages}
         onSend={(messages) => onSend(messages)}
         user={{ _id: 1 }}
         renderBubble={renderBubble}
+        renderSend={renderSend} 
         renderInputToolbar={renderInputToolbar}
         placeholder="Digite sua mensagem..."
         placeholderTextColor="#5e5f61" 
-        
       />
     </View>
   );
@@ -95,11 +104,19 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     backgroundColor: 'transparent',
-    overflow: "hidden"
+    overflow: "hidden",
   },
-
+  sendContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 14,
+  },
+  sendText: {
+    color: '#007aff', 
+    fontWeight: 'bold',
+  },
   errorMessage: {
-    backgroundColor: '#ffdddd', // Cor de fundo para mensagens de erro
+    backgroundColor: '#ffdddd', 
     color: 'red',
   },
 });
