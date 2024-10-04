@@ -40,7 +40,7 @@ export default function Home() {
           Hoje é, {currentDate}
         </Text>
         <View style={styles.viewImagem}>
-          <CustomAvatar imageUri={selectedImage} size={80} />
+          <CustomAvatar imageUri={selectedImage} size={70} />
           <View>
             <Text style={[globalStyles.semiBoldText, styles.textoImagem]}>
               {greeting},
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     color: "#a6a2a2",
   },
   viewImagem: {
-    width: "52%",
+    width: "45%",
     paddingTop: 14,
     paddingBottom: 50,
     flexDirection: "row",
