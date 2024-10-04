@@ -25,7 +25,6 @@ import FormPage3 from "./src/screens/FormPage3";
 import FormPage4 from "./src/screens/FormPage4";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [fontsLoaded, setFontsLoaded] = useState(false);
