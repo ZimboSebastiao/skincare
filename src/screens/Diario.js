@@ -1,8 +1,13 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { getCurrentDate } from "../utils/dateUtils";
+import { globalStyles } from "../utils/globalStyles";
 
 export default function Diario({navigation}) {
+
+  const currentDate = getCurrentDate();
+
   return (
     <View style={styles.container}>
       <View style={styles.viewMenu}>
@@ -13,9 +18,11 @@ export default function Diario({navigation}) {
           size={35}
         />
         </Pressable>
-        
+
         <View>
-          <Text>DIario</Text>
+        <Text style={[styles.textoMenu, globalStyles.text]}>
+          Hoje é, {currentDate}
+        </Text>
           <Text>DIario</Text>
         </View>
 
@@ -37,5 +44,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     width: "55%"
-  }
+  },
+  textoMenu: {
+    fontSize: 13,
+    color: "#a6a2a2",
+  },
 });
