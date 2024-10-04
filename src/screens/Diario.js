@@ -27,6 +27,10 @@ export default function Diario({navigation}) {
         </View>
 
       </View>
+
+      <View style={styles.viewScan}>
+        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique a saúde da pele</Text>
+      </View>
     </View>
   );
 }
@@ -40,7 +44,7 @@ const styles = StyleSheet.create({
   viewMenu: {
 
     marginVertical: 30,
-    padding: 15,
+    padding: 4,
     flexDirection: "row",
     justifyContent: "space-between",
     width: "73%"
@@ -52,5 +56,11 @@ const styles = StyleSheet.create({
   viewTexto: {
     justifyContent: "center",
     alignItems: "center"
+  },
+  viewScan:{
+    padding: 16
+  },
+  viewTextoScan: {
+    fontSize: 16
   }
 });
