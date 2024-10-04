@@ -20,10 +20,10 @@ export default function Diario({navigation}) {
         </Pressable>
 
         <View>
+          <Text style={[globalStyles.mediumText]}>DIario</Text>
         <Text style={[styles.textoMenu, globalStyles.text]}>
           Hoje é, {currentDate}
         </Text>
-          <Text>DIario</Text>
         </View>
 
       </View>
