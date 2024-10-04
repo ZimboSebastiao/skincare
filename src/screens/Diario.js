@@ -47,11 +47,55 @@ export default function Diario({navigation}) {
 
         <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Como Está Sua Pele Hoje?</Text>
         <View style={styles.viewSkinOpcao}>
+
           <View style={styles.viewSkinTipo}>
             <Text>
-            Normal, Oleoso, Seco, Coceira, Irritado, Opaco, Irregular, Outro
+            Normal
             </Text>
           </View>
+
+          <View style={styles.viewSkinTipo}>
+            <Text>
+            Oleoso
+            </Text>
+          </View>
+
+          <View style={styles.viewSkinTipo}>
+            <Text>
+            Seco
+            </Text>
+          </View>
+
+          <View style={styles.viewSkinTipo}>
+            <Text>
+            Coceira
+            </Text>
+          </View>
+
+          <View style={styles.viewSkinTipo}>
+            <Text>
+            Irritado
+            </Text>
+          </View>
+
+          <View style={styles.viewSkinTipo}>
+            <Text>
+            Opaco
+            </Text>
+          </View>
+
+          <View style={styles.viewSkinTipo}>
+            <Text>
+            Irregular
+            </Text>
+          </View>
+
+          <View style={styles.viewSkinTipo}>
+            <Text>
+           Outro
+            </Text>
+          </View>
+
         </View>
       </View>
     </View>
@@ -120,7 +164,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderWidth: 1,
     borderRadius: 20,
-    padding: 8
+    padding: 8,
 
   }
 });
