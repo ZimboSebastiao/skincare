@@ -31,6 +31,8 @@ export default function Diario({navigation}) {
       <View style={styles.viewScan}>
         <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique a saúde da pele</Text>
 
+        <Pressable onPress={() => {console.log("Oi");}}>
+
         <View style={styles.viewScanImagem} >
         <Image
               source={require("../../assets/images/face-scan.png")}
@@ -38,6 +40,7 @@ export default function Diario({navigation}) {
             />
           <Text style={[globalStyles.mediumText, styles.viewTextoScan, styles.textoImagem]}>Scan com IA</Text>
         </View>
+        </Pressable>
       </View>
     </View>
   );
