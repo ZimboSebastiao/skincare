@@ -165,7 +165,8 @@ export default function Home() {
               style={styles.animationImage}
             />
             <View style={styles.viewBox}>
-              <PaperProvider theme={theme}></PaperProvider>
+             
+            
               <Checkbox
                 status={checked ? "checked" : "unchecked"}
                 onPress={() => {
@@ -271,13 +272,15 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     borderColor: "#ffff",
     backgroundColor: "#ffff",
-    backgroundColor: "red",
   },
   viewBox: {
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    // width: 100,
+    padding: 0,
+    margin: 0,
+    backgroundColor: "red",
+    width: 100,
   },
   boxCheck: {
     backgroundColor: "white",
