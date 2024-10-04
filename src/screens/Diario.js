@@ -30,12 +30,13 @@ export default function Diario({navigation}) {
 
       <View style={styles.viewScan}>
         <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique a saúde da pele</Text>
-        <View>
+
+        <View style={styles.viewScanImagem} >
         <Image
               source={require("../../assets/images/face-scan.png")}
               style={styles.animationImage}
             />
-          <Text>Scan com IA</Text>
+          <Text style={[globalStyles.mediumText, styles.viewTextoScan, styles.textoImagem]}>Scan com IA</Text>
         </View>
       </View>
     </View>
@@ -66,10 +67,10 @@ const styles = StyleSheet.create({
   },
   viewScan:{
     padding: 16,
-    backgroundColor: "red"
   },
   viewTextoScan: {
-    fontSize: 16
+    fontSize: 18,
+    marginBottom: 15,
   },
   animationImage: {
     width: 60,
@@ -79,4 +80,15 @@ const styles = StyleSheet.create({
     borderColor: "#ffff",
     backgroundColor: "#ffff",
   },
+  viewScanImagem: {
+    backgroundColor: "#F6EEFB",
+    padding: 13,
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 15
+  },
+  textoImagem: {
+ 
+    margin: 12
+  }
 });
