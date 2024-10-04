@@ -252,13 +252,17 @@ const styles = StyleSheet.create({
   },
   feito: {
     backgroundColor: "#F1DAEA",
-    padding: 26,
+    padding: 30,
     borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
   },
   feito2: {
     backgroundColor: "#FFE5E5",
-    padding: 26,
+    padding: 30,
     borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
   },
   animationImage: {
     width: 80,
@@ -270,7 +274,8 @@ const styles = StyleSheet.create({
   },
   viewBox: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
+    backgroundColor: "red",
     alignItems: "center",
     width: 70,
   },
@@ -290,4 +295,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  textoFeito: {},
 });
