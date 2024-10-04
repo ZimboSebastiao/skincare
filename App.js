@@ -189,6 +189,7 @@ export default function App() {
                 tabBarActiveTintColor: "#ff80c3",
                 tabBarInactiveTintColor: "#c2bebe",
                 tabBarButton: () => null,
+                tabBarStyle: { display: "none" },
               }}
             />
           </Tab.Navigator>
