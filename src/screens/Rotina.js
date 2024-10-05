@@ -44,4 +44,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  textoMenu: {
+    fontSize: 13,
+    color: "#a6a2a2",
+  },
 });
