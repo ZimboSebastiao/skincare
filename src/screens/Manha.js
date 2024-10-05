@@ -4,6 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
 import Svg, { Path } from "react-native-svg";
+import { Plus } from "lucide-react-native";
 
 export default function Manha({ navigation }) {
   const currentDate = getCurrentDate();
@@ -58,52 +59,28 @@ export default function Manha({ navigation }) {
       <View style={styles.viewMenu}>
         <Pressable
           onPress={() => {
-            navigation.navigate("Home");
+            navigation.navigate("Rotina");
           }}
         >
           <MaterialCommunityIcons name="chevron-left" size={35} />
         </Pressable>
 
         <View style={styles.viewTexto}>
-          <Text style={[globalStyles.mediumText]}>Rotinas</Text>
+          <Text style={[globalStyles.mediumText]}>Rotina Matinal</Text>
           <Text style={[styles.textoMenu, globalStyles.mediumText]}>
             Hoje é, {currentDate}
           </Text>
         </View>
       </View>
 
-      <View style={styles.cuidados}>
-        <Text style={[styles.textoCuidados, globalStyles.semiBoldText]}>
-          Crie sua rotina diária de cuidados com a pele.
-        </Text>
-      </View>
-
       <View style={styles.viewRotinas}>
         <Pressable style={styles.rotinaManha}>
-          <Image
-            source={require("../../assets/images/sun.png")}
-            style={styles.animationImage}
-          />
+          <Plus size={30} color="white" />
           <View style={styles.botaoRotina}>
-            <Text style={styles.textoRotinaTitulo}>
-              Crie uma Rotina Matinal
-            </Text>
+            <Text style={styles.textoRotinaTitulo}>Limpadores</Text>
             <Text style={[styles.textoHora, globalStyles.mediumText]}>
-              08:00
+              Adicione o seu Produto
             </Text>
-          </View>
-        </Pressable>
-
-        <Pressable style={styles.rotinaNoite}>
-          <Image
-            source={require("../../assets/images/lua.png")}
-            style={styles.animationImage}
-          />
-          <View style={styles.botaoRotina}>
-            <Text style={styles.textoRotinaTitulo}>
-              Crie uma Rotina Noturna
-            </Text>
-            <Text style={[styles.textoHora, globalStyles.text]}>21h00</Text>
           </View>
         </Pressable>
       </View>

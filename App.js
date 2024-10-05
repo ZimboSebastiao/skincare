@@ -12,6 +12,7 @@ import {
   CirclePlus,
   UserRound,
   Clock,
+  ShoppingBag,
 } from "lucide-react-native";
 
 import Onboarding from "./src/screens/Onboarding";
@@ -112,6 +113,22 @@ export default function App() {
               }}
             />
             <Tab.Screen
+              name="Produtos"
+              component={Nova}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <ShoppingBag
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+              }}
+            />
+            <Tab.Screen
               name="Rotina"
               component={Rotina}
               options={{
@@ -125,20 +142,7 @@ export default function App() {
                 // tabBarStyle: { display: "none" },
               }}
             />
-            <Tab.Screen
-              name="Nova"
-              component={Nova}
-              options={{
-                headerShown: false,
-                tabBarIcon: ({ focused }) => (
-                  <CirclePlus
-                    size={50}
-                    color={focused ? "#ff80c3" : "#c2bebe"}
-                  />
-                ),
-                tabBarLabel: () => null,
-              }}
-            />
+
             <Tab.Screen
               name="AI Health"
               component={Skinbot}
