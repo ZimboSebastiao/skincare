@@ -33,6 +33,8 @@ import FormPage3 from "./src/screens/FormPage3";
 import FormPage4 from "./src/screens/FormPage4";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Diario from "./src/screens/Diario";
+import Noite from "./src/screens/Noite";
+import Manha from "./src/screens/Manha";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -173,6 +175,44 @@ export default function App() {
             <Tab.Screen
               name="Diario"
               component={Diario}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="account"
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+                tabBarButton: () => null,
+                tabBarStyle: { display: "none" },
+              }}
+            />
+            <Tab.Screen
+              name="Noite"
+              component={Noite}
+              options={{
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="account"
+                    size={30}
+                    color={focused ? "#ff80c3" : "#c2bebe"}
+                  />
+                ),
+                tabBarLabelStyle: { fontSize: 13.4 },
+                tabBarActiveTintColor: "#ff80c3",
+                tabBarInactiveTintColor: "#c2bebe",
+                tabBarButton: () => null,
+                tabBarStyle: { display: "none" },
+              }}
+            />
+            <Tab.Screen
+              name="Manha"
+              component={Manha}
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
