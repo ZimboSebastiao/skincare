@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
@@ -30,6 +30,30 @@ export default function Rotina({ navigation }) {
           Crie sua rotina diária de cuidados com a pele.
         </Text>
       </View>
+
+      <View style={styles.viewRotinas}>
+        <View style={styles.rotinaManha}>
+          <Image
+            source={require("../../assets/images/sun.png")}
+            style={styles.animationImage}
+          />
+          <View>
+            <Text>Crie uma Rotina Matinal</Text>
+            <Text>08:00</Text>
+          </View>
+        </View>
+
+        <View style={styles.rotinaNoite}>
+          <Image
+            source={require("../../assets/images/lua.png")}
+            style={styles.animationImage}
+          />
+          <View>
+            <Text>Crie uma Rotina Noturna</Text>
+            <Text>21h00</Text>
+          </View>
+        </View>
+      </View>
     </View>
   );
 }
@@ -57,5 +81,37 @@ const styles = StyleSheet.create({
   cuidados: {
     backgroundColor: "#D5E9E9",
     padding: 10,
+  },
+  viewRotinas: {
+    backgroundColor: "red",
+    justifyContent: "center",
+    alignItems: "center",
+    marginVertical: "auto",
+  },
+  rotinaManha: {
+    backgroundColor: "yellow",
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 20,
+    margin: "3%",
+    borderRadius: 15,
+  },
+  rotinaNoite: {
+    backgroundColor: "blue",
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 20,
+    margin: "3%",
+    borderRadius: 15,
+  },
+  animationImage: {
+    width: 35,
+    height: 35,
+    resizeMode: "contain",
+    borderRadius: 100,
+    borderColor: "#ffff",
+    backgroundColor: "#ffff",
   },
 });
