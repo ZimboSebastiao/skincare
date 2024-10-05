@@ -11,6 +11,7 @@ import {
   ClipboardList,
   CirclePlus,
   UserRound,
+  Clock,
 } from "lucide-react-native";
 
 import Onboarding from "./src/screens/Onboarding";
@@ -114,15 +115,12 @@ export default function App() {
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
-                  <ClipboardList
-                    size={30}
-                    color={focused ? "#ff80c3" : "#c2bebe"}
-                  />
+                  <Clock size={30} color={focused ? "#ff80c3" : "#c2bebe"} />
                 ),
                 tabBarLabelStyle: { fontSize: 13.4 },
                 tabBarActiveTintColor: "#ff80c3",
                 tabBarInactiveTintColor: "#c2bebe",
-                tabBarStyle: { display: "none" },
+                // tabBarStyle: { display: "none" },
               }}
             />
             <Tab.Screen
