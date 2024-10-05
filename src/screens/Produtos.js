@@ -47,6 +47,12 @@ export default function Produtos({ navigation }) {
           </Text>
         </View>
       </View>
+
+      <View style={styles.viewBotaoAdd}>
+        <Pressable style={styles.botaoAdd}>
+          <Text style={styles.textoBotaoAdd}>Add Produto</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -99,5 +105,22 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: "#a6a2a2",
     textAlign: "center",
+  },
+  viewBotaoAdd: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+  },
+  botaoAdd: {
+    backgroundColor: "#79B7B7",
+    padding: 14,
+    width: "100%",
+    borderRadius: 20,
+  },
+  textoBotaoAdd: {
+    color: "#ffff",
+    fontSize: 16,
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
