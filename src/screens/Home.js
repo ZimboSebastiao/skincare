@@ -17,8 +17,7 @@ import Svg, { Path } from "react-native-svg";
 import { Checkbox } from "react-native-paper";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 
-
-export default function Home({navigation}) {
+export default function Home({ navigation }) {
   const { selectedImage } = useContext(ImageContext);
   const [checked, setChecked] = React.useState(false);
 
@@ -55,10 +54,15 @@ export default function Home({navigation}) {
 
       <View style={styles.viewPaginas}>
         <View style={styles.viewPagina}>
-          <Pressable style={styles.buttonWrapper} onPress={() => {navigation.navigate("Diario")}}>
+          <Pressable
+            style={styles.buttonWrapper}
+            onPress={() => {
+              navigation.navigate("Diario");
+            }}
+          >
             <Svg
-              width="109"
-              height="123"
+              width="90"
+              height="110"
               viewBox="0 0 109 123"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +76,7 @@ export default function Home({navigation}) {
             <View style={styles.buttonContent}>
               <MaterialCommunityIcons
                 name="clipboard-check-outline"
-                size={50}
+                size={45}
                 color={"#2D2D2D"}
               />
             </View>
@@ -83,8 +87,8 @@ export default function Home({navigation}) {
         <View style={styles.viewPagina}>
           <Pressable style={styles.buttonWrapper}>
             <Svg
-              width="109"
-              height="122"
+              width="90"
+              height="110"
               viewBox="0 0 109 122"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +102,7 @@ export default function Home({navigation}) {
             <View style={styles.buttonContent}>
               <MaterialCommunityIcons
                 name="emoticon-outline"
-                size={50}
+                size={45}
                 color={"#2D2D2D"}
               />
             </View>
@@ -109,8 +113,8 @@ export default function Home({navigation}) {
         <View style={styles.viewPagina}>
           <Pressable style={styles.buttonWrapper}>
             <Svg
-              width="110"
-              height="123"
+              width="90"
+              height="110"
               viewBox="0 0 110 123"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +128,7 @@ export default function Home({navigation}) {
             <View style={styles.buttonContent}>
               <MaterialCommunityIcons
                 name="star-shooting-outline"
-                size={50}
+                size={45}
                 color={"#2D2D2D"}
               />
             </View>
@@ -166,8 +170,6 @@ export default function Home({navigation}) {
               style={styles.animationImage}
             />
             <View style={styles.viewBox}>
-             
-            
               <Checkbox
                 status={checked ? "checked" : "unchecked"}
                 onPress={() => {
@@ -237,7 +239,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#2D2D2D",
     marginTop: 15,
-    fontSize: 16,
+    fontSize: 15,
   },
   jornada: {
     marginTop: 100,
