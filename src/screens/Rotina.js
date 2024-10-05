@@ -24,6 +24,12 @@ export default function Rotina({ navigation }) {
           </Text>
         </View>
       </View>
+
+      <View style={styles.cuidados}>
+        <Text style={[styles.textoCuidados, globalStyles.semiBoldText]}>
+          Crie sua rotina diária de cuidados com a pele.
+        </Text>
+      </View>
     </View>
   );
 }
@@ -47,5 +53,9 @@ const styles = StyleSheet.create({
   textoMenu: {
     fontSize: 13,
     color: "#a6a2a2",
+  },
+  cuidados: {
+    backgroundColor: "#D5E9E9",
+    padding: 10,
   },
 });
