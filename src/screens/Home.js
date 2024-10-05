@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     color: "#a6a2a2",
   },
   viewImagem: {
-    width: "45%",
+    width: "50%",
     paddingTop: 14,
     paddingBottom: 50,
     flexDirection: "row",
