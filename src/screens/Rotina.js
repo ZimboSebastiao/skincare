@@ -79,7 +79,12 @@ export default function Rotina({ navigation }) {
       </View>
 
       <View style={styles.viewRotinas}>
-        <Pressable style={styles.rotinaManha}>
+        <Pressable
+          style={styles.rotinaManha}
+          onPress={() => {
+            navigation.navigate("Manha");
+          }}
+        >
           <Image
             source={require("../../assets/images/sun.png")}
             style={styles.animationImage}
