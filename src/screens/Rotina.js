@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     width: "73%",
-    backgroundColor: "red",
   },
   viewTexto: {
     justifyContent: "center",
