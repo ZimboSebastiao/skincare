@@ -91,6 +91,7 @@ export default function App() {
                 backgroundColor: "#ffff",
                 height: 55,
                 borderTopColor: "#c2bebe",
+                height: "8%",
               },
             }}
           >
