@@ -1,12 +1,40 @@
-import React from "react";
-import { View, Text, StyleSheet, Pressable, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Image,
+  ScrollView,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
-import Svg, { Path } from "react-native-svg";
+import ProdutoModal from "../components/ProdutoModal";
+import { loadProducts } from "../utils/storageUtils";
+import {
+  addProductToCategory,
+  getAllCategories,
+  getProductsByCategory,
+} from "../helpers/categoryHelper";
 
 export default function Produtos({ navigation }) {
   const currentDate = getCurrentDate();
+  const [modalVisible, setModalVisible] = useState(false);
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const loadedProducts = await loadProducts();
+      setProdutos(loadedProducts);
+    };
+    fetchProducts();
+  }, []);
+
+  const handleAddProduct = (product) => {
+    setProdutos((prev) => [...prev, product]);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.viewMenu}>
@@ -31,28 +59,48 @@ export default function Produtos({ navigation }) {
           Adicione Aqui os seus Produtos!
         </Text>
       </View>
-
-      <View style={styles.viewFeadback}>
-        <Image
-          source={require("../../assets/images/triste.png")}
-          style={styles.animationImage}
-        />
-        <View style={styles.feadback}>
-          <Text style={[styles.textoFeadback, globalStyles.semiBoldText]}>
-            Meu estoque de produtos está vazio
-          </Text>
-          <Text style={styles.textoMoreInfo}>
-            Acompanhe todos os seus produtos para a pele, datas de validade,
-            seus gastos e muito mais.
-          </Text>
+      {produtos.length === 0 ? (
+        <View style={styles.viewFeadback}>
+          <Image
+            source={require("../../assets/images/triste.png")}
+            style={styles.animationImage}
+          />
+          <View style={styles.feadback}>
+            <Text style={[styles.textoFeadback, globalStyles.semiBoldText]}>
+              Meu estoque de produtos está vazio
+            </Text>
+            <Text style={styles.textoMoreInfo}>
+              Acompanhe todos os seus produtos para a pele, datas de validade,
+              seus gastos e muito mais.
+            </Text>
+          </View>
         </View>
-      </View>
+      ) : (
+        <ScrollView style={styles.viewProdutos}>
+          {produtos.map((produto, index) => (
+            <View key={index} style={styles.produto}>
+              <Text>{produto.nome}</Text>
+              <Text>{produto.categoria}</Text>
+              <Text>{produto.dataExpiracao}</Text>
+              <Text>{produto.valorPago}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      )}
 
       <View style={styles.viewBotaoAdd}>
-        <Pressable style={styles.botaoAdd}>
+        <Pressable
+          style={styles.botaoAdd}
+          onPress={() => setModalVisible(true)}
+        >
           <Text style={styles.textoBotaoAdd}>Add Produto</Text>
         </Pressable>
       </View>
+      <ProdutoModal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+        onAdd={handleAddProduct}
+      />
     </View>
   );
 }
