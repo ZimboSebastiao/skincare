@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
+import Svg, { Path } from "react-native-svg";
 
 export default function Rotina({ navigation }) {
   const currentDate = getCurrentDate();
@@ -37,8 +38,10 @@ export default function Rotina({ navigation }) {
             source={require("../../assets/images/sun.png")}
             style={styles.animationImage}
           />
-          <View>
-            <Text>Crie uma Rotina Matinal</Text>
+          <View style={styles.botaoRotina}>
+            <Text style={styles.textoRotinaTitulo}>
+              Crie uma Rotina Matinal
+            </Text>
             <Text style={[styles.textoHora, globalStyles.mediumText]}>
               08:00
             </Text>
@@ -50,8 +53,10 @@ export default function Rotina({ navigation }) {
             source={require("../../assets/images/lua.png")}
             style={styles.animationImage}
           />
-          <View>
-            <Text>Crie uma Rotina Noturna</Text>
+          <View style={styles.botaoRotina}>
+            <Text style={styles.textoRotinaTitulo}>
+              Crie uma Rotina Noturna
+            </Text>
             <Text style={[styles.textoHora, globalStyles.text]}>21h00</Text>
           </View>
         </View>
@@ -85,7 +90,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   viewRotinas: {
-    backgroundColor: "red",
     justifyContent: "center",
     alignItems: "center",
     marginVertical: "auto",
@@ -95,7 +99,7 @@ const styles = StyleSheet.create({
     width: "90%",
     flexDirection: "row",
     alignItems: "center",
-    padding: 20,
+    padding: 10,
     margin: "3%",
     borderRadius: 15,
   },
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
     width: "90%",
     flexDirection: "row",
     alignItems: "center",
-    padding: 20,
+    padding: 10,
     margin: "3%",
     borderRadius: 15,
   },
@@ -117,5 +121,15 @@ const styles = StyleSheet.create({
   },
   textoHora: {
     color: "#f0eded",
+  },
+  textoRotinaTitulo: {
+    fontSize: 17.5,
+    color: "#ffff",
+    fontWeight: "bold",
+  },
+  botaoRotina: {
+    padding: 10,
+    paddingBottom: 0,
+    justifyContent: "flex-end",
   },
 });
