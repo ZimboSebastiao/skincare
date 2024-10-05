@@ -13,7 +13,7 @@ export default function Rotina({ navigation }) {
       <Svg
         style={styles.backgroundSvg1}
         width="592"
-        height="416"
+        height="516"
         viewBox="0 0 252 216"
       >
         <Path
@@ -180,13 +180,13 @@ const styles = StyleSheet.create({
   },
   backgroundSvg1: {
     position: "absolute",
-    top: 0,
-    left: 0,
+    top: -190,
+    left: -40,
   },
   backgroundSvg2: {
     position: "absolute",
     top: 200,
-    right: -100,
+    right: -200,
   },
   backgroundSvg3: {
     position: "absolute",
