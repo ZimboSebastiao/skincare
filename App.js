@@ -5,7 +5,13 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, ActivityIndicator } from "react-native";
 import * as Font from "expo-font";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { BotMessageSquare } from "lucide-react-native";
+import {
+  BotMessageSquare,
+  House,
+  ClipboardList,
+  CirclePlus,
+  UserRound,
+} from "lucide-react-native";
 
 import Onboarding from "./src/screens/Onboarding";
 import Splash from "./src/screens/Splash";
@@ -94,11 +100,7 @@ export default function App() {
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
-                  <MaterialCommunityIcons
-                    name="home"
-                    size={30}
-                    color={focused ? "#ff80c3" : "#c2bebe"}
-                  />
+                  <House size={30} color={focused ? "#ff80c3" : "#c2bebe"} />
                 ),
                 tabBarLabelStyle: { fontSize: 13.4 },
                 tabBarActiveTintColor: "#ff80c3",
@@ -111,8 +113,7 @@ export default function App() {
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
-                  <MaterialCommunityIcons
-                    name="clipboard-list"
+                  <ClipboardList
                     size={30}
                     color={focused ? "#ff80c3" : "#c2bebe"}
                   />
@@ -128,8 +129,7 @@ export default function App() {
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
-                  <MaterialCommunityIcons
-                    name="plus-circle"
+                  <CirclePlus
                     size={50}
                     color={focused ? "#ff80c3" : "#c2bebe"}
                   />
@@ -160,8 +160,7 @@ export default function App() {
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
-                  <MaterialCommunityIcons
-                    name="account"
+                  <UserRound
                     size={30}
                     color={focused ? "#ff80c3" : "#c2bebe"}
                   />
