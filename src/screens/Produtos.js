@@ -5,7 +5,7 @@ import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
 import Svg, { Path } from "react-native-svg";
 
-export default function Nova({ navigation }) {
+export default function Produtos({ navigation }) {
   const currentDate = getCurrentDate();
   return (
     <View style={styles.container}>

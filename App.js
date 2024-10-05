@@ -19,7 +19,7 @@ import Onboarding from "./src/screens/Onboarding";
 import Splash from "./src/screens/Splash";
 import Home from "./src/screens/Home";
 import Rotina from "./src/screens/Rotina";
-import Nova from "./src/screens/Nova";
+import Nova from "./src/screens/Produtos";
 import Skinbot from "./src/screens/Skinbot";
 import Perfil from "./src/screens/Perfil";
 import {
@@ -36,6 +36,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import Diario from "./src/screens/Diario";
 import Noite from "./src/screens/Noite";
 import Manha from "./src/screens/Manha";
+import Produtos from "./src/screens/Produtos";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -114,7 +115,7 @@ export default function App() {
             />
             <Tab.Screen
               name="Produtos"
-              component={Nova}
+              component={Produtos}
               options={{
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
