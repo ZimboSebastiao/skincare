@@ -90,7 +90,7 @@ export default function App() {
               tabBarStyle: {
                 backgroundColor: "#ffff",
                 height: 55,
-                borderTopColor: "#c2bebe",
+                borderTopColor: "#ffff",
                 height: "8%",
               },
             }}
