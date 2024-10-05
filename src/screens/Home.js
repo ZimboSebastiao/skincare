@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
   viewImagem: {
     width: "50%",
     paddingTop: 14,
-    paddingBottom: 50,
+    paddingBottom: 35,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   jornada: {
-    marginTop: 100,
+    marginTop: 60,
     padding: 10,
   },
   textoJornada: {
