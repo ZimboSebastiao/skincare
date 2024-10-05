@@ -33,7 +33,7 @@ export default function Rotina({ navigation }) {
       </View>
 
       <View style={styles.viewRotinas}>
-        <View style={styles.rotinaManha}>
+        <Pressable style={styles.rotinaManha}>
           <Image
             source={require("../../assets/images/sun.png")}
             style={styles.animationImage}
@@ -46,9 +46,9 @@ export default function Rotina({ navigation }) {
               08:00
             </Text>
           </View>
-        </View>
+        </Pressable>
 
-        <View style={styles.rotinaNoite}>
+        <Pressable style={styles.rotinaNoite}>
           <Image
             source={require("../../assets/images/lua.png")}
             style={styles.animationImage}
@@ -59,7 +59,7 @@ export default function Rotina({ navigation }) {
             </Text>
             <Text style={[styles.textoHora, globalStyles.text]}>21h00</Text>
           </View>
-        </View>
+        </Pressable>
       </View>
     </View>
   );
