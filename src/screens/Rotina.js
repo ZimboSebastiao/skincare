@@ -39,7 +39,9 @@ export default function Rotina({ navigation }) {
           />
           <View>
             <Text>Crie uma Rotina Matinal</Text>
-            <Text>08:00</Text>
+            <Text style={[styles.textoHora, globalStyles.mediumText]}>
+              08:00
+            </Text>
           </View>
         </View>
 
@@ -50,7 +52,7 @@ export default function Rotina({ navigation }) {
           />
           <View>
             <Text>Crie uma Rotina Noturna</Text>
-            <Text>21h00</Text>
+            <Text style={[styles.textoHora, globalStyles.text]}>21h00</Text>
           </View>
         </View>
       </View>
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
     marginVertical: "auto",
   },
   rotinaManha: {
-    backgroundColor: "yellow",
+    backgroundColor: "#EFA383",
     width: "90%",
     flexDirection: "row",
     alignItems: "center",
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   rotinaNoite: {
-    backgroundColor: "blue",
+    backgroundColor: "#AE92E6",
     width: "90%",
     flexDirection: "row",
     alignItems: "center",
@@ -111,7 +113,9 @@ const styles = StyleSheet.create({
     height: 35,
     resizeMode: "contain",
     borderRadius: 100,
-    borderColor: "#ffff",
-    backgroundColor: "#ffff",
+    backgroundColor: "transparent",
+  },
+  textoHora: {
+    color: "#f0eded",
   },
 });
