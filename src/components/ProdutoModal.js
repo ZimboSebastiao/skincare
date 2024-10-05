@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Modal, Portal, Button, TextInput } from "react-native-paper";
 import { View, StyleSheet } from "react-native";
+import { Picker } from "@react-native-picker/picker";
+import { TextInputMask } from "react-native-text-input-mask";
 import { saveProduct } from "../utils/storageUtils";
 import { getAllCategories } from "../helpers/categoryHelper";
-import { Picker } from "@react-native-picker/picker";
 
 const ProdutoModal = ({ visible, onClose, onAdd }) => {
   const [nome, setNome] = useState("");
@@ -44,10 +45,12 @@ const ProdutoModal = ({ visible, onClose, onAdd }) => {
             ))}
           </Picker>
         </View>
-        <TextInput
-          label="Data de Expiração"
+        <TextInputMask
+          style={styles.input}
+          label="Data de Expiração (MM/AAAA)"
           value={dataExpiracao}
-          onChangeText={setDataExpiracao}
+          onChangeText={(formatted, raw) => setDataExpiracao(formatted)}
+          mask={"[00]/[0000]"}
         />
         <TextInput
           label="Valor Pago"
@@ -68,6 +71,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 20,
     margin: 20,
+  },
+  pickerContainer: {
+    marginVertical: 10,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+  },
+  picker: {
+    height: 50,
+    width: "100%",
   },
 });
 
