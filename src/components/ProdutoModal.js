@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Modal, Portal, Button, TextInput } from "react-native-paper";
 import { View, StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import { TextInputMask } from "react-native-text-input-mask";
 import { saveProduct } from "../utils/storageUtils";
 import { getAllCategories } from "../helpers/categoryHelper";
 
@@ -45,12 +44,10 @@ const ProdutoModal = ({ visible, onClose, onAdd }) => {
             ))}
           </Picker>
         </View>
-        <TextInputMask
-          style={styles.input}
-          label="Data de Expiração (MM/AAAA)"
+        <TextInput
+          label="Data de Expiração"
           value={dataExpiracao}
-          onChangeText={(formatted, raw) => setDataExpiracao(formatted)}
-          mask={"[00]/[0000]"}
+          onChangeText={setDataExpiracao}
         />
         <TextInput
           label="Valor Pago"

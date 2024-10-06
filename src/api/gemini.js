@@ -40,7 +40,7 @@ export const sendMessageToChatGemini = async (message, retries = 3) => {
       if (response.data.candidates && response.data.candidates.length > 0) {
         const parts = response.data.candidates[0].content.parts;
         if (parts && parts.length > 0) {
-          return parts[0].text.trim();  // Acessa o texto corretamente
+          return parts[0].text.trim(); // Acessa o texto corretamente
         } else {
           throw new Error("Conteúdo não encontrado.");
         }
