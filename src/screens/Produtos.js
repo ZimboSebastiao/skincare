@@ -79,14 +79,25 @@ export default function Produtos({ navigation }) {
         <ScrollView style={styles.viewProdutos}>
           {produtos.map((produto, index) => (
             <View key={index} style={styles.produto}>
-              <Text style={styles.nome}>{produto.nome}</Text>
-              <Text style={styles.categoria}>
-                Categoria: {produto.categoria}
-              </Text>
-              <Text style={styles.data}>
-                Expiração: {produto.dataExpiracao}
-              </Text>
-              <Text style={styles.valor}>Valor: {produto.valorPago}</Text>
+              <Image
+                source={require("../../assets/images/triste.png")}
+                style={styles.produtoImage}
+              />
+
+              <View>
+                <Text style={styles.nome}>{produto.nome}</Text>
+                <Text style={styles.infoProdutos}>
+                  Categoria: {produto.categoria}
+                </Text>
+                <View style={styles.demaisInfo}>
+                  <Text style={styles.infoProdutos}>
+                    Expiração: {produto.dataExpiracao}
+                  </Text>
+                  <Text style={styles.infoProdutos}>
+                    Valor: {produto.valorPago}
+                  </Text>
+                </View>
+              </View>
             </View>
           ))}
         </ScrollView>
@@ -183,10 +194,27 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   nome: {
-    // backgroundColor: "yellow",
     padding: 2,
     fontSize: 16,
     color: "white",
     fontWeight: "bold",
+  },
+  infoProdutos: {
+    padding: 2,
+    fontSize: 14,
+    color: "white",
+  },
+  demaisInfo: {
+    // backgroundColor: "red",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  produtoImage: {
+    width: 65,
+    height: 65,
+    resizeMode: "contain",
+    // borderRadius: 100,
+    backgroundColor: "transparent",
+    borderWidth: 1,
   },
 });
