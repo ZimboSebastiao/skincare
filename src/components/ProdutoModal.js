@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 20,
     margin: 20,
+    borderRadius: 15,
   },
   pickerContainer: {
     marginVertical: 10,
