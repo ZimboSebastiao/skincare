@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Modal, Portal, Button, TextInput } from "react-native-paper";
-import { View, StyleSheet } from "react-native";
+import { Modal, Portal, Button } from "react-native-paper";
+import { View, StyleSheet, TextInput } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { saveProduct } from "../utils/storageUtils";
 import { getAllCategories } from "../helpers/categoryHelper";
@@ -27,11 +27,12 @@ const ProdutoModal = ({ visible, onClose, onAdd }) => {
         contentContainerStyle={styles.modal}
       >
         <TextInput
-          label="Nome do Produto"
           value={nome}
           onChangeText={setNome}
+          placeholder="Nome do Produto"
+          style={styles.inputs}
         />
-        {/* Substitui o TextInput de categoria pelo Picker */}
+
         <View style={styles.pickerContainer}>
           <Picker
             selectedValue={categoria}
@@ -45,14 +46,16 @@ const ProdutoModal = ({ visible, onClose, onAdd }) => {
           </Picker>
         </View>
         <TextInput
-          label="Data de Expiração"
+          placeholder="Data de Expiração"
           value={dataExpiracao}
           onChangeText={setDataExpiracao}
+          style={styles.input}
         />
         <TextInput
-          label="Valor Pago"
+          placeholder="Valor Pago"
           value={valorPago}
           onChangeText={setValorPago}
+          style={styles.inputs}
         />
         <Button mode="contained" onPress={handleAddProduct}>
           Confirmar
@@ -79,6 +82,19 @@ const styles = StyleSheet.create({
   picker: {
     height: 50,
     width: "100%",
+  },
+  inputs: {
+    borderColor: "#ccc",
+    borderWidth: 0.9,
+    padding: 10,
+    borderRadius: 7,
+  },
+  input: {
+    borderColor: "#ccc",
+    borderWidth: 0.9,
+    padding: 10,
+    borderRadius: 7,
+    marginBottom: 10,
   },
 });
 
