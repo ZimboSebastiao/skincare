@@ -17,6 +17,7 @@ import {
   getAllCategories,
   getProductsByCategory,
 } from "../helpers/categoryHelper";
+import { Trash, Trash2 } from "lucide-react-native";
 
 export default function Produtos({ navigation }) {
   const currentDate = getCurrentDate();
@@ -79,10 +80,12 @@ export default function Produtos({ navigation }) {
         <ScrollView style={styles.viewProdutos}>
           {produtos.map((produto, index) => (
             <View key={index} style={styles.produto}>
-              <Image
-                source={require("../../assets/images/tube.png")}
-                style={styles.produtoImage}
-              />
+              <View>
+                <Image
+                  source={require("../../assets/images/tube.png")}
+                  style={styles.produtoImage}
+                />
+              </View>
 
               <View>
                 <Text style={styles.nome}>{produto.nome}</Text>
@@ -98,6 +101,10 @@ export default function Produtos({ navigation }) {
                   </Text>
                 </View>
               </View>
+
+              <Pressable style={styles.lixeira}>
+                <Trash2 size={35} color="#ba1e2b" />
+              </Pressable>
             </View>
           ))}
         </ScrollView>
@@ -192,10 +199,11 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     borderRadius: 20,
+    flexDirection: "row",
   },
   nome: {
     padding: 2,
-    fontSize: 16,
+    fontSize: 14.5,
     color: "white",
     fontWeight: "bold",
   },
@@ -214,5 +222,11 @@ const styles = StyleSheet.create({
     height: 65,
     resizeMode: "contain",
     backgroundColor: "transparent",
+  },
+  lixeira: {
+    // backgroundColor: "yellow",
+    width: 55,
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
   },
 });
