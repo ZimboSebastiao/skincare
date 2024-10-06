@@ -17,7 +17,7 @@ import {
   getAllCategories,
   getProductsByCategory,
 } from "../helpers/categoryHelper";
-import { Trash, Trash2 } from "lucide-react-native";
+import { Trash2 } from "lucide-react-native";
 
 export default function Produtos({ navigation }) {
   const currentDate = getCurrentDate();
