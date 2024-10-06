@@ -30,6 +30,7 @@ const ProdutoModal = ({ visible, onClose, onAdd }) => {
           value={nome}
           onChangeText={setNome}
           placeholder="Nome do Produto"
+          placeholderTextColor="black"
           style={styles.inputs}
         />
 
@@ -47,12 +48,14 @@ const ProdutoModal = ({ visible, onClose, onAdd }) => {
         </View>
         <TextInput
           placeholder="Data de Expiração"
+          placeholderTextColor="black"
           value={dataExpiracao}
           onChangeText={setDataExpiracao}
           style={styles.input}
         />
         <TextInput
           placeholder="Valor Pago"
+          placeholderTextColor="black"
           value={valorPago}
           onChangeText={setValorPago}
           style={styles.inputs}
