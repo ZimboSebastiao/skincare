@@ -80,7 +80,7 @@ export default function Produtos({ navigation }) {
           {produtos.map((produto, index) => (
             <View key={index} style={styles.produto}>
               <Image
-                source={require("../../assets/images/triste.png")}
+                source={require("../../assets/images/tube.png")}
                 style={styles.produtoImage}
               />
 
@@ -213,8 +213,6 @@ const styles = StyleSheet.create({
     width: 65,
     height: 65,
     resizeMode: "contain",
-    // borderRadius: 100,
     backgroundColor: "transparent",
-    borderWidth: 1,
   },
 });
