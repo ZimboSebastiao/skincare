@@ -6,12 +6,14 @@ import {
   Pressable,
   Image,
   ScrollView,
+  Alert,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
 import ProdutoModal from "../components/ProdutoModal";
 import { loadProducts } from "../utils/storageUtils";
+import { deleteProduct } from "../utils/deleteProduct";
 import {
   addProductToCategory,
   getAllCategories,
@@ -31,6 +33,34 @@ export default function Produtos({ navigation }) {
     };
     fetchProducts();
   }, []);
+
+  const handleDeleteProduct = async (productName) => {
+    const success = await deleteProduct(productName);
+    if (success) {
+      setProdutos((prev) =>
+        prev.filter((produto) => produto.nome !== productName)
+      );
+    }
+  };
+
+  const confirmDelete = (productName) => {
+    Alert.alert(
+      "Confirmação de Exclusão",
+      `Você tem certeza que deseja excluir o produto "${productName}"?`,
+      [
+        {
+          text: "Cancelar",
+          style: "cancel",
+        },
+        {
+          text: "Confirmar",
+          onPress: () => handleDeleteProduct(productName),
+          style: "destructive",
+        },
+      ],
+      { cancelable: true }
+    );
+  };
 
   const handleAddProduct = (product) => {
     setProdutos((prev) => [...prev, product]);
@@ -102,7 +132,10 @@ export default function Produtos({ navigation }) {
                 </View>
               </View>
 
-              <Pressable style={styles.lixeira}>
+              <Pressable
+                style={styles.lixeira}
+                onPress={() => confirmDelete(produto.nome)}
+              >
                 <Trash2 size={35} color="#ba1e2b" />
               </Pressable>
             </View>
@@ -180,7 +213,7 @@ const styles = StyleSheet.create({
   viewBotaoAdd: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    padding: 13,
   },
   botaoAdd: {
     backgroundColor: "#79B7B7",
@@ -213,7 +246,6 @@ const styles = StyleSheet.create({
     color: "white",
   },
   demaisInfo: {
-    // backgroundColor: "red",
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -224,7 +256,6 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   lixeira: {
-    // backgroundColor: "yellow",
     width: 55,
     justifyContent: "flex-end",
     alignItems: "flex-end",
