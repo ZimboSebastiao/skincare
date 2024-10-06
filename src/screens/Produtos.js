@@ -181,9 +181,12 @@ const styles = StyleSheet.create({
     color: "#a6a2a2",
   },
   cuidados: {
-    backgroundColor: "#D5E9E9",
+    backgroundColor: "#ff80c3",
     padding: 10,
     marginBottom: 20,
+  },
+  textoCuidados: {
+    color: "white",
   },
   viewFeadback: {
     justifyContent: "center",
@@ -216,7 +219,7 @@ const styles = StyleSheet.create({
     padding: 13,
   },
   botaoAdd: {
-    backgroundColor: "#79B7B7",
+    backgroundColor: "#ff80c3",
     padding: 14,
     width: "100%",
     borderRadius: 20,
@@ -228,7 +231,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   produto: {
-    backgroundColor: "#79B7B7",
+    backgroundColor: "#F1DAEA",
     margin: 10,
     padding: 10,
     borderRadius: 20,
@@ -237,13 +240,13 @@ const styles = StyleSheet.create({
   nome: {
     padding: 2,
     fontSize: 14.5,
-    color: "white",
+    color: "#4E4E4E",
     fontWeight: "bold",
   },
   infoProdutos: {
     padding: 2,
     fontSize: 14,
-    color: "white",
+    color: "#4E4E4E",
   },
   demaisInfo: {
     flexDirection: "row",
