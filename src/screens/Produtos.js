@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
   cuidados: {
     backgroundColor: "#D5E9E9",
     padding: 10,
+    marginBottom: 20,
   },
   viewFeadback: {
     justifyContent: "center",
@@ -170,5 +171,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
     fontWeight: "bold",
+  },
+  produto: {
+    backgroundColor: "red",
+    margin: 10,
   },
 });
