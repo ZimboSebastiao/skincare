@@ -219,19 +219,19 @@ const styles = StyleSheet.create({
     padding: 13,
   },
   botaoAdd: {
-    backgroundColor: "#ff80c3",
+    backgroundColor: "#FCB4D6",
     padding: 14,
     width: "100%",
     borderRadius: 20,
   },
   textoBotaoAdd: {
-    color: "#ffff",
+    color: "#4E4E4E",
     fontSize: 16,
     textAlign: "center",
     fontWeight: "bold",
   },
   produto: {
-    backgroundColor: "#F1DAEA",
+    backgroundColor: "#FCB4D6",
     margin: 10,
     padding: 10,
     borderRadius: 20,
