@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Portal, Button } from "react-native-paper";
-import { View, StyleSheet, TextInput } from "react-native";
+import { View, StyleSheet, TextInput, Pressable, Text } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { saveProduct } from "../utils/storageUtils";
 import { getAllCategories } from "../helpers/categoryHelper";
@@ -57,10 +57,14 @@ const ProdutoModal = ({ visible, onClose, onAdd }) => {
           onChangeText={setValorPago}
           style={styles.inputs}
         />
-        <Button mode="contained" onPress={handleAddProduct}>
-          Confirmar
-        </Button>
-        <Button onPress={onClose}>Cancelar</Button>
+        <View style={styles.botoes}>
+          <Pressable style={styles.botaoConfirmar} onPress={handleAddProduct}>
+            <Text style={styles.textoBotoes}>Confirmar</Text>
+          </Pressable>
+          <Pressable style={styles.botaoCancelar} onPress={onClose}>
+            <Text style={styles.textoBotoes}>Cancelar</Text>
+          </Pressable>
+        </View>
       </Modal>
     </Portal>
   );
@@ -95,6 +99,27 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 7,
     marginBottom: 10,
+  },
+  botoes: {
+    marginTop: 25,
+    padding: 10,
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  botaoConfirmar: {
+    backgroundColor: "#046611",
+    padding: 10,
+    borderRadius: 15,
+  },
+  botaoCancelar: {
+    backgroundColor: "#DB453D",
+    padding: 10,
+    borderRadius: 15,
+  },
+  textoBotoes: {
+    color: "#FFFFFF",
+    fontWeight: "bold",
   },
 });
 
