@@ -80,9 +80,13 @@ export default function Produtos({ navigation }) {
           {produtos.map((produto, index) => (
             <View key={index} style={styles.produto}>
               <Text style={styles.nome}>{produto.nome}</Text>
-              <Text style={styles.categoria}>{produto.categoria}</Text>
-              <Text style={styles.data}>{produto.dataExpiracao}</Text>
-              <Text style={styles.valor}>{produto.valorPago}</Text>
+              <Text style={styles.categoria}>
+                Categoria: {produto.categoria}
+              </Text>
+              <Text style={styles.data}>
+                Expiração: {produto.dataExpiracao}
+              </Text>
+              <Text style={styles.valor}>Valor: {produto.valorPago}</Text>
             </View>
           ))}
         </ScrollView>
@@ -177,5 +181,12 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     borderRadius: 20,
+  },
+  nome: {
+    // backgroundColor: "yellow",
+    padding: 2,
+    fontSize: 16,
+    color: "white",
+    fontWeight: "bold",
   },
 });
