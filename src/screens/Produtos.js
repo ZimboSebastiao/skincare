@@ -219,14 +219,14 @@ const styles = StyleSheet.create({
     padding: 13,
   },
   botaoAdd: {
-    backgroundColor: "#FCB4D6",
+    backgroundColor: "#21D8EE",
     padding: 14,
     width: "100%",
     borderRadius: 20,
   },
   textoBotaoAdd: {
-    color: "#4E4E4E",
-    fontSize: 16,
+    color: "#0B224C",
+    fontSize: 15,
     textAlign: "center",
     fontWeight: "bold",
   },
