@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
@@ -16,6 +16,8 @@ import {
   ShoppingBag,
 } from "lucide-react-native";
 
+
+import AnimatedIcon from "./src/components/AnimatedIcon"
 import Onboarding from "./src/screens/Onboarding";
 import Splash from "./src/screens/Splash";
 import Home from "./src/screens/Home";
@@ -86,6 +88,11 @@ export default function App() {
     return <ActivityIndicator size="large" />; // Mostra um carregando enquanto verifica
   }
 
+
+  
+
+
+
   // Retorna a navegação com as fontes carregadas
   return (
     <ImageProvider>
@@ -96,10 +103,9 @@ export default function App() {
               initialRouteName="Home"
               screenOptions={{
                 tabBarStyle: {
-                  backgroundColor: "#ffff",
-                  height: 55,
-                  borderTopColor: "#ffff",
-                  height: "8%",
+                  backgroundColor: "#121212",
+                  borderTopColor: "#121212",
+                  height: "7%",
                 },
               }}
             >
@@ -109,7 +115,7 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <House size={30} color={focused ? "#ff80c3" : "#c2bebe"} />
+                    <AnimatedIcon focused={focused} IconComponent={House} />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
@@ -122,10 +128,7 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <ShoppingBag
-                      size={30}
-                      color={focused ? "#ff80c3" : "#c2bebe"}
-                    />
+                    <AnimatedIcon focused={focused} IconComponent={ShoppingBag} />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
@@ -138,7 +141,7 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <Clock size={30} color={focused ? "#ff80c3" : "#c2bebe"} />
+                    <AnimatedIcon focused={focused} IconComponent={Clock} />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
@@ -153,10 +156,7 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <BotMessageSquare
-                      size={30}
-                      color={focused ? "#ff80c3" : "#c2bebe"}
-                    />
+                    <AnimatedIcon focused={focused} IconComponent={BotMessageSquare} />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
@@ -170,10 +170,7 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <UserRound
-                      size={30}
-                      color={focused ? "#ff80c3" : "#c2bebe"}
-                    />
+                    <AnimatedIcon focused={focused} IconComponent={UserRound} />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
