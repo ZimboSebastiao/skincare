@@ -265,7 +265,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   viewBotoes: {
-    backgroundColor: "yellow",
     padding: 10,
   },
   viewBotao: {
@@ -274,5 +273,6 @@ const styles = StyleSheet.create({
   botao: {
     backgroundColor: "#21D8EE",
     padding: 15,
+    borderRadius: 20,
   },
 });
