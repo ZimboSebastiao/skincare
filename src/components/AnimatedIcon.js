@@ -38,8 +38,8 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
   return (
     <View style={{ alignItems: 'center' }}>
       <View style={{
-        width: 60, // Defina a largura
-        height: 60, // Defina a altura igual à largura
+        width: 70, // Defina a largura
+        height: 70, // Defina a altura igual à largura
         borderWidth: focused ? 2 : 0,
         borderColor: focused ? "#ffff" : "transparent",
         borderRadius: 40, // Metade da largura/altura para um círculo
