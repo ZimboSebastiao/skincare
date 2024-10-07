@@ -142,13 +142,22 @@ export default function Scan({ navigation }) {
         </View>
       )}
 
-      {/* Botões de ação */}
-      <Button title="Tirar Foto" onPress={takePicture} />
-      <Button
-        title="Enviar para Análise"
-        onPress={uploadImage}
-        disabled={loading}
-      />
+      <View style={styles.viewBotoes}>
+        <View style={styles.viewBotao}>
+          <Pressable style={styles.botao} onPress={takePicture}>
+            <Text>Tirar Foto</Text>
+          </Pressable>
+        </View>
+        <View style={styles.viewBotao}>
+          <Pressable
+            style={styles.botao}
+            onPress={uploadImage}
+            disabled={loading}
+          >
+            <Text>Enviar para Análise</Text>
+          </Pressable>
+        </View>
+      </View>
 
       {loading && <ActivityIndicator size="large" color="#0000ff" />}
 
@@ -233,7 +242,6 @@ const styles = StyleSheet.create({
   viewTexto: {
     justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: "red",
   },
   scanImage: {
     width: 210,
@@ -244,16 +252,27 @@ const styles = StyleSheet.create({
   scanIcon: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
-    marginBottom: 40,
+    padding: 10,
+    marginBottom: 20,
   },
   viewDescricao: {
     padding: 20,
-    marginBottom: 30,
+    marginBottom: 20,
   },
   textoDescricao: {
     fontSize: 16,
     color: "#a6a2a2",
     textAlign: "center",
+  },
+  viewBotoes: {
+    backgroundColor: "yellow",
+    padding: 10,
+  },
+  viewBotao: {
+    margin: 10,
+  },
+  botao: {
+    backgroundColor: "#21D8EE",
+    padding: 15,
   },
 });
