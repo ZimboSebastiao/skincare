@@ -1,7 +1,12 @@
 // src/screens/Skinbot.js
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { GiftedChat, Bubble, InputToolbar, Send } from "react-native-gifted-chat";
+import {
+  GiftedChat,
+  Bubble,
+  InputToolbar,
+  Send,
+} from "react-native-gifted-chat";
 import Icon from "react-native-vector-icons/Ionicons";
 import { sendMessageToChatGemini } from "../api/gemini.js";
 
@@ -53,10 +58,10 @@ export default function Skinbot() {
         {...props}
         wrapperStyle={{
           left: {
-            backgroundColor: '#F2F8FD', // Mensagem do bot
+            backgroundColor: "#F2F8FD", // Mensagem do bot
           },
           right: {
-            backgroundColor: '#0076FD', // Mensagem do usuário
+            backgroundColor: "#0076FD", // Mensagem do usuário
           },
         }}
       />
@@ -66,44 +71,43 @@ export default function Skinbot() {
   const renderSend = (props) => {
     return (
       <Send {...props}>
-      <View style={{ marginBottom: 11 }}>
-        <Icon name="send" size={24} color="#0075FD" />
-      </View>
-    </Send>
+        <View style={{ marginBottom: 11 }}>
+          <Icon name="send" size={24} color="#0075FD" />
+        </View>
+      </Send>
     );
   };
 
   const renderInputToolbar = (props) => {
     return (
       <InputToolbar
-      {...props}
-      containerStyle={{
-        borderRadius: 16,
-        backgroundColor: "#f2f8fc",
-        marginHorizontal: 8,
-        margin: 10,
-        borderTopWidth: 0,
-
-      }}
+        {...props}
+        containerStyle={{
+          borderRadius: 16,
+          backgroundColor: "#f2f8fc",
+          marginHorizontal: 8,
+          margin: 10,
+          borderTopWidth: 0,
+        }}
       />
     );
   };
 
   return (
-    
     <View style={styles.chatContainer}>
       <Text style={styles.alertText}>
-        Esta consulta de saúde com IA não é uma opinião médica. Consulte seu médico para um diagnóstico e prescrição precisos.
+        Esta consulta de saúde com IA não é uma opinião médica. Consulte seu
+        médico para um diagnóstico e prescrição precisos.
       </Text>
       <GiftedChat
         messages={messages}
         onSend={(messages) => onSend(messages)}
         user={{ _id: 1 }}
         renderBubble={renderBubble}
-        renderSend={renderSend} 
+        renderSend={renderSend}
         renderInputToolbar={renderInputToolbar}
         placeholder="Digite sua mensagem..."
-        placeholderTextColor="#5e5f61" 
+        placeholderTextColor="#5e5f61"
       />
     </View>
   );
@@ -112,37 +116,35 @@ export default function Skinbot() {
 const styles = StyleSheet.create({
   chatContainer: {
     flex: 1,
-    backgroundColor: 'white', 
+    backgroundColor: "white",
   },
   inputContainer: {
-    backgroundColor: 'transparent',
-    overflow: "hidden",  
-    backgroundColor: '#ffff',   
-    margin: 25, 
-    borderRadius: 10, 
+    backgroundColor: "transparent",
+    overflow: "hidden",
+    backgroundColor: "#ffff",
+    margin: 25,
+    borderRadius: 10,
     borderWidth: 1,
-    borderColor: "gray"
-  
+    borderColor: "gray",
   },
   sendContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     margin: 14,
   },
   sendText: {
-    color: '#007aff', 
-    fontWeight: 'bold',
+    color: "#007aff",
+    fontWeight: "bold",
   },
   errorMessage: {
-    backgroundColor: '#ffdddd', 
-    color: 'red',
+    backgroundColor: "#ffdddd",
+    color: "red",
   },
   alertText: {
-    color: '#3b393a',
-    fontWeight: "bold",
+    color: "#a6a2a2",
     padding: 20,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 16,
-    marginTop: 20
+    marginTop: 20,
   },
 });
