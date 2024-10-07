@@ -38,6 +38,7 @@ import Diario from "./src/screens/Diario";
 import Noite from "./src/screens/Noite";
 import Manha from "./src/screens/Manha";
 import Produtos from "./src/screens/Produtos";
+import Scan from "./src/screens/Scan";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -220,6 +221,25 @@ export default function App() {
               <Tab.Screen
                 name="Manha"
                 component={Manha}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                      size={30}
+                      color={focused ? "#ff80c3" : "#c2bebe"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Scan"
+                component={Scan}
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (

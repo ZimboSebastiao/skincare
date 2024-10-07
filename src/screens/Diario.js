@@ -4,98 +4,92 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getCurrentDate } from "../utils/dateUtils";
 import { globalStyles } from "../utils/globalStyles";
 
-export default function Diario({navigation}) {
-
+export default function Diario({ navigation }) {
   const currentDate = getCurrentDate();
 
   return (
     <View style={styles.container}>
       <View style={styles.viewMenu}>
-        <Pressable onPress={() => {navigation.navigate("Home")}}>
-
-        <MaterialCommunityIcons
-          name="chevron-left"
-          size={35}
-        />
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
+        >
+          <MaterialCommunityIcons name="chevron-left" size={35} />
         </Pressable>
 
         <View style={styles.viewTexto}>
           <Text style={[globalStyles.mediumText]}>Diário</Text>
-        <Text style={[styles.textoMenu, globalStyles.mediumText]}>
-          Hoje é, {currentDate}
-        </Text>
+          <Text style={[styles.textoMenu, globalStyles.mediumText]}>
+            Hoje é, {currentDate}
+          </Text>
         </View>
-
       </View>
 
       <View style={styles.viewScan}>
-        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Verifique A Saúde Da Pele</Text>
+        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>
+          Verifique A Saúde Da Pele
+        </Text>
 
-        <Pressable onPress={() => {console.log("Oi");}}>
-
-        <View style={styles.viewScanImagem} >
-        <Image
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Scan");
+          }}
+        >
+          <View style={styles.viewScanImagem}>
+            <Image
               source={require("../../assets/images/face-scan.png")}
               style={styles.animationImage}
             />
-          <Text style={[globalStyles.mediumText, styles.viewTextoScan, styles.textoImagem]}>Scan com IA</Text>
-        </View>
+            <Text
+              style={[
+                globalStyles.mediumText,
+                styles.viewTextoScan,
+                styles.textoImagem,
+              ]}
+            >
+              Scan com IA
+            </Text>
+          </View>
         </Pressable>
       </View>
 
       <View style={styles.viewSkinInfo}>
-
-        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>Como Está Sua Pele Hoje?</Text>
+        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>
+          Como Está Sua Pele Hoje?
+        </Text>
         <View style={styles.viewSkinOpcao}>
-
           <View style={styles.viewSkinTipo}>
-            <Text>
-            Normal
-            </Text>
+            <Text>Normal</Text>
           </View>
 
           <View style={styles.viewSkinTipo}>
-            <Text>
-            Oleoso
-            </Text>
+            <Text>Oleoso</Text>
           </View>
 
           <View style={styles.viewSkinTipo}>
-            <Text>
-            Seco
-            </Text>
+            <Text>Seco</Text>
           </View>
 
           <View style={styles.viewSkinTipo}>
-            <Text>
-            Coceira
-            </Text>
+            <Text>Coceira</Text>
           </View>
 
           <View style={styles.viewSkinTipo}>
-            <Text>
-            Irritado
-            </Text>
+            <Text>Irritado</Text>
           </View>
 
           <View style={styles.viewSkinTipo}>
-            <Text>
-            Opaco
-            </Text>
+            <Text>Opaco</Text>
           </View>
 
           <View style={styles.viewSkinTipo}>
-            <Text>
-            Irregular
-            </Text>
+            <Text>Irregular</Text>
           </View>
 
           <View style={styles.viewSkinTipo}>
-            <Text>
-           Outro
-            </Text>
+            <Text>Outro</Text>
           </View>
-
         </View>
       </View>
     </View>
@@ -106,15 +100,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffff",
-
   },
   viewMenu: {
-
     marginVertical: 30,
     padding: 4,
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "73%"
+    width: "73%",
   },
   textoMenu: {
     fontSize: 13,
@@ -122,9 +114,9 @@ const styles = StyleSheet.create({
   },
   viewTexto: {
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
-  viewScan:{
+  viewScan: {
     padding: 16,
   },
   viewTextoScan: {
@@ -144,11 +136,10 @@ const styles = StyleSheet.create({
     padding: 13,
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 15
+    borderRadius: 15,
   },
   textoImagem: {
- 
-    margin: 12
+    margin: 12,
   },
   viewSkinInfo: {
     padding: 16,
@@ -159,17 +150,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 15,
-    flexDirection: "row", 
-  flexWrap: "wrap",     
-  justifyContent: "flex-start", 
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
   },
-  viewSkinTipo:{
+  viewSkinTipo: {
     backgroundColor: "transparent",
     borderWidth: 1,
     borderRadius: 20,
     padding: 8,
-    width: "30%", 
-    marginBottom: 10, 
-    marginRight: "3%"
-  }
+    width: "30%",
+    marginBottom: 10,
+    marginRight: "3%",
+  },
 });
