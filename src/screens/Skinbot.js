@@ -52,7 +52,7 @@ export default function Skinbot() {
         {...props}
         wrapperStyle={{
           left: {
-            backgroundColor: '#89b0e0', // Mensagem do bot
+            backgroundColor: '#B0EDFF', // Mensagem do bot
           },
           right: {
             backgroundColor: '#cbafed', // Mensagem do usuário
@@ -75,8 +75,8 @@ export default function Skinbot() {
   const renderInputToolbar = (props) => {
     return (
       <InputToolbar
-        {...props}
-        containerStyle={styles.inputContainer}
+      {...props}
+      containerStyle={styles.inputContainer}
       />
     );
   };
@@ -108,7 +108,13 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     backgroundColor: 'transparent',
-    overflow: "hidden",
+    overflow: "hidden",  
+    backgroundColor: '#ffff',   
+    margin: 25, 
+    borderRadius: 10, 
+    borderWidth: 1,
+    borderColor: "gray"
+  
   },
   sendContainer: {
     justifyContent: 'center',
