@@ -137,11 +137,11 @@ const styles = StyleSheet.create({
     color: "#a6a2a2",
   },
   cuidados: {
-    backgroundColor: "#ff80c3",
+    backgroundColor: "#21D8EE",
     padding: 10,
   },
   textoCuidados: {
-    color: "white",
+    color: "#0B224C",
   },
   viewRotinas: {
     justifyContent: "center",
