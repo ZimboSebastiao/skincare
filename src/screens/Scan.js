@@ -4,12 +4,12 @@ import { Camera } from "expo-camera";
 
 export default function Scan() {
   const [hasPermission, setHasPermission] = useState(null);
-  const [cameraType, setCameraType] = useState(Camera.Constants.Type.front);
+  const [cameraType, setCameraType] = useState("front"); // Usando strings simples
   const cameraRef = useRef(null);
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status } = await Camera.requestCameraPermissionsAsync();
       setHasPermission(status === "granted");
     })();
   }, []);
@@ -23,15 +23,15 @@ export default function Scan() {
 
   return (
     <View style={styles.container}>
-      <Camera ref={cameraRef} style={styles.camera} type={cameraType} />
+      <Camera 
+        ref={cameraRef} 
+        style={styles.camera} 
+        type={cameraType === "front" ? Camera.Type.front : Camera.Type.back} 
+      />
       <Button
         title="Trocar Câmera"
         onPress={() => {
-          setCameraType(
-            cameraType === Camera.Constants.Type.front
-              ? Camera.Constants.Type.back
-              : Camera.Constants.Type.front
-          );
+          setCameraType(prevType => (prevType === "front" ? "back" : "front"));
         }}
       />
     </View>

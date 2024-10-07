@@ -48,6 +48,7 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
         alignItems: 'center', // Centraliza o conteúdo horizontalmente
         justifyContent: 'center', // Centraliza o conteúdo verticalmentea
         
+        
       }}>
         <Animated.View style={{
           transform: [{ translateY }],
