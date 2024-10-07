@@ -104,7 +104,7 @@ export default function Scan({ navigation }) {
       <View style={styles.viewMenu}>
         <Pressable
           onPress={() => {
-            navigation.navigate("Rotina");
+            navigation.navigate("Home");
           }}
         >
           <MaterialCommunityIcons name="chevron-left" size={35} />
