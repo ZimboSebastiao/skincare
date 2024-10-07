@@ -59,7 +59,7 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
         </Animated.View>
       </View>
       <Animated.View style={{ opacity }}>
-        <Text style={{ color: focused ? "#ff80c3" : "#c2bebe", fontSize: 12 }}>
+        <Text style={{ color: focused ? "#ff80c3" : "#c2bebe", fontSize: 12, marginTop: -15 }}>
           {label}
         </Text>
       </Animated.View>
