@@ -7,15 +7,21 @@ import {
   ActivityIndicator,
   Alert,
   ScrollView,
+  StyleSheet,
+  Pressable,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import * as FileSystem from "expo-file-system";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { globalStyles } from "../utils/globalStyles";
+import { getCurrentDate } from "../utils/dateUtils";
 
-export default function Scan() {
+export default function Scan({ navigation }) {
   const [image, setImage] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const currentDate = getCurrentDate();
 
   useEffect(() => {
     (async () => {
@@ -91,18 +97,41 @@ export default function Scan() {
     <ScrollView
       contentContainerStyle={{
         flexGrow: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        // justifyContent: "center",
+        // alignItems: "center",
       }}
     >
-      <Text>Analisador de Pele</Text>
+      <View style={styles.viewMenu}>
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Rotina");
+          }}
+        >
+          <MaterialCommunityIcons name="chevron-left" size={35} />
+        </Pressable>
 
-      {/* Exibir a imagem capturada */}
-      {image && (
+        <View style={styles.viewTexto}>
+          <Text style={[globalStyles.mediumText]}>Análise de Pele</Text>
+          <Text style={[styles.textoMenu, globalStyles.mediumText]}>
+            Hoje é, {currentDate}
+          </Text>
+        </View>
+      </View>
+
+      <View style={styles.scanIcon}>
         <Image
-          source={{ uri: image }}
-          style={{ width: 300, height: 300, marginVertical: 20 }}
+          source={require("../../assets/images/scaneer.png")}
+          style={styles.scanImage}
         />
+      </View>
+
+      {image && (
+        <View style={styles.viewImagem}>
+          <Image
+            source={{ uri: image }}
+            style={{ width: 300, height: 300, marginVertical: 20 }}
+          />
+        </View>
       )}
 
       {/* Botões de ação */}
@@ -177,3 +206,36 @@ export default function Scan() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  viewImagem: {
+    backgroundColor: "red",
+  },
+  viewMenu: {
+    marginVertical: 30,
+    padding: 4,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "73%",
+  },
+  textoMenu: {
+    fontSize: 13,
+    color: "#a6a2a2",
+  },
+  viewTexto: {
+    justifyContent: "center",
+    alignItems: "center",
+    // backgroundColor: "red",
+  },
+  scanImage: {
+    width: 210,
+    height: 210,
+    resizeMode: "contain",
+    backgroundColor: "transparent",
+  },
+  scanIcon: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+  },
+});
