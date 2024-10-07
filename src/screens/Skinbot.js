@@ -2,6 +2,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { GiftedChat, Bubble, InputToolbar, Send } from "react-native-gifted-chat";
+import Icon from "react-native-vector-icons/Ionicons";
 import { sendMessageToChatGemini } from "../api/gemini.js";
 
 export default function Skinbot() {
@@ -52,10 +53,10 @@ export default function Skinbot() {
         {...props}
         wrapperStyle={{
           left: {
-            backgroundColor: '#B0EDFF', // Mensagem do bot
+            backgroundColor: '#F2F8FD', // Mensagem do bot
           },
           right: {
-            backgroundColor: '#cbafed', // Mensagem do usuário
+            backgroundColor: '#0076FD', // Mensagem do usuário
           },
         }}
       />
@@ -65,10 +66,10 @@ export default function Skinbot() {
   const renderSend = (props) => {
     return (
       <Send {...props}>
-        <View style={styles.sendContainer}>
-          <Text style={styles.sendText}>Enviar</Text>
-        </View>
-      </Send>
+      <View style={{ marginBottom: 11 }}>
+        <Icon name="send" size={24} color="#0075FD" />
+      </View>
+    </Send>
     );
   };
 
@@ -76,7 +77,14 @@ export default function Skinbot() {
     return (
       <InputToolbar
       {...props}
-      containerStyle={styles.inputContainer}
+      containerStyle={{
+        borderRadius: 16,
+        backgroundColor: "#f2f8fc",
+        marginHorizontal: 8,
+        margin: 10,
+        borderTopWidth: 0,
+
+      }}
       />
     );
   };
