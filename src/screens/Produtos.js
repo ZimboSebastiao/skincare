@@ -136,7 +136,7 @@ export default function Produtos({ navigation }) {
                 style={styles.lixeira}
                 onPress={() => confirmDelete(produto.nome)}
               >
-                <Trash2 size={35} color="#ba1e2b" />
+                <Trash2 size={30} color="#ba1e2b" />
               </Pressable>
             </View>
           ))}
@@ -216,11 +216,11 @@ const styles = StyleSheet.create({
   viewBotaoAdd: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 13,
+    padding: 10,
   },
   botaoAdd: {
     backgroundColor: "#21D8EE",
-    padding: 14,
+    padding: 15,
     width: "100%",
     borderRadius: 20,
   },
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   produto: {
-    backgroundColor: "#FCB4D6",
+    backgroundColor: "#F0F0F0",
     margin: 10,
     padding: 10,
     borderRadius: 20,
