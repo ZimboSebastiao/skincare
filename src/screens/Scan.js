@@ -145,7 +145,7 @@ export default function Scan({ navigation }) {
       <View style={styles.viewBotoes}>
         <View style={styles.viewBotao}>
           <Pressable style={styles.botao} onPress={takePicture}>
-            <Text>Tirar Foto</Text>
+            <Text style={styles.textoBotao}>Tirar Foto</Text>
           </Pressable>
         </View>
         <View style={styles.viewBotao}>
@@ -154,7 +154,7 @@ export default function Scan({ navigation }) {
             onPress={uploadImage}
             disabled={loading}
           >
-            <Text>Enviar para Análise</Text>
+            <Text style={styles.textoBotao}>Enviar para Análise</Text>
           </Pressable>
         </View>
       </View>
@@ -274,5 +274,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#21D8EE",
     padding: 15,
     borderRadius: 20,
+  },
+  textoBotao: {
+    textAlign: "center",
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#0B224C",
   },
 });
