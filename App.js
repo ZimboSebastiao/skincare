@@ -118,7 +118,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <AnimatedIcon focused={focused} IconComponent={House} />
                   ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
                   tabBarInactiveTintColor: "#c2bebe",
                 }}
@@ -131,7 +131,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <AnimatedIcon focused={focused} IconComponent={ShoppingBag} />
                   ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
                   tabBarInactiveTintColor: "#c2bebe",
                 }}
@@ -144,7 +144,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <AnimatedIcon focused={focused} IconComponent={Clock} />
                   ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
                   tabBarInactiveTintColor: "#c2bebe",
                   // tabBarStyle: { display: "none" },
@@ -159,7 +159,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <AnimatedIcon focused={focused} IconComponent={BotMessageSquare} />
                   ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
                   tabBarInactiveTintColor: "#c2bebe",
                   // tabBarStyle: { display: "none" },
@@ -173,7 +173,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <AnimatedIcon focused={focused} IconComponent={UserRound} />
                   ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
                   tabBarInactiveTintColor: "#c2bebe",
                 }}
