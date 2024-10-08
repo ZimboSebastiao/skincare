@@ -159,7 +159,7 @@ export default function Home({ navigation }) {
 
       <View style={styles.jornada}>
         <Text style={[globalStyles.mediumText, styles.textoJornada]}>
-          Acompanhe suas metas diárias
+          Verificação diária de Skincare
         </Text>
 
         <View style={styles.jornadaFeitas}>
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
   },
   jornada: {
     marginTop: 60,
-    padding: 10,
+    padding: 15,
   },
   textoJornada: {
     fontSize: 19,
