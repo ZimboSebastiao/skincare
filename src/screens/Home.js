@@ -163,23 +163,23 @@ export default function Home({ navigation }) {
         </Text>
 
         <View>
-          <View style={styles.feito}>
+          <Pressable style={styles.feito}>
             <Image
               source={require("../../assets/images/relogio.png")}
               style={styles.animationImage}
             />
 
             <Text style={styles.textoRotinas}>Rotina Matinal</Text>
-          </View>
+          </Pressable>
 
-          <View style={styles.feito2}>
+          <Pressable style={styles.feito2}>
             <Image
               source={require("../../assets/images/cloud.png")}
               style={styles.animationImage}
             />
 
             <Text style={styles.textoRotinas}>Rotina Nortuna</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
     </ScrollView>
@@ -265,7 +265,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textoRotinas: {
-    // backgroundColor: "red",
     width: "48%",
     textAlign: "right",
     fontSize: 17,
