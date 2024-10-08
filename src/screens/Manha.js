@@ -26,18 +26,6 @@ export default function Manha({ navigation }) {
           </Text>
         </View>
       </View>
-
-      <View style={styles.viewRotinas}>
-        <Pressable style={styles.rotinaManha}>
-          <Plus size={30} color="white" />
-          <View style={styles.botaoRotina}>
-            <Text style={styles.textoRotinaTitulo}>Limpadores</Text>
-            <Text style={[styles.textoHora, globalStyles.mediumText]}>
-              Adicione o seu Produto
-            </Text>
-          </View>
-        </Pressable>
-      </View>
     </View>
   );
 }
