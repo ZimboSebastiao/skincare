@@ -140,7 +140,7 @@ export default function Produtos({ navigation }) {
                   style={styles.lixeira}
                   onPress={() => confirmDelete(produto.nome)}
                 >
-                  <Trash2 size={30} color="#ed1111" />
+                  <Trash2 size={25} color="#ed1111" />
                 </Pressable>
               </View>
             ))}
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#faf7f7",
     margin: 10,
     padding: 10,
-    borderRadius: 20,
+    borderRadius: 10,
     flexDirection: "row",
     elevation: 1,
   },
