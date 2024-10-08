@@ -85,11 +85,6 @@ export default function Produtos({ navigation }) {
         </View>
       </View>
 
-      <View style={styles.cuidados}>
-        <Text style={[styles.textoCuidados, globalStyles.semiBoldText]}>
-          Adicione Aqui os seus Produtos!
-        </Text>
-      </View>
       {produtos.length === 0 ? (
         <View style={styles.viewFeadback}>
           <Image
@@ -107,40 +102,50 @@ export default function Produtos({ navigation }) {
           </View>
         </View>
       ) : (
-        <ScrollView style={styles.viewProdutos}>
-          {produtos.map((produto, index) => (
-            <View key={index} style={styles.produto}>
-              <View>
-                <Image
-                  source={require("../../assets/images/tube.png")}
-                  style={styles.produtoImage}
-                />
-              </View>
-
-              <View>
-                <Text style={styles.nome}>{produto.nome}</Text>
-                <Text style={styles.infoProdutos}>
-                  Categoria: {produto.categoria}
-                </Text>
-                <View style={styles.demaisInfo}>
-                  <Text style={styles.infoProdutos}>
-                    Expiração: {produto.dataExpiracao}
-                  </Text>
-                  <Text style={styles.infoProdutos}>
-                    Valor: {produto.valorPago}
-                  </Text>
+        <>
+          <View style={styles.cuidados}>
+            <Text style={[styles.textoCuidados, globalStyles.semiBoldText]}>
+              Quantidade:
+            </Text>
+            <Text style={[styles.textoCuidados, globalStyles.semiBoldText]}>
+              Valor Total: R$
+            </Text>
+          </View>
+          <ScrollView style={styles.viewProdutos}>
+            {produtos.map((produto, index) => (
+              <View key={index} style={styles.produto}>
+                <View>
+                  <Image
+                    source={require("../../assets/images/tube.png")}
+                    style={styles.produtoImage}
+                  />
                 </View>
-              </View>
 
-              <Pressable
-                style={styles.lixeira}
-                onPress={() => confirmDelete(produto.nome)}
-              >
-                <Trash2 size={30} color="#ba1e2b" />
-              </Pressable>
-            </View>
-          ))}
-        </ScrollView>
+                <View>
+                  <Text style={styles.nome}>{produto.nome}</Text>
+                  <Text style={styles.infoProdutos}>
+                    Categoria: {produto.categoria}
+                  </Text>
+                  <View style={styles.demaisInfo}>
+                    <Text style={styles.infoProdutos}>
+                      Expiração: {produto.dataExpiracao}
+                    </Text>
+                    <Text style={styles.infoProdutos}>
+                      Valor: {produto.valorPago}
+                    </Text>
+                  </View>
+                </View>
+
+                <Pressable
+                  style={styles.lixeira}
+                  onPress={() => confirmDelete(produto.nome)}
+                >
+                  <Trash2 size={30} color="#ba1e2b" />
+                </Pressable>
+              </View>
+            ))}
+          </ScrollView>
+        </>
       )}
 
       <View style={styles.viewBotaoAdd}>
@@ -181,9 +186,11 @@ const styles = StyleSheet.create({
     color: "#a6a2a2",
   },
   cuidados: {
-    backgroundColor: "#21D8EE",
     padding: 10,
     marginBottom: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   textoCuidados: {
     color: "#0B224C",
