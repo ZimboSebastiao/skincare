@@ -16,8 +16,7 @@ import {
   ShoppingBag,
 } from "lucide-react-native";
 
-
-import AnimatedIcon from "./src/components/AnimatedIcon"
+import AnimatedIcon from "./src/components/AnimatedIcon";
 import Onboarding from "./src/screens/Onboarding";
 import Splash from "./src/screens/Splash";
 import Home from "./src/screens/Home";
@@ -88,11 +87,6 @@ export default function App() {
     return <ActivityIndicator size="large" />; // Mostra um carregando enquanto verifica
   }
 
-
-  
-
-
-
   // Retorna a navegação com as fontes carregadas
   return (
     <ImageProvider>
@@ -106,7 +100,6 @@ export default function App() {
                   backgroundColor: "#121212",
                   borderTopColor: "#121212",
                   height: "8%",
-                 
                 },
               }}
             >
@@ -120,7 +113,7 @@ export default function App() {
                   ),
                   tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                 }}
               />
               <Tab.Screen
@@ -129,11 +122,14 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon focused={focused} IconComponent={ShoppingBag} />
+                    <AnimatedIcon
+                      focused={focused}
+                      IconComponent={ShoppingBag}
+                    />
                   ),
                   tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                 }}
               />
               <Tab.Screen
@@ -146,7 +142,7 @@ export default function App() {
                   ),
                   tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                   // tabBarStyle: { display: "none" },
                 }}
               />
@@ -157,11 +153,14 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon focused={focused} IconComponent={BotMessageSquare} />
+                    <AnimatedIcon
+                      focused={focused}
+                      IconComponent={BotMessageSquare}
+                    />
                   ),
                   tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                   // tabBarStyle: { display: "none" },
                 }}
               />
@@ -175,7 +174,7 @@ export default function App() {
                   ),
                   tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                 }}
               />
               <Tab.Screen
@@ -187,12 +186,12 @@ export default function App() {
                     <MaterialCommunityIcons
                       name="account"
                       size={30}
-                      color={focused ? "#ff80c3" : "#c2bebe"}
+                      color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                   tabBarButton: () => null,
                   tabBarStyle: { display: "none" },
                 }}
@@ -206,12 +205,12 @@ export default function App() {
                     <MaterialCommunityIcons
                       name="account"
                       size={30}
-                      color={focused ? "#ff80c3" : "#c2bebe"}
+                      color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                   tabBarButton: () => null,
                   tabBarStyle: { display: "none" },
                 }}
@@ -225,12 +224,12 @@ export default function App() {
                     <MaterialCommunityIcons
                       name="account"
                       size={30}
-                      color={focused ? "#ff80c3" : "#c2bebe"}
+                      color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                   tabBarButton: () => null,
                   tabBarStyle: { display: "none" },
                 }}
@@ -244,12 +243,12 @@ export default function App() {
                     <MaterialCommunityIcons
                       name="account"
                       size={30}
-                      color={focused ? "#ff80c3" : "#c2bebe"}
+                      color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
                   tabBarLabelStyle: { fontSize: 13.4 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#c2bebe",
+                  tabBarInactiveTintColor: "#ffff",
                   tabBarButton: () => null,
                   tabBarStyle: { display: "none" },
                 }}
