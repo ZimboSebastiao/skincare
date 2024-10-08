@@ -94,7 +94,7 @@ export default function Rotina({ navigation }) {
               Crie uma Rotina Matinal
             </Text>
             <Text style={[styles.textoHora, globalStyles.mediumText]}>
-              08:00
+              08h00
             </Text>
           </View>
         </Pressable>
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   textoHora: {
-    color: "#f0eded",
+    color: "#aba7a7",
   },
   textoRotinaTitulo: {
     fontSize: 17,
