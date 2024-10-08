@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: "3%",
     borderRadius: 15,
+    elevation: 1,
   },
   rotinaNoite: {
     backgroundColor: "#F1DAEA",
@@ -165,6 +166,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: "3%",
     borderRadius: 15,
+    elevation: 1,
   },
   animationImage: {
     width: 35,
@@ -185,25 +187,5 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingBottom: 0,
     justifyContent: "flex-end",
-  },
-  backgroundSvg1: {
-    position: "absolute",
-    top: -190,
-    left: -40,
-  },
-  backgroundSvg2: {
-    position: "absolute",
-    top: 200,
-    right: -200,
-  },
-  backgroundSvg3: {
-    position: "absolute",
-    bottom: -150,
-    left: -42,
-  },
-  backgroundSvg4: {
-    position: "absolute",
-    top: 80,
-    right: 170,
   },
 });
