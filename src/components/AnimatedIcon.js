@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Animated, Text, View } from 'react-native';
+import React, { useRef } from "react";
+import { Animated, Text, View } from "react-native";
 
 const AnimatedIcon = ({ focused, IconComponent, label }) => {
   const translateY = useRef(new Animated.Value(0)).current;
@@ -36,30 +36,38 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
   }, [focused]);
 
   return (
-    <View style={{ alignItems: 'center' }}>
-      <View style={{
-        width: 70, // Defina a largura
-        height: 70, // Defina a altura igual à largura
-        borderWidth: focused ? 2 : 0,
-        borderColor: focused ? "#ffff" : "transparent",
-        borderRadius: 40, // Metade da largura/altura para um círculo
-        backgroundColor: focused ? "#ffff" : "transparent",
-        marginBottom: focused ? 35 : 0, // Eleva a borda apenas se focado
-        alignItems: 'center', // Centraliza o conteúdo horizontalmente
-        justifyContent: 'center', // Centraliza o conteúdo verticalmentea
-        
-        
-      }}>
-        <Animated.View style={{
-          transform: [{ translateY }],
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <IconComponent size={30} color={focused ? "#ff80c3" : "#c2bebe"} />
+    <View style={{ alignItems: "center" }}>
+      <View
+        style={{
+          width: 70, // Defina a largura
+          height: 70, // Defina a altura igual à largura
+          borderWidth: focused ? 2 : 0,
+          borderColor: focused ? "#ffff" : "transparent",
+          borderRadius: 40, // Metade da largura/altura para um círculo
+          backgroundColor: focused ? "#ffff" : "transparent",
+          marginBottom: focused ? 35 : 0, // Eleva a borda apenas se focado
+          alignItems: "center", // Centraliza o conteúdo horizontalmente
+          justifyContent: "center", // Centraliza o conteúdo verticalmentea
+        }}
+      >
+        <Animated.View
+          style={{
+            transform: [{ translateY }],
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <IconComponent size={30} color={focused ? "#ff80c3" : "#ffff"} />
         </Animated.View>
       </View>
       <Animated.View style={{ opacity }}>
-        <Text style={{ color: focused ? "#ff80c3" : "#c2bebe", fontSize: 12, marginTop: -15 }}>
+        <Text
+          style={{
+            color: focused ? "#ff80c3" : "#ffff",
+            fontSize: 12,
+            marginTop: -15,
+          }}
+        >
           {label}
         </Text>
       </Animated.View>
