@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   botao: {
-    backgroundColor: "#21D8EE",
+    backgroundColor: "#ff80c3",
     padding: 15,
     borderRadius: 20,
   },
@@ -279,6 +279,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 15,
     fontWeight: "bold",
-    color: "#0B224C",
+    color: "#ffff",
   },
 });
