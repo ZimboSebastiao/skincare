@@ -5,6 +5,7 @@ import {
   Pressable,
   Image,
   ScrollView,
+  Animated,
 } from "react-native";
 import React, { useContext } from "react";
 import { getCurrentDate } from "../utils/dateUtils";
