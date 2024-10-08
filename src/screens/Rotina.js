@@ -10,7 +10,7 @@ export default function Rotina({ navigation }) {
   return (
     <View style={styles.container}>
       {/* SVGs como fundo */}
-      <Svg
+      {/* <Svg
         style={styles.backgroundSvg1}
         width="592"
         height="516"
@@ -18,7 +18,7 @@ export default function Rotina({ navigation }) {
       >
         <Path
           d="M131.927 0.758265C141.143 -0.12561 148.663 8.018 147.05 17.1339L141.67 47.5381C139.944 57.2881 148.609 65.699 158.303 63.685L211.729 52.5855C217.311 51.4256 223.04 53.7675 226.211 58.5062L249.639 93.513C254.508 100.787 251.582 110.695 243.543 114.158L216.981 125.598C208.17 129.393 205.7 140.724 212.132 147.842L233.673 171.68C240.379 179.102 237.364 190.958 227.927 194.275L169.868 214.678C167.41 215.542 164.758 215.703 162.213 215.142L113.365 204.374C110.409 203.723 107.743 202.13 105.768 199.836L74.9545 164.043C73.1825 161.985 70.85 160.486 68.2413 159.73L10.268 142.93C1.50566 140.391 -2.5261 130.284 2.08281 122.41L32.8274 69.892C33.6038 68.5656 34.1566 67.1205 34.4635 65.6145L43.9314 19.1515C45.1605 13.1198 50.1853 8.59857 56.3128 8.01085L131.927 0.758265Z"
-          fill="#F8ECF4"
+          fill="#e4f5f7"
         />
       </Svg>
       <Svg
@@ -29,7 +29,7 @@ export default function Rotina({ navigation }) {
       >
         <Path
           d="M374.023 113.24C408.373 -40.8824 283.056 7.8904 182.64 7.8904C82.2233 7.8904 0.819824 62.4811 0.819824 129.822C0.819824 197.163 286 26 148 194C148 390 374.023 180.581 374.023 113.24Z"
-          fill="#F8ECF4"
+          fill="#e4f5f7"
         />
       </Svg>
       <Svg
@@ -40,7 +40,7 @@ export default function Rotina({ navigation }) {
       >
         <Path
           d="M315.5 117C344.5 275 238.702 225 153.926 225C69.1503 225 0.426025 169.036 0.426025 100C0.426025 30.9644 104.5 -61 167 59C320.074 -52 315.5 47.9644 315.5 117Z"
-          fill="#F8ECF4"
+          fill="#e4f5f7"
         />
       </Svg>
       <Svg
@@ -51,9 +51,9 @@ export default function Rotina({ navigation }) {
       >
         <Path
           d="M145 244C145 354.457 200.245 400 129 400C57.7553 400 0 310.457 0 200C0 89.5431 57.7553 0 129 0C200.245 0 145 133.543 145 244Z"
-          fill="#F8ECF4"
+          fill="#e4f5f7"
         />
-      </Svg>
+      </Svg> */}
 
       <View style={styles.viewMenu}>
         <Pressable
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     marginVertical: "auto",
   },
   rotinaManha: {
-    backgroundColor: "#EFA383",
+    backgroundColor: "#FFE5E5",
     width: "90%",
     flexDirection: "row",
     alignItems: "center",
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   rotinaNoite: {
-    backgroundColor: "#AE92E6",
+    backgroundColor: "#F1DAEA",
     width: "90%",
     flexDirection: "row",
     alignItems: "center",
@@ -177,8 +177,8 @@ const styles = StyleSheet.create({
     color: "#f0eded",
   },
   textoRotinaTitulo: {
-    fontSize: 17.5,
-    color: "#ffff",
+    fontSize: 17,
+    color: "#0B224C",
     fontWeight: "bold",
   },
   botaoRotina: {
