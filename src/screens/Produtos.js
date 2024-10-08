@@ -116,7 +116,7 @@ export default function Produtos({ navigation }) {
               <View key={index} style={styles.produto}>
                 <View>
                   <Image
-                    source={require("../../assets/images/tube.png")}
+                    source={require("../../assets/images/cream.png")}
                     style={styles.produtoImage}
                   />
                 </View>
@@ -226,13 +226,13 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   botaoAdd: {
-    backgroundColor: "#21D8EE",
+    backgroundColor: "#ff80c3",
     padding: 15,
     width: "100%",
     borderRadius: 20,
   },
   textoBotaoAdd: {
-    color: "#0B224C",
+    color: "#ffff",
     fontSize: 15,
     textAlign: "center",
     fontWeight: "bold",
