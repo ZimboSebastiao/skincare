@@ -63,7 +63,7 @@ export default function App() {
 
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 4300);
+    }, 4200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -185,7 +185,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={30}
+                      size={20}
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
@@ -204,7 +204,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={30}
+                      size={20}
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
@@ -223,7 +223,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={30}
+                      size={20}
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
@@ -242,7 +242,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={30}
+                      size={20}
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),

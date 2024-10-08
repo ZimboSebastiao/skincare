@@ -57,7 +57,7 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
             justifyContent: "center",
           }}
         >
-          <IconComponent size={30} color={focused ? "#ff80c3" : "#ffff"} />
+          <IconComponent size={24} color={focused ? "#ff80c3" : "#ffff"} />
         </Animated.View>
       </View>
       <Animated.View style={{ opacity }}>
