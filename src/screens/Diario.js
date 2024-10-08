@@ -15,7 +15,7 @@ export default function Diario({ navigation }) {
             navigation.navigate("Home");
           }}
         >
-          <MaterialCommunityIcons name="chevron-left" size={35} />
+          <MaterialCommunityIcons name="chevron-left-circle" size={35} />
         </Pressable>
 
         <View style={styles.viewTexto}>
