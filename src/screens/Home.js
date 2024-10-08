@@ -53,38 +53,7 @@ export default function Home({ navigation }) {
       </View>
 
       <View style={styles.viewPaginas}>
-        <View style={styles.viewPagina}>
-          <Pressable
-            style={styles.buttonWrapper}
-            onPress={() => {
-              navigation.navigate("Diario");
-            }}
-          >
-            <Svg
-              width="90"
-              height="110"
-              viewBox="0 0 109 123"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <Path
-                d="M16.8846 95.4338C-1.49599 85.665 -5.25823 60.9379 9.38521 46.1445L34.8438 20.4253C36.8506 18.3979 38.3812 15.9495 39.3247 13.2574V13.2574C44.2839 -0.892831 62.8106 -4.17536 72.3295 7.4097L84.5358 22.2654C88.9527 27.641 91.3672 34.3828 91.3672 41.3402V42.9851C91.3672 48.2103 92.8969 53.3212 95.7676 57.6872L105.534 72.541C114.546 86.2478 103.011 104.14 86.8065 101.589V101.589C78.8025 100.329 70.8861 104.312 67.1277 111.49L66.8739 111.975C59.7559 125.57 40.5021 126.132 32.6028 112.976L28.023 105.349C25.7179 101.51 22.4108 98.3708 18.4567 96.2693L16.8846 95.4338Z"
-                fill="#F1DAEA"
-              />
-            </Svg>
-
-            <View style={styles.buttonContent}>
-              <MaterialCommunityIcons
-                name="clipboard-check-outline"
-                size={45}
-                color={"#2D2D2D"}
-              />
-            </View>
-            <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
-          </Pressable>
-        </View>
-
-        <View style={styles.viewPagina}>
+        {/* <View style={styles.viewPagina}>
           <Pressable style={styles.buttonWrapper}>
             <Svg
               width="90"
@@ -108,33 +77,96 @@ export default function Home({ navigation }) {
             </View>
             <Text style={[styles.buttonText, globalStyles.text]}>Humor</Text>
           </Pressable>
-        </View>
+        </View> */}
 
         <View style={styles.viewPagina}>
-          <Pressable style={styles.buttonWrapper}>
+          <Pressable
+            style={styles.buttonWrapper}
+            onPress={() => {
+              navigation.navigate("Diario");
+            }}
+          >
             <Svg
               width="90"
               height="110"
-              viewBox="0 0 110 123"
+              viewBox="0 0 109 123"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <Path
-                d="M6.75469 87.2383C-3.39984 78.4617 -1.03102 62.1146 11.1971 56.5814V56.5814C16.5457 54.1611 20.4168 49.3318 21.6149 43.5846L25.3492 25.6718C25.706 23.96 26.2042 22.2808 26.8387 20.6515V20.6515C34.0418 2.15375 56.3098 -5.20822 73.1192 5.35074L88.2181 14.8351C96.6813 20.1514 102.848 28.4433 105.503 38.0785L106.928 43.2458C108.634 49.437 108.519 55.989 106.595 62.1162L103.685 71.3834C102.238 75.9942 103.136 81.0214 106.092 84.8453V84.8453C114.649 95.9183 104.451 111.578 90.8631 108.228L83.7201 106.467C77.0731 104.828 70.0842 107.254 65.8808 112.657L64.2318 114.777C54.0324 127.889 33.3809 124.602 27.7561 108.971V108.971C26.5296 105.563 24.4458 102.529 21.7054 100.16L6.75469 87.2383Z"
-                fill="#FFF3DA"
+                d="M16.8846 95.4338C-1.49599 85.665 -5.25823 60.9379 9.38521 46.1445L34.8438 20.4253C36.8506 18.3979 38.3812 15.9495 39.3247 13.2574V13.2574C44.2839 -0.892831 62.8106 -4.17536 72.3295 7.4097L84.5358 22.2654C88.9527 27.641 91.3672 34.3828 91.3672 41.3402V42.9851C91.3672 48.2103 92.8969 53.3212 95.7676 57.6872L105.534 72.541C114.546 86.2478 103.011 104.14 86.8065 101.589V101.589C78.8025 100.329 70.8861 104.312 67.1277 111.49L66.8739 111.975C59.7559 125.57 40.5021 126.132 32.6028 112.976L28.023 105.349C25.7179 101.51 22.4108 98.3708 18.4567 96.2693L16.8846 95.4338Z"
+                fill="#ff80c3"
               />
             </Svg>
 
             <View style={styles.buttonContent}>
               <MaterialCommunityIcons
-                name="star-shooting-outline"
+                name="clipboard-check-outline"
                 size={45}
                 color={"#2D2D2D"}
               />
             </View>
-            <Text style={[styles.buttonText, globalStyles.text]}>
-              Percepções
-            </Text>
+            <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
+          </Pressable>
+        </View>
+        <View style={styles.viewPagina}>
+          <Pressable
+            style={styles.buttonWrapper}
+            onPress={() => {
+              navigation.navigate("Diario");
+            }}
+          >
+            <Svg
+              width="90"
+              height="110"
+              viewBox="0 0 109 123"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <Path
+                d="M16.8846 95.4338C-1.49599 85.665 -5.25823 60.9379 9.38521 46.1445L34.8438 20.4253C36.8506 18.3979 38.3812 15.9495 39.3247 13.2574V13.2574C44.2839 -0.892831 62.8106 -4.17536 72.3295 7.4097L84.5358 22.2654C88.9527 27.641 91.3672 34.3828 91.3672 41.3402V42.9851C91.3672 48.2103 92.8969 53.3212 95.7676 57.6872L105.534 72.541C114.546 86.2478 103.011 104.14 86.8065 101.589V101.589C78.8025 100.329 70.8861 104.312 67.1277 111.49L66.8739 111.975C59.7559 125.57 40.5021 126.132 32.6028 112.976L28.023 105.349C25.7179 101.51 22.4108 98.3708 18.4567 96.2693L16.8846 95.4338Z"
+                fill="#ff80c3"
+              />
+            </Svg>
+
+            <View style={styles.buttonContent}>
+              <MaterialCommunityIcons
+                name="clipboard-check-outline"
+                size={45}
+                color={"#2D2D2D"}
+              />
+            </View>
+            <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
+          </Pressable>
+        </View>
+        <View style={styles.viewPagina}>
+          <Pressable
+            style={styles.buttonWrapper}
+            onPress={() => {
+              navigation.navigate("Diario");
+            }}
+          >
+            <Svg
+              width="90"
+              height="110"
+              viewBox="0 0 109 123"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <Path
+                d="M16.8846 95.4338C-1.49599 85.665 -5.25823 60.9379 9.38521 46.1445L34.8438 20.4253C36.8506 18.3979 38.3812 15.9495 39.3247 13.2574V13.2574C44.2839 -0.892831 62.8106 -4.17536 72.3295 7.4097L84.5358 22.2654C88.9527 27.641 91.3672 34.3828 91.3672 41.3402V42.9851C91.3672 48.2103 92.8969 53.3212 95.7676 57.6872L105.534 72.541C114.546 86.2478 103.011 104.14 86.8065 101.589V101.589C78.8025 100.329 70.8861 104.312 67.1277 111.49L66.8739 111.975C59.7559 125.57 40.5021 126.132 32.6028 112.976L28.023 105.349C25.7179 101.51 22.4108 98.3708 18.4567 96.2693L16.8846 95.4338Z"
+                fill="#ff80c3"
+              />
+            </Svg>
+
+            <View style={styles.buttonContent}>
+              <MaterialCommunityIcons
+                name="clipboard-check-outline"
+                size={45}
+                color={"#2D2D2D"}
+              />
+            </View>
+            <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
           </Pressable>
         </View>
       </View>
