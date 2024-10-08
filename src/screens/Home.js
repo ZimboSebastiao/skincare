@@ -57,7 +57,7 @@ export default function Home({ navigation }) {
           <Pressable
             style={styles.buttonWrapper}
             onPress={() => {
-              navigation.navigate("Diario");
+              navigation.navigate("Scan");
             }}
           >
             <Svg
@@ -79,7 +79,7 @@ export default function Home({ navigation }) {
                 style={styles.produtoImage}
               />
             </View>
-            <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
+            <Text style={[styles.buttonText, globalStyles.text]}>Análise</Text>
           </Pressable>
         </View>
         <View style={styles.viewPagina}>
