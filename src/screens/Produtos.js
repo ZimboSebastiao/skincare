@@ -111,9 +111,10 @@ export default function Produtos({ navigation }) {
               Valor Total: R$
             </Text>
           </View>
+
           <ScrollView style={styles.viewProdutos}>
             {produtos.map((produto, index) => (
-              <View key={index} style={styles.produto}>
+              <Pressable key={index} style={styles.produto}>
                 <View>
                   <Image
                     source={require("../../assets/images/cream.png")}
@@ -142,7 +143,7 @@ export default function Produtos({ navigation }) {
                 >
                   <Trash2 size={25} color="#ed1111" />
                 </Pressable>
-              </View>
+              </Pressable>
             ))}
           </ScrollView>
         </>
