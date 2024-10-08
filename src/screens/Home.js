@@ -162,14 +162,14 @@ export default function Home({ navigation }) {
           Verificação diária de Skincare
         </Text>
 
-        <View style={styles.jornadaFeitas}>
+        <View>
           <View style={styles.feito}>
             <Image
-              source={require("../../assets/images/water.png")}
+              source={require("../../assets/images/relogio.png")}
               style={styles.animationImage}
             />
 
-            <Text>Feito</Text>
+            <Text style={styles.textoRotinas}>Rotina Matinal</Text>
           </View>
 
           <View style={styles.feito2}>
@@ -178,7 +178,7 @@ export default function Home({ navigation }) {
               style={styles.animationImage}
             />
 
-            <Text>Feito</Text>
+            <Text style={styles.textoRotinas}>Rotina Nortuna</Text>
           </View>
         </View>
       </View>
@@ -246,57 +246,38 @@ const styles = StyleSheet.create({
     fontSize: 19,
     paddingBottom: 20,
   },
-  jornadaFeitas: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 6,
-  },
   feito: {
-    backgroundColor: "#F1DAEA",
-    padding: 33,
+    margin: 10,
+    backgroundColor: "#FFE5E5",
+    padding: 15,
     borderRadius: 15,
-    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   feito2: {
-    backgroundColor: "#FFE5E5",
-    padding: 33,
+    margin: 10,
+    backgroundColor: "#F1DAEA",
+    padding: 15,
     borderRadius: 15,
-    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "flex-start",
     alignItems: "center",
+  },
+  textoRotinas: {
+    // backgroundColor: "red",
+    width: "48%",
+    textAlign: "right",
+    fontSize: 17,
+    fontWeight: "bold",
+    color: "#0B224C",
   },
   animationImage: {
     width: 90,
     height: 90,
     resizeMode: "contain",
-    borderRadius: 100,
-    borderColor: "#ffff",
-    backgroundColor: "#ffff",
   },
-  viewBox: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    padding: 0,
-    margin: 0,
-    width: 70,
-  },
-  boxCheck: {
-    backgroundColor: "white",
-  },
-  quantidade: {
-    color: "gray",
-    fontSize: 12,
-    textAlign: "center",
-  },
-  checkboxContainer: {
-    borderWidth: 2, // Largura da borda
-    borderColor: "#6200ee", // Cor da borda
-    borderRadius: 8, // Bordas arredondadas
-    padding: 4, // Espaçamento interno
-    alignItems: "center",
-    justifyContent: "center",
-  },
+
   produtoImage: {
     width: 55,
     height: 55,
