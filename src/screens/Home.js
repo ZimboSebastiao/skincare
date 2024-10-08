@@ -53,32 +53,6 @@ export default function Home({ navigation }) {
       </View>
 
       <View style={styles.viewPaginas}>
-        {/* <View style={styles.viewPagina}>
-          <Pressable style={styles.buttonWrapper}>
-            <Svg
-              width="90"
-              height="110"
-              viewBox="0 0 109 122"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <Path
-                d="M14.2456 82.056C-3.60009 74.0161 -3.85877 48.7688 13.8185 40.3649L15.4838 39.5733C20.3504 37.2596 24.289 33.3646 26.6566 28.524L29.9439 21.8031C35.9515 9.52039 47.9722 1.29867 61.5974 0.153218V0.153218C86.7294 -1.9596 107.185 20.0556 103.234 44.9649L102.059 52.3712C101.102 58.4108 102.114 64.5983 104.946 70.018V70.018C112.177 83.8557 106.915 100.936 93.1509 108.306L77.8474 116.5L71.196 118.983C53.7705 125.487 34.3737 116.617 27.8966 99.1811L26.3437 95.0008C24.2042 89.2417 19.8471 84.5795 14.2456 82.056V82.056Z"
-                fill="#FFE5E5"
-              />
-            </Svg>
-
-            <View style={styles.buttonContent}>
-              <MaterialCommunityIcons
-                name="emoticon-outline"
-                size={45}
-                color={"#2D2D2D"}
-              />
-            </View>
-            <Text style={[styles.buttonText, globalStyles.text]}>Humor</Text>
-          </Pressable>
-        </View> */}
-
         <View style={styles.viewPagina}>
           <Pressable
             style={styles.buttonWrapper}
@@ -100,10 +74,9 @@ export default function Home({ navigation }) {
             </Svg>
 
             <View style={styles.buttonContent}>
-              <MaterialCommunityIcons
-                name="clipboard-check-outline"
-                size={45}
-                color={"#2D2D2D"}
+              <Image
+                source={require("../../assets/images/generator.png")}
+                style={styles.produtoImage}
               />
             </View>
             <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
@@ -130,15 +103,22 @@ export default function Home({ navigation }) {
             </Svg>
 
             <View style={styles.buttonContent}>
-              <MaterialCommunityIcons
+              {/* <MaterialCommunityIcons
                 name="clipboard-check-outline"
                 size={45}
                 color={"#2D2D2D"}
+              /> */}
+              <Image
+                source={require("../../assets/images/docum.png")}
+                style={styles.produtoImage}
               />
             </View>
-            <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
+            <Text style={[styles.buttonText, globalStyles.text]}>
+              Relatório
+            </Text>
           </Pressable>
         </View>
+
         <View style={styles.viewPagina}>
           <Pressable
             style={styles.buttonWrapper}
@@ -160,13 +140,19 @@ export default function Home({ navigation }) {
             </Svg>
 
             <View style={styles.buttonContent}>
-              <MaterialCommunityIcons
+              {/* <MaterialCommunityIcons
                 name="clipboard-check-outline"
                 size={45}
                 color={"#2D2D2D"}
+              /> */}
+              <Image
+                source={require("../../assets/images/agenda.png")}
+                style={styles.produtoImage}
               />
             </View>
-            <Text style={[styles.buttonText, globalStyles.text]}>Diário</Text>
+            <Text style={[styles.buttonText, globalStyles.text]}>
+              Calendário
+            </Text>
           </Pressable>
         </View>
       </View>
@@ -332,5 +318,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  textoFeito: {},
+  produtoImage: {
+    width: 55,
+    height: 55,
+    resizeMode: "contain",
+    backgroundColor: "transparent",
+  },
 });
