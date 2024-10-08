@@ -168,18 +168,8 @@ export default function Home({ navigation }) {
               source={require("../../assets/images/water.png")}
               style={styles.animationImage}
             />
-            <View style={styles.viewBox}>
-              <Checkbox
-                status={checked ? "checked" : "unchecked"}
-                onPress={() => {
-                  setChecked(!checked);
-                }}
-                uncheckedColor="#ffff"
-                color="red"
-              />
-              <Text>Feito</Text>
-            </View>
-            <Text style={styles.quantidade}>12 copos de água</Text>
+
+            <Text>Feito</Text>
           </View>
 
           <View style={styles.feito2}>
@@ -187,19 +177,8 @@ export default function Home({ navigation }) {
               source={require("../../assets/images/cloud.png")}
               style={styles.animationImage}
             />
-            <View style={styles.viewBox}>
-              <Checkbox
-                status={checked ? "checked" : "unchecked"}
-                onPress={() => {
-                  setChecked(!checked);
-                }}
-                style={styles.boxCheck}
-                uncheckedColor="#ffff"
-                color="red"
-              />
-              <Text>Feito</Text>
-            </View>
-            <Text style={styles.quantidade}>8 horas</Text>
+
+            <Text>Feito</Text>
           </View>
         </View>
       </View>
