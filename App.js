@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, ActivityIndicator, View, TouchableOpacity } from "react-native";
+import { StyleSheet, ActivityIndicator } from "react-native";
 import * as Font from "expo-font";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Provider as PaperProvider } from "react-native-paper";
@@ -10,17 +10,19 @@ import {
   BotMessageSquare,
   House,
   ClipboardList,
+  CirclePlus,
+  UserRound,
   Clock,
   ShoppingBag,
-  UserRound,
 } from "lucide-react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 import AnimatedIcon from "./src/components/AnimatedIcon";
 import Onboarding from "./src/screens/Onboarding";
 import Splash from "./src/screens/Splash";
 import Home from "./src/screens/Home";
 import Rotina from "./src/screens/Rotina";
-import Produtos from "./src/screens/Produtos";
+import Nova from "./src/screens/Produtos";
 import Skinbot from "./src/screens/Skinbot";
 import Perfil from "./src/screens/Perfil";
 import {
@@ -29,7 +31,16 @@ import {
   Poppins_600SemiBold,
 } from "./src/utils/fonts";
 import { ImageProvider } from "./src/context/ImageContext";
+import FormPage1 from "./src/screens/FormPage1";
+import FormPage2 from "./src/screens/FormPage2";
+import FormPage3 from "./src/screens/FormPage3";
+import FormPage4 from "./src/screens/FormPage4";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Diario from "./src/screens/Diario";
+import Noite from "./src/screens/Noite";
+import Manha from "./src/screens/Manha";
+import Produtos from "./src/screens/Produtos";
+import Scan from "./src/screens/Scan";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -77,33 +88,6 @@ export default function App() {
     return <ActivityIndicator size="large" />; // Mostra um carregando enquanto verifica
   }
 
-  // Função para o botão central flutuante
-  function CustomTabBarButton({ children, onPress }) {
-    return (
-      <TouchableOpacity
-        style={{
-          top: -30, // Faz o botão flutuar acima do TabBar
-          justifyContent: "center",
-          alignItems: "center",
-          ...styles.shadow,
-        }}
-        onPress={onPress}
-      >
-        <View
-          style={{
-            width: 70,
-            height: 70,
-            borderRadius: 35,
-            backgroundColor: "#ff944d",
-          }}
-        >
-          {children}
-        </View>
-      </TouchableOpacity>
-    );
-  }
-  
-
   // Retorna a navegação com as fontes carregadas
   return (
     <ImageProvider>
@@ -114,11 +98,10 @@ export default function App() {
               initialRouteName="Home"
               screenOptions={{
                 tabBarStyle: {
-                  backgroundColor: "#FFFFFF",
-                  borderTopColor: "#FFFFFF",
+                  backgroundColor: "#121212",
+                  borderTopColor: "#121212",
                   height: "8%",
                 },
-                tabBarShowLabel: false, // Oculta os rótulos das tabs
               }}
             >
               <Tab.Screen
@@ -129,8 +112,9 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <AnimatedIcon focused={focused} IconComponent={House} />
                   ),
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#b8bbbf",
+                  tabBarInactiveTintColor: "#ffff",
                 }}
               />
               <Tab.Screen
@@ -139,32 +123,47 @@ export default function App() {
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon focused={focused} IconComponent={ShoppingBag} />
+                    <AnimatedIcon
+                      focused={focused}
+                      IconComponent={ShoppingBag}
+                    />
                   ),
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#b8bbbf",
+                  tabBarInactiveTintColor: "#ffff",
                 }}
               />
+              
               <Tab.Screen
-                name="CentralButton"
-                component={Rotina} // Tela ao clicar no botão flutuante
+                name="Rotina"
+                component={Rotina}
                 options={{
+                  headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <MaterialCommunityIcons name="plus" size={40} color="grayff" />
+                    <AnimatedIcon focused={focused} IconComponent={Clock} />
                   ),
-                  tabBarButton: (props) => <CustomTabBarButton {...props} />,
+                  tabBarLabelStyle: { fontSize: 11 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  // tabBarStyle: { display: "none" },
                 }}
               />
+
               <Tab.Screen
                 name="AI Health"
                 component={Skinbot}
                 options={{
                   headerShown: false,
                   tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon focused={focused} IconComponent={BotMessageSquare} />
+                    <AnimatedIcon
+                      focused={focused}
+                      IconComponent={BotMessageSquare}
+                    />
                   ),
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "gray",
+                  tabBarInactiveTintColor: "#ffff",
+                  // tabBarStyle: { display: "none" },
                 }}
               />
               <Tab.Screen
@@ -175,8 +174,85 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <AnimatedIcon focused={focused} IconComponent={UserRound} />
                   ),
+                  tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "gray",
+                  tabBarInactiveTintColor: "#ffff",
+                }}
+              />
+              <Tab.Screen
+                name="Diario"
+                component={Diario}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                    
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Noite"
+                component={Noite}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                     
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Manha"
+                component={Manha}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                     
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Scan"
+                component={Scan}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                      
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
                 }}
               />
             </Tab.Navigator>
@@ -192,23 +268,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "gray",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  shadow: {
-    shadowColor: "#7f5df0",
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,
-    elevation: 5,
+    flexDirection: 'column',
+    backgroundColor: '#fff'
   },
 });
-
-
-
-
-
