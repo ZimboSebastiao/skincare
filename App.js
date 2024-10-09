@@ -15,6 +15,7 @@ import {
   UserRound,
   Clock,
   ShoppingBag,
+  Navigation,
 } from "lucide-react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -43,7 +44,7 @@ import Manha from "./src/screens/Manha";
 import Produtos from "./src/screens/Produtos";
 import Scan from "./src/screens/Scan";
 
-export default function App() {
+export default function App({navigation}) {
   const [showSplash, setShowSplash] = useState(true);
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const Tab = createBottomTabNavigator();
@@ -105,52 +106,205 @@ export default function App() {
                   color: '#fff',
                   style: { marginRight: 0 }
               }}
-              onPress={() => this.doSomething()}
+              onPress={() => navigation.navigate("Rotina")}
               buttonStyle={{ backgroundColor: '#000', width: 60, height: 60, borderRadius: 30 }}
               containerViewStyle={{ alignSelf: 'center' }}
           />
       </View>
-      <View style={{ position: 'absolute', backgroundColor: '#3F51B5', bottom: 0, zIndex: 1, width: '100%', height: 60, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 15, paddingVertical: 10 }}>
-          <AnimatedIcon  IconComponent={House}
-              name='list'
-              type='feather'
-              color='#fff'
-              onPress={() => this.doSomething()} // Ex : openDrawer() in react-navigation
+      <ImageProvider>
+      <PaperProvider>
+        <NavigationContainer >
+          {hasSeenOnboarding ? (
+            <Tab.Navigator
+              initialRouteName="Home"
+              screenOptions={{
+                tabBarStyle: {
+                  backgroundColor: "#121212",
+                  borderTopColor: "#121212",
+                  height: "8%",
+                },
+              }}
+              
+             
+            >
 
-          />
-          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-              <Icon
-                  name='heart'
-                  type='feather'
-                  color='#fff'
-                  containerStyle={{ marginHorizontal: 10 }}
+              <Tab.Screen
+                name="Home"
+                component={Home}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <AnimatedIcon focused={focused} IconComponent={House} />
+                  ),
+                  tabBarLabelStyle: { fontSize: 11 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                }}
               />
-              <Icon
-                  name='search'
-                  type='feather'
-                  color='#fff'
+              <Tab.Screen
+                name="Produtos"
+                component={Produtos}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <AnimatedIcon
+                      focused={focused}
+                      IconComponent={ShoppingBag}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 11 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                }}
               />
-          </View>
-      </View>
-  </View>
+              {/* <Tab.Screen
+                name="Rotina"
+                component={Rotina}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <AnimatedIcon focused={focused} IconComponent={Clock} />
+                  ),
+                  tabBarLabelStyle: { fontSize: 11 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  // tabBarStyle: { display: "none" },
+                }}
+              /> */}
+
+              <Tab.Screen
+                name="AI Health"
+                component={Skinbot}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <AnimatedIcon
+                      focused={focused}
+                      IconComponent={BotMessageSquare}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 11 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  // tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Perfil"
+                component={Perfil}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <AnimatedIcon focused={focused} IconComponent={UserRound} />
+                  ),
+                  tabBarLabelStyle: { fontSize: 11 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                }}
+              />
+              <Tab.Screen
+                name="Diario"
+                component={Diario}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                    
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Noite"
+                component={Noite}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                     
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Manha"
+                component={Manha}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                     
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+              <Tab.Screen
+                name="Scan"
+                component={Scan}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ focused }) => (
+                    <MaterialCommunityIcons
+                      name="account"
+                      
+                      color={focused ? "#ff80c3" : "#ffff"}
+                    />
+                  ),
+                  tabBarLabelStyle: { fontSize: 13.4 },
+                  tabBarActiveTintColor: "#ff80c3",
+                  tabBarInactiveTintColor: "#ffff",
+                  tabBarButton: () => null,
+                  tabBarStyle: { display: "none" },
+                }}
+              />
+
+            </Tab.Navigator>
+          ) : (
+            <Onboarding />
+          )}
+        </NavigationContainer>
+      </PaperProvider>
+    </ImageProvider>
+   </View>
 );
 }
 
 
 
 const styles = StyleSheet.create({
-  tabBar: {
-    backgroundColor: '#6200ee', // Cor de fundo da Tab Bar
-    height: 70, // Altura da Tab Bar
-    borderTopWidth: 0, // Remover borda superior
-    elevation: 5, // Sombra
-  },
-  fab: {
-    position: 'absolute',
-    bottom: 30, // Posiciona o FAB acima da Tab Bar
-    left: '50%', // Centraliza horizontalmente
-    marginLeft: -28, // Metade da largura do FAB para centralizá-lo
-    backgroundColor: '#ff4081', // Cor do FAB
-  },
+  // tabBar: {
+  //   backgroundColor: '#6200ee', // Cor de fundo da Tab Bar
+  //   height: 70, // Altura da Tab Bar
+  //   borderTopWidth: 0, // Remover borda superior
+  //   elevation: 5, // Sombra
+  // },
+  // fab: {
+  //   position: 'absolute',
+  //   bottom: 30, // Posiciona o FAB acima da Tab Bar
+  //   left: '50%', // Centraliza horizontalmente
+  //   marginLeft: -28, // Metade da largura do FAB para centralizá-lo
+  //   backgroundColor: '#ff4081', // Cor do FAB
+  // },
 
 });
