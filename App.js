@@ -111,7 +111,7 @@ export default function App() {
           />
       </View>
       <View style={{ position: 'absolute', backgroundColor: '#3F51B5', bottom: 0, zIndex: 1, width: '100%', height: 60, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 15, paddingVertical: 10 }}>
-          <Icon
+          <AnimatedIcon  IconComponent={House}
               name='list'
               type='feather'
               color='#fff'
