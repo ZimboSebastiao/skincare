@@ -185,7 +185,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={20}
+                    
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
@@ -204,7 +204,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={20}
+                     
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
@@ -223,7 +223,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={20}
+                     
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
@@ -242,7 +242,7 @@ export default function App() {
                   tabBarIcon: ({ focused }) => (
                     <MaterialCommunityIcons
                       name="account"
-                      size={20}
+                      
                       color={focused ? "#ff80c3" : "#ffff"}
                     />
                   ),
