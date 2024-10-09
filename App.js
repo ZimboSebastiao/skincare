@@ -15,7 +15,6 @@ import {
   UserRound,
   Clock,
   ShoppingBag,
-  Navigation,
 } from "lucide-react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -43,8 +42,9 @@ import Noite from "./src/screens/Noite";
 import Manha from "./src/screens/Manha";
 import Produtos from "./src/screens/Produtos";
 import Scan from "./src/screens/Scan";
+import { navigationRef, navigate } from './src/navigationRef'; 
 
-export default function App({navigation}) {
+export default function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const Tab = createBottomTabNavigator();
@@ -89,6 +89,11 @@ export default function App({navigation}) {
   if (!fontsLoaded || isLoading) {
     return <ActivityIndicator size="large" />; // Mostra um carregando enquanto verifica
   }
+  // Função para navegar para a tela "Rotina"
+  const navigateToRotina = () => {
+    navigationRef.current?.navigate("Rotina");
+  };
+
 
   // Retorna a navegação com as fontes carregadas
   return (
@@ -98,7 +103,7 @@ export default function App({navigation}) {
       backgroundColor: '#fff'
 
   }}>
-      <View style={{ position: 'absolute', padding: 5, alignSelf: 'center', backgroundColor: '#fff', width: 70, height: 70, borderRadius: 35, bottom: 25, zIndex: 2 }}>
+      <View  ref={navigationRef} style={{ position: 'absolute', padding: 5, alignSelf: 'center', backgroundColor: '#fff', width: 70, height: 70, borderRadius: 35, bottom: 25, zIndex: 2 }}>
           <Button
               icon={{
                   name: 'plus',
@@ -106,14 +111,14 @@ export default function App({navigation}) {
                   color: '#fff',
                   style: { marginRight: 0 }
               }}
-              onPress={() => navigation.navigate("Rotina")}
+              onPress={navigateToRotina} 
               buttonStyle={{ backgroundColor: '#000', width: 60, height: 60, borderRadius: 30 }}
               containerViewStyle={{ alignSelf: 'center' }}
           />
       </View>
       <ImageProvider>
       <PaperProvider>
-        <NavigationContainer >
+        <NavigationContainer  ref={navigationRef} >
           {hasSeenOnboarding ? (
             <Tab.Navigator
               initialRouteName="Home"
@@ -157,7 +162,7 @@ export default function App({navigation}) {
                   tabBarInactiveTintColor: "#ffff",
                 }}
               />
-              {/* <Tab.Screen
+              <Tab.Screen
                 name="Rotina"
                 component={Rotina}
                 options={{
@@ -168,9 +173,9 @@ export default function App({navigation}) {
                   tabBarLabelStyle: { fontSize: 11 },
                   tabBarActiveTintColor: "#ff80c3",
                   tabBarInactiveTintColor: "#ffff",
-                  // tabBarStyle: { display: "none" },
+                  tabBarStyle: { display: "none" },
                 }}
-              /> */}
+              />
 
               <Tab.Screen
                 name="AI Health"
