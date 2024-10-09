@@ -20,7 +20,7 @@ export default function App() {
       backgroundColor: '#fff'
 
   }}>
-      <View style={{ position: 'absolute', padding: 5, alignSelf: 'center', backgroundColor: '#fff', width: 70, height: 70, borderRadius: 35, bottom: 25, zIndex: 5 }}>
+      <View style={{ position: 'absolute', padding: 5, alignSelf: 'center', backgroundColor: '#fff', width: 70, height: 70, borderRadius: 35, bottom: 25, zIndex: 2 }}>
           <Button
               icon={{
                   name: 'plus',
@@ -75,4 +75,5 @@ const styles = StyleSheet.create({
     marginLeft: -28, // Metade da largura do FAB para centralizá-lo
     backgroundColor: '#ff4081', // Cor do FAB
   },
+
 });
