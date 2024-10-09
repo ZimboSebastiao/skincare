@@ -39,20 +39,7 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
 
   return (
     <View style={{ alignItems: "center" }}>
-      <View
-        style={{
-          width: 70, 
-          height: 70, 
-          borderWidth: focused ? 2 : 0,
-          borderColor: focused ? "#ffff" : "transparent",
-          borderRadius: 40,
-          backgroundColor: focused ? "#ffff" : "transparent",
-          marginBottom: focused ? 35 : 0, 
-          alignItems: "center", 
-          justifyContent: "center", 
-          
-        }}
-      >
+
         <Animated.View
           style={{
             transform: [{ translateY }],
@@ -60,9 +47,9 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
             justifyContent: "center",
           }}
         >
-          <IconComponent size={24} color={focused ? "#ff80c3" : "#ffff"} />
+          <IconComponent size={24} color={focused ? "#ff80c3" : "#b8bbbf"} />
         </Animated.View>
-      </View>
+      
       <Animated.View style={{ opacity }}>
         <Text
           style={{
