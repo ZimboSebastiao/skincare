@@ -133,7 +133,6 @@ export default function App() {
                   tabBarInactiveTintColor: "#ffff",
                 }}
               />
-              
               <Tab.Screen
                 name="Rotina"
                 component={Rotina}
