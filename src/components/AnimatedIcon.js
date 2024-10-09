@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Animated, Text, View } from "react-native";
+import { Animated, Text, View, Easing } from "react-native";
 
 const AnimatedIcon = ({ focused, IconComponent, label }) => {
   const translateY = useRef(new Animated.Value(0)).current;
@@ -24,11 +24,13 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
         Animated.timing(translateY, {
           toValue: 0, // Mantém o ícone na posição normal
           duration: 200,
+          easing: Easing.out(Easing.ease),
           useNativeDriver: true,
         }),
         Animated.timing(opacity, {
           toValue: 0, // Desaparece o rótulo
           duration: 200,
+          easing: Easing.out(Easing.ease),
           useNativeDriver: true,
         }),
       ]).start();
@@ -39,15 +41,16 @@ const AnimatedIcon = ({ focused, IconComponent, label }) => {
     <View style={{ alignItems: "center" }}>
       <View
         style={{
-          width: 70, // Defina a largura
-          height: 70, // Defina a altura igual à largura
+          width: 70, 
+          height: 70, 
           borderWidth: focused ? 2 : 0,
           borderColor: focused ? "#ffff" : "transparent",
-          borderRadius: 40, // Metade da largura/altura para um círculo
+          borderRadius: 40,
           backgroundColor: focused ? "#ffff" : "transparent",
-          marginBottom: focused ? 35 : 0, // Eleva a borda apenas se focado
-          alignItems: "center", // Centraliza o conteúdo horizontalmente
-          justifyContent: "center", // Centraliza o conteúdo verticalmentea
+          marginBottom: focused ? 35 : 0, 
+          alignItems: "center", 
+          justifyContent: "center", 
+          
         }}
       >
         <Animated.View
