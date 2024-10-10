@@ -71,7 +71,8 @@ export default function Scan({ navigation }) {
       ); // Log da imagem em base64 (apenas os primeiros 30 caracteres para não sobrecarregar o log)
 
       const response = await fetch(
-        "https://opencv-hg7j.onrender.com/analyze-skin",
+        // "https://opencv-hg7j.onrender.com/analyze-skin",
+        "http://192.168.15.11:5000/analyze-skin",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -163,65 +164,22 @@ export default function Scan({ navigation }) {
         </View>
       </View>
 
-      {loading && <ActivityIndicator size="large" color="#0000ff" />}
+      {loading && (
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#ff80c3" />
+        </View>
+      )}
 
       {error && <Text style={{ color: "red" }}>{`Erro: ${error}`}</Text>}
 
       {result && (
         <View style={{ marginTop: 20 }}>
-          <Text>{`Tipo de Pele: ${
-            result.analysis_result?.skinType || "Desconhecido"
-          }`}</Text>
-
-          {result.analysis_result?.colorAnalysis ? (
-            <>
-              <Text>{`Média de Matiz (Hue): ${
-                result.analysis_result.colorAnalysis.meanHue?.toFixed(2) ||
-                "N/A"
-              }`}</Text>
-              <Text>{`Média de Saturação: ${
-                result.analysis_result.colorAnalysis.meanSaturation?.toFixed(
-                  2
-                ) || "N/A"
-              }`}</Text>
-              <Text>{`Média de Valor: ${
-                result.analysis_result.colorAnalysis.meanValue?.toFixed(2) ||
-                "N/A"
-              }`}</Text>
-            </>
-          ) : (
-            <Text>Análise de cor não disponível.</Text>
-          )}
-
-          {result.analysis_result?.problems?.length > 0 ? (
-            <View>
-              <Text>Problemas Detectados:</Text>
-              {result.analysis_result.problems.map((problem, index) => (
-                <Text key={index}>{`- ${problem}`}</Text>
-              ))}
-            </View>
-          ) : (
-            <Text>Sem problemas detectados.</Text>
-          )}
-
-          {/* Exibir a imagem processada */}
-          {result.processed_image && (
-            <View>
-              <Text>Imagem Processada:</Text>
-              <Image
-                source={{
-                  uri: `data:image/png;base64,${result.processed_image}`,
-                }}
-                style={{ width: 300, height: 300, marginVertical: 20 }}
-                onLoad={() =>
-                  console.log("Imagem processada carregada com sucesso!")
-                }
-                onError={(error) =>
-                  console.error("Erro ao carregar imagem processada:", error)
-                }
-              />
-            </View>
-          )}
+          <Pressable
+            style={styles.visualizarBotao}
+            onPress={() => navigation.navigate("Resultado", { result })}
+          >
+            <Text style={styles.textoBotao}>Visualizar Resultado</Text>
+          </Pressable>
         </View>
       )}
     </ScrollView>
@@ -292,5 +250,16 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
     color: "#ffff",
+  },
+  loadingContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0, // Alterado para cobrir toda a tela
+    backgroundColor: "rgba(247, 242, 242, 0.5)", // Fundo semitransparente para um efeito de sobreposição
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 999, // Garante que o indicador fique sobre todos os elementos
   },
 });
