@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#2D2D2D",
     marginTop: 15,
-    fontSize: 15,
+    fontSize: 14,
   },
   jornada: {
     marginTop: 60,
