@@ -71,8 +71,8 @@ export default function Scan({ navigation }) {
       ); // Log da imagem em base64 (apenas os primeiros 30 caracteres para não sobrecarregar o log)
 
       const response = await fetch(
-        // "https://opencv-hg7j.onrender.com/analyze-skin",
-        "http://192.168.15.11:5000/analyze-skin",
+        "https://opencv-hg7j.onrender.com/analyze-skin",
+        // "http://192.168.15.11:5000/analyze-skin",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

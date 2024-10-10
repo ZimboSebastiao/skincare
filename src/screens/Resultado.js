@@ -4,6 +4,8 @@ import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 export default function Resultado({ route }) {
   const { result } = route.params;
 
+  console.log("RESULTADO: ", result);
+
   return (
     <ScrollView contentContainerStyle={{ padding: 20 }}>
       <View style={styles.viewImagens}>
@@ -41,13 +43,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   viewImagens: {
-    backgroundColor: "red",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     borderRadius: 20,
     borderWidth: 4,
-    // backgroundColor: "#ff80c3",
+    backgroundColor: "#ff80c3",
     borderColor: "#ff80c3",
+    marginVertical: 30,
+    padding: 10,
+    elevation: 2,
   },
 });
