@@ -141,7 +141,7 @@ export default function Scan({ navigation }) {
         <View style={styles.viewImagem}>
           <Image
             source={{ uri: image }}
-            style={{ width: 300, height: 300, marginVertical: 20 }}
+            style={{ width: 350, height: 350, borderRadius: 20 }}
           />
         </View>
       )}
@@ -230,7 +230,15 @@ export default function Scan({ navigation }) {
 
 const styles = StyleSheet.create({
   viewImagem: {
-    backgroundColor: "red",
+    backgroundColor: "#ff80c3",
+    borderWidth: 2,
+    margin: 15,
+    padding: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "#ff80c3",
+    borderRadius: 20,
+    elevation: 1,
   },
   viewMenu: {
     marginVertical: 30,
