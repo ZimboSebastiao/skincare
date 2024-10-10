@@ -43,6 +43,7 @@ import Manha from "./src/screens/Manha";
 import Produtos from "./src/screens/Produtos";
 import Scan from "./src/screens/Scan";
 import { navigationRef, navigate } from "./src/navigationRef";
+import Resultado from "./src/screens/Resultado";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -282,6 +283,24 @@ export default function App() {
                 <Tab.Screen
                   name="Scan"
                   component={Scan}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <MaterialCommunityIcons
+                        name="account"
+                        color={focused ? "#ff80c3" : "#ffff"}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 13.4 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    tabBarButton: () => null,
+                    // tabBarStyle: { display: "none" },
+                  }}
+                />
+                <Tab.Screen
+                  name="Resultado"
+                  component={Resultado}
                   options={{
                     headerShown: false,
                     tabBarIcon: ({ focused }) => (
