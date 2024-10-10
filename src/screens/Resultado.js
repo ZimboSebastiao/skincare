@@ -8,7 +8,15 @@ export default function Resultado({ route }) {
     <ScrollView contentContainerStyle={{ padding: 20 }}>
       <Text style={styles.title}>Resultado da Análise de Pele</Text>
 
-      {/* Exibir a imagem tirada */}
+      {/* Exibir a imagem original tirada */}
+      <Text style={styles.text}>Imagem Original:</Text>
+      <Image
+        source={{ uri: `data:image/png;base64,${result.original_image}` }}
+        style={styles.image}
+      />
+
+      {/* Exibir a imagem processada */}
+      <Text style={styles.text}>Imagem Processada:</Text>
       <Image
         source={{ uri: `data:image/png;base64,${result.processed_image}` }}
         style={styles.image}

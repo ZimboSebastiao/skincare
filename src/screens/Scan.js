@@ -85,8 +85,13 @@ export default function Scan({ navigation }) {
       }
 
       const result = await response.json();
-      console.log("Resultado da análise:", result); // Log do resultado da análise
-      setResult(result);
+      console.log("Resultado da análise:", result);
+      setResult({
+        result,
+        processed_image: result.processed_image,
+        original_image: imageData,
+        analysis_result: result.analysis_result,
+      });
     } catch (err) {
       setError(err.message);
       Alert.alert("Erro ao enviar a imagem", err.message);
