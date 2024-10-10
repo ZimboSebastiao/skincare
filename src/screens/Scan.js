@@ -147,22 +147,24 @@ export default function Scan({ navigation }) {
         </View>
       )}
 
-      <View style={styles.viewBotoes}>
-        <View style={styles.viewBotao}>
-          <Pressable style={styles.botao} onPress={takePicture}>
-            <Text style={styles.textoBotao}>Tirar Foto</Text>
-          </Pressable>
+      {!result && (
+        <View style={styles.viewBotoes}>
+          <View style={styles.viewBotao}>
+            <Pressable style={styles.botao} onPress={takePicture}>
+              <Text style={styles.textoBotao}>Tirar Foto</Text>
+            </Pressable>
+          </View>
+          <View style={styles.viewBotao}>
+            <Pressable
+              style={styles.botao}
+              onPress={uploadImage}
+              disabled={loading}
+            >
+              <Text style={styles.textoBotao}>Enviar para Análise</Text>
+            </Pressable>
+          </View>
         </View>
-        <View style={styles.viewBotao}>
-          <Pressable
-            style={styles.botao}
-            onPress={uploadImage}
-            disabled={loading}
-          >
-            <Text style={styles.textoBotao}>Enviar para Análise</Text>
-          </Pressable>
-        </View>
-      </View>
+      )}
 
       {loading && (
         <View style={styles.loadingContainer}>
