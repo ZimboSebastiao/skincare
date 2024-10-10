@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, ActivityIndicator, View } from "react-native";
 import * as Font from "expo-font";
-import { Icon, Button } from 'react-native-elements'
+import { Icon, Button } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Provider as PaperProvider } from "react-native-paper";
 import {
@@ -42,7 +42,7 @@ import Noite from "./src/screens/Noite";
 import Manha from "./src/screens/Manha";
 import Produtos from "./src/screens/Produtos";
 import Scan from "./src/screens/Scan";
-import { navigationRef, navigate } from './src/navigationRef'; 
+import { navigationRef, navigate } from "./src/navigationRef";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -94,208 +94,219 @@ export default function App() {
     navigationRef.current?.navigate("Rotina");
   };
 
-
   // Retorna a navegação com as fontes carregadas
   return (
-    <View style={{
-      flex: 1,
-      flexDirection: 'column',
-      backgroundColor: '#fff'
-
-  }}>
-      <View  ref={navigationRef} style={{ position: 'absolute', padding: 5, alignSelf: 'center', backgroundColor: '#fff', width: 70, height: 70, borderRadius: 35, bottom: 25, zIndex: 2 }}>
-          <Button
-              icon={{
-                  name: 'plus',
-                  type: 'feather',
-                  color: '#fff',
-                  style: { marginRight: 0 }
-              }}
-              onPress={navigateToRotina} 
-              buttonStyle={{ backgroundColor: '#ff80c3', width: 60, height: 60, borderRadius: 30 }}
-              containerViewStyle={{ alignSelf: 'center' }}
-          />
+    <View
+      style={{
+        flex: 1,
+        flexDirection: "column",
+        backgroundColor: "#fff",
+      }}
+    >
+      <View
+        ref={navigationRef}
+        style={{
+          position: "absolute",
+          padding: 5,
+          alignSelf: "center",
+          backgroundColor: "#fff",
+          width: 70,
+          height: 70,
+          borderRadius: 35,
+          bottom: 25,
+          zIndex: 2,
+        }}
+      >
+        <Button
+          icon={{
+            name: "plus",
+            type: "feather",
+            color: "#fff",
+            style: { marginRight: 0 },
+          }}
+          onPress={navigateToRotina}
+          buttonStyle={{
+            backgroundColor: "#ff80c3",
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+          }}
+          containerViewStyle={{ alignSelf: "center" }}
+        />
       </View>
       <ImageProvider>
-      <PaperProvider>
-        <NavigationContainer  ref={navigationRef} >
-          {hasSeenOnboarding ? (
-            <Tab.Navigator
-              initialRouteName="Home"
-              screenOptions={{
-                tabBarStyle: {
-                  backgroundColor: "#121212",
-                  borderTopColor: "#121212",
-                  height: "8%",
-                },
-              }}
-              
-             
-            >
+        <PaperProvider>
+          <NavigationContainer ref={navigationRef}>
+            {hasSeenOnboarding ? (
+              <Tab.Navigator
+                initialRouteName="Home"
+                screenOptions={{
+                  tabBarStyle: {
+                    backgroundColor: "#121212",
+                    borderTopColor: "#121212",
+                    height: "8%",
+                  },
+                }}
+              >
+                <Tab.Screen
+                  name="Home"
+                  component={Home}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <AnimatedIcon focused={focused} IconComponent={House} />
+                    ),
+                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                  }}
+                />
+                <Tab.Screen
+                  name="Produtos"
+                  component={Produtos}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <AnimatedIcon
+                        focused={focused}
+                        IconComponent={ShoppingBag}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                  }}
+                />
+                <Tab.Screen
+                  name="Rotina"
+                  component={Rotina}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <AnimatedIcon focused={focused} IconComponent={Clock} />
+                    ),
+                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    tabBarStyle: { display: "none" },
+                  }}
+                />
 
-              <Tab.Screen
-                name="Home"
-                component={Home}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon focused={focused} IconComponent={House} />
-                  ),
-                  tabBarLabelStyle: { fontSize: 11 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                }}
-              />
-              <Tab.Screen
-                name="Produtos"
-                component={Produtos}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon
-                      focused={focused}
-                      IconComponent={ShoppingBag}
-                    />
-                  ),
-                  tabBarLabelStyle: { fontSize: 11 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                }}
-              />
-              <Tab.Screen
-                name="Rotina"
-                component={Rotina}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon focused={focused} IconComponent={Clock} />
-                  ),
-                  tabBarLabelStyle: { fontSize: 11 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                  tabBarStyle: { display: "none" },
-                }}
-              />
-
-              <Tab.Screen
-                name="AI Health"
-                component={Skinbot}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon
-                      focused={focused}
-                      IconComponent={BotMessageSquare}
-                    />
-                  ),
-                  tabBarLabelStyle: { fontSize: 11 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                  // tabBarStyle: { display: "none" },
-                }}
-              />
-              <Tab.Screen
-                name="Perfil"
-                component={Perfil}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <AnimatedIcon focused={focused} IconComponent={UserRound} />
-                  ),
-                  tabBarLabelStyle: { fontSize: 11 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                }}
-              />
-              <Tab.Screen
-                name="Diario"
-                component={Diario}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <MaterialCommunityIcons
-                      name="account"
-                    
-                      color={focused ? "#ff80c3" : "#ffff"}
-                    />
-                  ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                  tabBarButton: () => null,
-                  tabBarStyle: { display: "none" },
-                }}
-              />
-              <Tab.Screen
-                name="Noite"
-                component={Noite}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <MaterialCommunityIcons
-                      name="account"
-                     
-                      color={focused ? "#ff80c3" : "#ffff"}
-                    />
-                  ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                  tabBarButton: () => null,
-                  tabBarStyle: { display: "none" },
-                }}
-              />
-              <Tab.Screen
-                name="Manha"
-                component={Manha}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <MaterialCommunityIcons
-                      name="account"
-                     
-                      color={focused ? "#ff80c3" : "#ffff"}
-                    />
-                  ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                  tabBarButton: () => null,
-                  tabBarStyle: { display: "none" },
-                }}
-              />
-              <Tab.Screen
-                name="Scan"
-                component={Scan}
-                options={{
-                  headerShown: false,
-                  tabBarIcon: ({ focused }) => (
-                    <MaterialCommunityIcons
-                      name="account"
-                      
-                      color={focused ? "#ff80c3" : "#ffff"}
-                    />
-                  ),
-                  tabBarLabelStyle: { fontSize: 13.4 },
-                  tabBarActiveTintColor: "#ff80c3",
-                  tabBarInactiveTintColor: "#ffff",
-                  tabBarButton: () => null,
-                  tabBarStyle: { display: "none" },
-                }}
-              />
-
-            </Tab.Navigator>
-          ) : (
-            <Onboarding />
-          )}
-        </NavigationContainer>
-      </PaperProvider>
-    </ImageProvider>
-   </View>
-);
+                <Tab.Screen
+                  name="AI Health"
+                  component={Skinbot}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <AnimatedIcon
+                        focused={focused}
+                        IconComponent={BotMessageSquare}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    // tabBarStyle: { display: "none" },
+                  }}
+                />
+                <Tab.Screen
+                  name="Perfil"
+                  component={Perfil}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <AnimatedIcon
+                        focused={focused}
+                        IconComponent={UserRound}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                  }}
+                />
+                <Tab.Screen
+                  name="Diario"
+                  component={Diario}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <MaterialCommunityIcons
+                        name="account"
+                        color={focused ? "#ff80c3" : "#ffff"}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 13.4 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    tabBarButton: () => null,
+                    tabBarStyle: { display: "none" },
+                  }}
+                />
+                <Tab.Screen
+                  name="Noite"
+                  component={Noite}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <MaterialCommunityIcons
+                        name="account"
+                        color={focused ? "#ff80c3" : "#ffff"}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 13.4 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    tabBarButton: () => null,
+                    // tabBarStyle: { display: "none" },
+                  }}
+                />
+                <Tab.Screen
+                  name="Manha"
+                  component={Manha}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <MaterialCommunityIcons
+                        name="account"
+                        color={focused ? "#ff80c3" : "#ffff"}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 13.4 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    tabBarButton: () => null,
+                    tabBarStyle: { display: "none" },
+                  }}
+                />
+                <Tab.Screen
+                  name="Scan"
+                  component={Scan}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <MaterialCommunityIcons
+                        name="account"
+                        color={focused ? "#ff80c3" : "#ffff"}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 13.4 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    tabBarButton: () => null,
+                    // tabBarStyle: { display: "none" },
+                  }}
+                />
+              </Tab.Navigator>
+            ) : (
+              <Onboarding />
+            )}
+          </NavigationContainer>
+        </PaperProvider>
+      </ImageProvider>
+    </View>
+  );
 }
-
-
 
 const styles = StyleSheet.create({
   // tabBar: {
@@ -311,5 +322,4 @@ const styles = StyleSheet.create({
   //   marginLeft: -28, // Metade da largura do FAB para centralizá-lo
   //   backgroundColor: '#ff4081', // Cor do FAB
   // },
-
 });
