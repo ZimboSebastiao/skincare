@@ -150,7 +150,7 @@ export default function App() {
                 }}
               >
                 <Tab.Screen
-                  name="Home"
+                  name="Início"
                   component={Home}
                   options={{
                     headerShown: false,
