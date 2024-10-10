@@ -256,10 +256,10 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    bottom: 0, // Alterado para cobrir toda a tela
-    backgroundColor: "rgba(247, 242, 242, 0.5)", // Fundo semitransparente para um efeito de sobreposição
+    bottom: 0,
+    backgroundColor: "rgba(247, 242, 242, 0.5)",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 999, // Garante que o indicador fique sobre todos os elementos
+    zIndex: 999,
   },
 });
