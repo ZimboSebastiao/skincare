@@ -197,11 +197,11 @@ const styles = StyleSheet.create({
   viewImagem: {
     backgroundColor: "#ff80c3",
     borderWidth: 2,
+    borderColor: "#ff80c3",
     margin: 15,
     padding: 5,
     justifyContent: "center",
     alignItems: "center",
-    borderColor: "#ff80c3",
     borderRadius: 20,
     elevation: 1,
   },

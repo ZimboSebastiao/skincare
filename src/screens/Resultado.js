@@ -6,27 +6,20 @@ export default function Resultado({ route }) {
 
   return (
     <ScrollView contentContainerStyle={{ padding: 20 }}>
-      <Text style={styles.title}>Resultado da Análise de Pele</Text>
-
-      {/* Exibir a imagem original tirada */}
-      <Text style={styles.text}>Imagem Original:</Text>
-      <Image
-        source={{ uri: `data:image/png;base64,${result.original_image}` }}
-        style={styles.image}
-      />
-
-      {/* Exibir a imagem processada */}
-      <Text style={styles.text}>Imagem Processada:</Text>
-      <Image
-        source={{ uri: `data:image/png;base64,${result.processed_image}` }}
-        style={styles.image}
-      />
+      <View style={styles.viewImagens}>
+        <Image
+          source={{ uri: `data:image/png;base64,${result.original_image}` }}
+          style={styles.image}
+        />
+        <Image
+          source={{ uri: `data:image/png;base64,${result.processed_image}` }}
+          style={styles.image}
+        />
+      </View>
 
       <Text style={styles.text}>
         Tipo de Pele: {result.analysis_result.skinType}
       </Text>
-
-      {/* Exibir outras informações, como problemas detectados, etc. */}
     </ScrollView>
   );
 }
@@ -38,13 +31,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   image: {
-    width: 300,
-    height: 300,
+    width: 200,
+    height: 200,
     borderRadius: 10,
     marginBottom: 20,
   },
   text: {
     fontSize: 16,
     marginBottom: 10,
+  },
+  viewImagens: {
+    backgroundColor: "red",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderRadius: 20,
+    borderWidth: 4,
+    // backgroundColor: "#ff80c3",
+    borderColor: "#ff80c3",
   },
 });
