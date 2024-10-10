@@ -13,7 +13,7 @@ export default function Splash({ navigation }) {
   return (
     <View style={styles.container}>
       <Video
-        source={require("../../assets/images/skin.mp4")}
+        source={require("../../assets/video/skin.mp4")}
         shouldPlay
         isLooping
         resizeMode="contain"

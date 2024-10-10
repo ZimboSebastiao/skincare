@@ -71,7 +71,7 @@ export default function Produtos({ navigation }) {
       <View style={styles.viewMenu}>
         <Pressable
           onPress={() => {
-            navigation.navigate("Home");
+            navigation.navigate("Início");
           }}
         >
           <MaterialCommunityIcons name="chevron-left-circle" size={35} />

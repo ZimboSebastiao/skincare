@@ -1,13 +1,20 @@
 import React from "react";
-import { View, Text, TextInput, Button, StyleSheet, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  StyleSheet,
+  Pressable,
+} from "react-native";
 
 const FormPage4 = ({ navigation }) => {
   const handleNext = () => {
-    navigation.navigate("Home");
+    navigation.navigate("Início");
   };
 
   const handleSkip = () => {
-    navigation.navigate("Home");
+    navigation.navigate("Início");
   };
 
   return (
@@ -27,10 +34,10 @@ const FormPage4 = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", padding: 20 },
   title: { fontSize: 24, marginBottom: 20 },
-  input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 20 },
+  input: { borderWidth: 1, borderColor: "#ccc", padding: 10, marginBottom: 20 },
   buttonContainer: { flexDirection: "row", justifyContent: "space-between" },
-  skipButton: { padding: 10, backgroundColor: '#ff80c3', borderRadius: 5 },
-  buttonText: { color: '#fff', fontWeight: 'bold' },
+  skipButton: { padding: 10, backgroundColor: "#ff80c3", borderRadius: 5 },
+  buttonText: { color: "#fff", fontWeight: "bold" },
 });
 
 export default FormPage4;
