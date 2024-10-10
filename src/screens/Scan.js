@@ -21,6 +21,7 @@ export default function Scan({ navigation }) {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isPictureTaken, setIsPictureTaken] = useState(false);
   const currentDate = getCurrentDate();
 
   useEffect(() => {
@@ -45,10 +46,10 @@ export default function Scan({ navigation }) {
     }
 
     const imageUri = result.assets[0].uri;
-    console.log("Imagem capturada:", imageUri); // Log da imagem capturada
     setImage(imageUri);
     setResult(null);
     setError(null);
+    setIsPictureTaken(true); // Atualize o estado para ocultar as views
   };
 
   const uploadImage = async () => {
@@ -118,21 +119,24 @@ export default function Scan({ navigation }) {
         </View>
       </View>
 
-      <View style={styles.scanIcon}>
-        <Image
-          source={require("../../assets/images/scaneer.png")}
-          style={styles.scanImage}
-        />
-      </View>
-      <View style={styles.viewDescricao}>
-        <Text style={[styles.textoDescricao, globalStyles.mediumText]}>
-          Capture uma foto do seu rosto para uma análise de pele personalizada
-          feita por nossa inteligência artificial. Após a captura, envie a
-          imagem e receba recomendações de produtos adequados ao seu tipo de
-          pele
-        </Text>
-      </View>
-
+      {!isPictureTaken && ( // Ocultar quando a foto for tirada
+        <>
+          <View style={styles.scanIcon}>
+            <Image
+              source={require("../../assets/images/scaneer.png")}
+              style={styles.scanImage}
+            />
+          </View>
+          <View style={styles.viewDescricao}>
+            <Text style={[styles.textoDescricao, globalStyles.mediumText]}>
+              Capture uma foto do seu rosto para uma análise de pele
+              personalizada feita por nossa inteligência artificial. Após a
+              captura, envie a imagem e receba recomendações de produtos
+              adequados ao seu tipo de pele
+            </Text>
+          </View>
+        </>
+      )}
       {image && (
         <View style={styles.viewImagem}>
           <Image
