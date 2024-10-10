@@ -262,4 +262,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: 999,
   },
+  visualizarBotao: {
+    backgroundColor: "#ff80c3",
+    padding: 15,
+    borderRadius: 20,
+    margin: 10,
+  },
+  textoBotao: {
+    textAlign: "center",
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#fff",
+  },
 });
