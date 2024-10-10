@@ -188,7 +188,7 @@ export default function App() {
                     tabBarLabelStyle: { fontSize: 11 },
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
-                    tabBarStyle: { display: "none" },
+                    // tabBarStyle: { display: "none" },
                   }}
                 />
 
@@ -240,7 +240,7 @@ export default function App() {
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
                     tabBarButton: () => null,
-                    tabBarStyle: { display: "none" },
+                    // tabBarStyle: { display: "none" },
                   }}
                 />
                 <Tab.Screen
@@ -276,7 +276,7 @@ export default function App() {
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
                     tabBarButton: () => null,
-                    tabBarStyle: { display: "none" },
+                    // tabBarStyle: { display: "none" },
                   }}
                 />
                 <Tab.Screen
