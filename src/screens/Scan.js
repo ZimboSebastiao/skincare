@@ -129,7 +129,7 @@ export default function Scan({ navigation }) {
         <>
           <View style={styles.scanIcon}>
             <Image
-              source={require("../../assets/images/scaneer.png")}
+              source={require("../../assets/images/face-scan.png")}
               style={styles.scanImage}
             />
           </View>
