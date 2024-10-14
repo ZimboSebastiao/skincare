@@ -19,7 +19,7 @@ export default function Relatorio({ navigation }) {
         </Pressable>
 
         <View style={styles.viewTexto}>
-          <Text style={[globalStyles.mediumText]}>Diário</Text>
+          <Text style={[globalStyles.mediumText]}>Relatório</Text>
           <Text style={[styles.textoMenu, globalStyles.mediumText]}>
             Hoje é, {currentDate}
           </Text>
