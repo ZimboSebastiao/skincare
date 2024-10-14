@@ -27,9 +27,9 @@ export default function Diario({ navigation }) {
         </View>
       </View>
 
-      <View>
-      <CalendarAgenda />
-      </View>
+      <View style={{ flex: 1 }}>
+  <CalendarAgenda />
+</View>
      
     </View>
   );
