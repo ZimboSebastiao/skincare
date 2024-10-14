@@ -51,21 +51,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  viewScan: {
-    padding: 16,
-  },
-  viewTextoScan: {
-    fontSize: 18,
-    marginBottom: 15,
-  },
-  animationImage: {
-    width: 60,
-    height: 60,
-    resizeMode: "contain",
-    borderRadius: 100,
-    borderColor: "#ffff",
-    backgroundColor: "#ffff",
-  },
+
+ 
+
 
  
 
