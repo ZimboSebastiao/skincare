@@ -66,28 +66,7 @@ const styles = StyleSheet.create({
     borderColor: "#ffff",
     backgroundColor: "#ffff",
   },
-  viewScanImagem: {
-    backgroundColor: "#F6EEFB",
-    padding: 13,
-    flexDirection: "row",
-    alignItems: "center",
-    borderRadius: 15,
-  },
-  textoImagem: {
-    margin: 12,
-  },
-  viewSkinInfo: {
-    padding: 16,
-  },
-  viewSkinOpcao: {
-    backgroundColor: "#F6EEFB",
-    padding: 13,
-    flexDirection: "row",
-    alignItems: "center",
-    borderRadius: 15,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "flex-start",
-  },
+
+ 
 
 });
