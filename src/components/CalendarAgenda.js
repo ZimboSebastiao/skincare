@@ -58,6 +58,8 @@ const CalendarAgenda = () => {
       renderItem={renderItem}
       theme={{
         agendaTodayColor: '#ff80c3',
+        dotColor: '#ff80c3',
+        selectedDotColor: '#ff80c3',
         agendaKnobColor: '#121212',
       }}
     />
