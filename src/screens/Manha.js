@@ -25,6 +25,13 @@ export default function Manha({ navigation }) {
             Hoje é, {currentDate}
           </Text>
         </View>
+
+
+      </View>
+
+
+      <View>
+        <Text>Selecione os produtos de cuidados com a pele </Text>
       </View>
     </View>
   );
