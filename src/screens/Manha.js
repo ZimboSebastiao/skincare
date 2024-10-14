@@ -96,7 +96,6 @@ const styles = StyleSheet.create({
   },
   checkboxContainer: {
     justifyContent: "space-around", 
-    flexDirection: "row-reverse",
     alignItems: "center",
     width: '48%', 
     marginBottom: 10,
@@ -111,4 +110,9 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 12.5,
   },
+  viewIcons:{
+  backgroundColor: "red",
+  flexDirection: "row"
+
+  }
 });
