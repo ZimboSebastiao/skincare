@@ -93,7 +93,7 @@ export default function Produtos({ navigation }) {
           />
           <View style={styles.feadback}>
             <Text style={[styles.textoFeadback, globalStyles.semiBoldText]}>
-              Meu estoque de produtos está vazio
+              Seu estoque de produtos está vazio
             </Text>
             <Text style={styles.textoMoreInfo}>
               Acompanhe todos os seus produtos para a pele, datas de validade,
