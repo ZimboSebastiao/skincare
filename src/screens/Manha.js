@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   },
   checkboxLabel: {
     marginLeft: 8,
-    fontSize: 12.5,
+    fontSize: 13,
     color: "#ff80c3"
   },
   viewIcons:{
