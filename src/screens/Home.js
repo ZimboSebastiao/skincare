@@ -87,7 +87,7 @@ export default function Home({ navigation }) {
           <Pressable
             style={styles.buttonWrapper}
             onPress={() => {
-              navigation.navigate("Diario");
+              navigation.navigate("Relatorio");
             }}
           >
             <Svg
