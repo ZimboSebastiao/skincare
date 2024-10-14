@@ -6,11 +6,20 @@ import { getCurrentDate } from "../utils/dateUtils";
 import Svg, { Path } from "react-native-svg";
 import { Plus } from "lucide-react-native";
 import { getAllCategories } from "../helpers/categoryHelper";
+import { Checkbox } from "react-native-paper";
 
 export default function Manha({ navigation }) {
   const currentDate = getCurrentDate();
   const [selectedCategories, setSelectedCategories] = useState({});
-  const categories = getAllCategories(); // Obtém todas as categorias
+  const categories = getAllCategories(); 
+
+   // Função para lidar com a seleção/deseleção de categorias
+   const toggleCategory = (category) => {
+    setSelectedCategories((prevSelected) => ({
+      ...prevSelected,
+      [category]: !prevSelected[category],
+    }));
+  };
 
   return (
     <View style={styles.container}>
@@ -34,8 +43,17 @@ export default function Manha({ navigation }) {
       </View>
 
 
-      <View>
-        <Text>Selecione os produtos de cuidados com a pele </Text>
+       <View>
+        <Text style={styles.title}>Selecione os produtos de cuidados com a pele:</Text>
+        {categories.map((category) => (
+          <View key={category} style={styles.checkboxContainer}>
+            <Checkbox
+              status={selectedCategories[category] ? 'checked' : 'unchecked'}
+              onPress={() => toggleCategory(category)}
+            />
+            <Text style={styles.checkboxLabel}>{category}</Text>
+          </View>
+        ))}
       </View>
     </View>
   );
@@ -107,5 +125,19 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingBottom: 0,
     justifyContent: "flex-end",
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginVertical: 20,
+  },
+  checkboxContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 5,
+  },
+  checkboxLabel: {
+    marginLeft: 8,
+    fontSize: 16,
   },
 });
