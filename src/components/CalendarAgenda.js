@@ -59,7 +59,7 @@ const CalendarAgenda = () => {
       theme={{
         agendaTodayColor: '#ff80c3',
         dotColor: '#ff80c3',
-        selectedDotColor: '#121212',
+        selectedDotColor: '#ffff',
         selectedDayBackgroundColor: '#ff80c3',
         agendaKnobColor: '#121212',
       }}
