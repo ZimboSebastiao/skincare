@@ -135,10 +135,8 @@ export default function Scan({ navigation }) {
           </View>
           <View style={styles.viewDescricao}>
             <Text style={[styles.textoDescricao, globalStyles.mediumText]}>
-              Capture uma foto do seu rosto para uma análise de pele
-              personalizada feita por nossa inteligência artificial. Após a
-              captura, envie a imagem e receba recomendações de produtos
-              adequados ao seu tipo de pele
+              <Text style={{color: "#ff80c3"}}>Deixe nossa IA analisar sua selfie </Text>
+             e revelar sua rotina perfeita de cuidados com a pele
             </Text>
           </View>
         </>
