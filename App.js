@@ -37,7 +37,7 @@ import FormPage2 from "./src/screens/FormPage2";
 import FormPage3 from "./src/screens/FormPage3";
 import FormPage4 from "./src/screens/FormPage4";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import Diario from "./src/screens/Diario";
+import Relatorio from "./src/screens/Relatorio";
 import Noite from "./src/screens/Noite";
 import Manha from "./src/screens/Manha";
 import Produtos from "./src/screens/Produtos";
@@ -228,8 +228,8 @@ export default function App() {
                   }}
                 />
                 <Tab.Screen
-                  name="Diario"
-                  component={Diario}
+                  name="Relatorio"
+                  component={Relatorio}
                   options={{
                     headerShown: false,
                     tabBarIcon: ({ focused }) => (
