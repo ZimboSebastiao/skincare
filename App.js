@@ -44,6 +44,7 @@ import Produtos from "./src/screens/Produtos";
 import Scan from "./src/screens/Scan";
 import { navigationRef, navigate } from "./src/navigationRef";
 import Resultado from "./src/screens/Resultado";
+import Calendario from "./src/screens/Calendario";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -301,6 +302,24 @@ export default function App() {
                 <Tab.Screen
                   name="Resultado"
                   component={Resultado}
+                  options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                      <MaterialCommunityIcons
+                        name="account"
+                        color={focused ? "#ff80c3" : "#ffff"}
+                      />
+                    ),
+                    tabBarLabelStyle: { fontSize: 13.4 },
+                    tabBarActiveTintColor: "#ff80c3",
+                    tabBarInactiveTintColor: "#ffff",
+                    tabBarButton: () => null,
+                    // tabBarStyle: { display: "none" },
+                  }}
+                />
+                <Tab.Screen
+                  name="Calendario"
+                  component={Calendario}
                   options={{
                     headerShown: false,
                     tabBarIcon: ({ focused }) => (
