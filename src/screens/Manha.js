@@ -43,11 +43,15 @@ export default function Manha({ navigation }) {
         <View style={styles.produtos}> 
           {categories.map((category) => (
             <View key={category} style={styles.checkboxContainer}>
+              <View style={styles.viewIcons} > 
+
+              <MaterialCommunityIcons name="chevron-left-circle" size={35} />
               <Checkbox
                 status={selectedCategories[category] ? 'checked' : 'unchecked'}
                 onPress={() => toggleCategory(category)}
                 color="#ff80c3"
               />
+              </View>
               <Text style={styles.checkboxLabel}>{category}</Text>
             </View>
           ))}
@@ -87,18 +91,24 @@ const styles = StyleSheet.create({
   },
   produtos: {
     flexDirection: "row",
-    flexWrap: "wrap", // Permite que os itens se movam para a próxima linha
+    flexWrap: "wrap", 
     justifyContent: "space-between", 
   },
   checkboxContainer: {
-    flexDirection: "row",
+    justifyContent: "space-around", 
+    flexDirection: "row-reverse",
     alignItems: "center",
-    width: '48%', // Define a largura de cada item como 48% para 2 itens por linha
-    marginBottom: 10, // Espaçamento entre as linhas
-    backgroundColor: "red"
+    width: '48%', 
+    marginBottom: 10,
+    backgroundColor: "#FFFFFF",
+    padding: 15,
+    borderWidth: 1,
+    borderColor: "#FFFFFF",
+    elevation: 3,
+    borderRadius: 20
   },
   checkboxLabel: {
     marginLeft: 8,
-    fontSize: 13,
+    fontSize: 12.5,
   },
 });
