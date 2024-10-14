@@ -54,44 +54,7 @@ export default function Relatorio({ navigation }) {
         </Pressable>
       </View>
 
-      <View style={styles.viewSkinInfo}>
-        <Text style={[globalStyles.mediumText, styles.viewTextoScan]}>
-          Como Está Sua Pele Hoje?
-        </Text>
-        <View style={styles.viewSkinOpcao}>
-          <View style={styles.viewSkinTipo}>
-            <Text>Normal</Text>
-          </View>
-
-          <View style={styles.viewSkinTipo}>
-            <Text>Oleoso</Text>
-          </View>
-
-          <View style={styles.viewSkinTipo}>
-            <Text>Seco</Text>
-          </View>
-
-          <View style={styles.viewSkinTipo}>
-            <Text>Coceira</Text>
-          </View>
-
-          <View style={styles.viewSkinTipo}>
-            <Text>Irritado</Text>
-          </View>
-
-          <View style={styles.viewSkinTipo}>
-            <Text>Opaco</Text>
-          </View>
-
-          <View style={styles.viewSkinTipo}>
-            <Text>Irregular</Text>
-          </View>
-
-          <View style={styles.viewSkinTipo}>
-            <Text>Outro</Text>
-          </View>
-        </View>
-      </View>
+    
     </View>
   );
 }
@@ -132,7 +95,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffff",
   },
   viewScanImagem: {
-    backgroundColor: "#F6EEFB",
+    backgroundColor: "#ff80c3",
     padding: 13,
     flexDirection: "row",
     alignItems: "center",
@@ -140,27 +103,7 @@ const styles = StyleSheet.create({
   },
   textoImagem: {
     margin: 12,
+    color:"#ffff"
   },
-  viewSkinInfo: {
-    padding: 16,
-  },
-  viewSkinOpcao: {
-    backgroundColor: "#F6EEFB",
-    padding: 13,
-    flexDirection: "row",
-    alignItems: "center",
-    borderRadius: 15,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "flex-start",
-  },
-  viewSkinTipo: {
-    backgroundColor: "transparent",
-    borderWidth: 1,
-    borderRadius: 20,
-    padding: 8,
-    width: "30%",
-    marginBottom: 10,
-    marginRight: "3%",
-  },
+  
 });
