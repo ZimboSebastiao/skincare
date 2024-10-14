@@ -1,6 +1,5 @@
 const categories = {
   "Área dos Olhos": [],
-  "Tratamentos Específicos": [],
   "Óleos Faciais": [],
   Máscaras: [],
   "Protetores Solares": [],
