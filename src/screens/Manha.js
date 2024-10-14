@@ -50,6 +50,7 @@ export default function Manha({ navigation }) {
             <Checkbox
               status={selectedCategories[category] ? 'checked' : 'unchecked'}
               onPress={() => toggleCategory(category)}
+              color="#ff80c3"
             />
             <Text style={styles.checkboxLabel}>{category}</Text>
           </View>
