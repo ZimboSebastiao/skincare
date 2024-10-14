@@ -87,15 +87,15 @@ const styles = StyleSheet.create({
   },
   produtos: {
     flexDirection: "row",
-    flexWrap: "wrap",
+    flexWrap: "wrap", // Permite que os itens se movam para a próxima linha
     justifyContent: "space-between", 
-    padding: 10
   },
   checkboxContainer: {
     flexDirection: "row",
     alignItems: "center",
-    width: '50%', 
-    marginVertical: 5, 
+    width: '48%', // Define a largura de cada item como 48% para 2 itens por linha
+    marginBottom: 10, // Espaçamento entre as linhas
+    backgroundColor: "red"
   },
   checkboxLabel: {
     marginLeft: 8,
