@@ -2,12 +2,29 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Agenda } from 'react-native-calendars';
+import { LocaleConfig } from 'react-native-calendars';
+
+// Configuração do calendário para exibir em português
+LocaleConfig.locales['pt-BR'] = {
+  monthNames: [
+    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
+    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+  ],
+  monthNamesShort: [
+    'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
+  ],
+  dayNames: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+  dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+  today: 'Hoje'
+};
+
+LocaleConfig.defaultLocale = 'pt-BR';
 
 const CalendarAgenda = () => {
   const [items, setItems] = useState({});
 
   const loadItems = (day) => {
-    const newItems = {...items};
+    const newItems = { ...items };
     for (let i = -15; i < 85; i++) {
       const time = day.timestamp + i * 24 * 60 * 60 * 1000;
       const strTime = timeToString(time);
@@ -16,7 +33,7 @@ const CalendarAgenda = () => {
         const numItems = Math.floor(Math.random() * 3 + 1);
         for (let j = 0; j < numItems; j++) {
           newItems[strTime].push({
-            name: `Evento para ${strTime}`,
+            name: `Evento para o dia ${strTime}`,
             height: Math.max(50, Math.floor(Math.random() * 150)),
           });
         }
