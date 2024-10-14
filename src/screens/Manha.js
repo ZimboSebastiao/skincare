@@ -45,7 +45,7 @@ export default function Manha({ navigation }) {
             <View key={category} style={styles.checkboxContainer}>
               <View style={styles.viewIcons} > 
 
-              <MaterialCommunityIcons name="chevron-left-circle" size={35} />
+              <MaterialCommunityIcons name="debian" size={35} color="#ff80c3" />
               <Checkbox
                 status={selectedCategories[category] ? 'checked' : 'unchecked'}
                 onPress={() => toggleCategory(category)}
@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between", 
   },
   checkboxContainer: {
-    justifyContent: "space-around", 
-    alignItems: "center",
+    justifyContent: "flex-start", 
+    alignItems: "flex-start",
     width: '48%', 
     marginBottom: 10,
     backgroundColor: "#FFFFFF",
@@ -109,10 +109,13 @@ const styles = StyleSheet.create({
   checkboxLabel: {
     marginLeft: 8,
     fontSize: 12.5,
+    color: "#ff80c3"
   },
   viewIcons:{
-  backgroundColor: "red",
-  flexDirection: "row"
-
+  // backgroundColor: "red",
+  flexDirection: "row",
+  width: "100%",
+  marginBottom: 10,
+  justifyContent: "space-between"
   }
 });
