@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
 import Svg, { Path } from "react-native-svg";
 import { Plus } from "lucide-react-native";
+import { getAllCategories } from "../helpers/categoryHelper";
 
 export default function Manha({ navigation }) {
   const currentDate = getCurrentDate();
+  const [selectedCategories, setSelectedCategories] = useState({});
+  const categories = getAllCategories(); // Obtém todas as categorias
+
   return (
     <View style={styles.container}>
       <View style={styles.viewMenu}>
