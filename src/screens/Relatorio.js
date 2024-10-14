@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getCurrentDate } from "../utils/dateUtils";
 import { globalStyles } from "../utils/globalStyles";
 
-export default function Diario({ navigation }) {
+export default function Relatorio({ navigation }) {
   const currentDate = getCurrentDate();
 
   return (
