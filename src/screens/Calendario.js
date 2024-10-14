@@ -3,6 +3,7 @@ import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getCurrentDate } from "../utils/dateUtils";
 import { globalStyles } from "../utils/globalStyles";
+import CalendarAgenda from '../components/CalendarAgenda';
 
 export default function Diario({ navigation }) {
   const currentDate = getCurrentDate();
@@ -26,6 +27,9 @@ export default function Diario({ navigation }) {
         </View>
       </View>
 
+      <View>
+      <CalendarAgenda />
+      </View>
      
     </View>
   );
