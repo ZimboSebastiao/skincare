@@ -124,7 +124,7 @@ export default function Home({ navigation }) {
           <Pressable
             style={styles.buttonWrapper}
             onPress={() => {
-              navigation.navigate("Diario");
+              navigation.navigate("Calendario");
             }}
           >
             <Svg

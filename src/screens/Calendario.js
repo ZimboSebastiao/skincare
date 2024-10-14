@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { getCurrentDate } from "../utils/dateUtils";
 import { globalStyles } from "../utils/globalStyles";
 
-export default function Calendario({ navigation }) {
+export default function Diario({ navigation }) {
   const currentDate = getCurrentDate();
 
   return (
@@ -18,7 +18,12 @@ export default function Calendario({ navigation }) {
           <MaterialCommunityIcons name="chevron-left-circle" size={35} />
         </Pressable>
 
-        
+        <View style={styles.viewTexto}>
+          <Text style={[globalStyles.mediumText]}>Calendário</Text>
+          <Text style={[styles.textoMenu, globalStyles.mediumText]}>
+            Hoje é, {currentDate}
+          </Text>
+        </View>
       </View>
 
      
