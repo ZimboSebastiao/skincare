@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffff",
   },
   viewMenu: {
-    marginVertical: 20,
+    // marginVertical: 10,
     padding: 4,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -199,7 +199,8 @@ const styles = StyleSheet.create({
   viewFeadback: {
     justifyContent: "center",
     alignItems: "center",
-    marginVertical: "auto",
+    marginVertical: "45%",
+
   },
   animationImage: {
     width: 65,
