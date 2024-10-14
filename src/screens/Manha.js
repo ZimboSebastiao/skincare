@@ -43,8 +43,8 @@ export default function Manha({ navigation }) {
       </View>
 
 
-       <View>
-        <Text style={styles.title}>Selecione os produtos de cuidados com a pele:</Text>
+       <View style={styles.viewProdutos}>
+        <Text style={styles.title}>Selecione os produtos de cuidados com a pele</Text>
         {categories.map((category) => (
           <View key={category} style={styles.checkboxContainer}>
             <Checkbox
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   title: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
     marginVertical: 20,
   },
@@ -141,4 +141,8 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 16,
   },
+  viewProdutos:{
+    backgroundColor: "red",
+    padding: 10
+  }
 });
