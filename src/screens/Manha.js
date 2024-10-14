@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { globalStyles } from "../utils/globalStyles";
 import { getCurrentDate } from "../utils/dateUtils";
@@ -37,26 +37,28 @@ export default function Manha({ navigation }) {
           </Text>
         </View>
       </View>
+      <ScrollView>
 
-      <View style={styles.viewProdutos}>
-        <Text style={styles.title}>Selecione os produtos de cuidados com a pele</Text>
-        <View style={styles.produtos}> 
-          {categories.map((category) => (
-            <View key={category} style={styles.checkboxContainer}>
-              <View style={styles.viewIcons} > 
+          <View style={styles.viewProdutos}>
+            <Text style={styles.title}>Selecione os produtos de cuidados com a pele</Text>
+            <View style={styles.produtos}> 
+              {categories.map((category) => (
+                <View key={category} style={styles.checkboxContainer}>
+                  <View style={styles.viewIcons} > 
 
-              <MaterialCommunityIcons name="debian" size={35} color="#ff80c3" />
-              <Checkbox
-                status={selectedCategories[category] ? 'checked' : 'unchecked'}
-                onPress={() => toggleCategory(category)}
-                color="#ff80c3"
-              />
-              </View>
-              <Text style={styles.checkboxLabel}>{category}</Text>
+                  <MaterialCommunityIcons name="debian" size={35} color="#ff80c3" />
+                  <Checkbox
+                    status={selectedCategories[category] ? 'checked' : 'unchecked'}
+                    onPress={() => toggleCategory(category)}
+                    color="#ff80c3"
+                  />
+                  </View>
+                  <Text style={styles.checkboxLabel}>{category}</Text>
+                </View>
+              ))}
             </View>
-          ))}
-        </View>
-      </View>
+          </View>
+      </ScrollView>
     </View>
   );
 }
