@@ -12,6 +12,7 @@ import { sendMessageToChatGemini } from "../api/gemini.js";
 
 export default function Skinbot() {
   const [messages, setMessages] = useState([]);
+  const [isTyping, setIsTyping] = useState(false);
 
   const onSend = async (newMessages = []) => {
     setMessages((previousMessages) =>
@@ -20,7 +21,11 @@ export default function Skinbot() {
 
     const userMessage = newMessages[0].text;
 
+    // Ativar o indicador de digitação
+    setIsTyping(true);
+
     try {
+      // Simular um atraso enquanto a mensagem é processada
       const botResponse = await sendMessageToChatGemini(userMessage);
 
       const botMessage = {
@@ -33,9 +38,12 @@ export default function Skinbot() {
         },
       };
 
-      setMessages((previousMessages) =>
-        GiftedChat.append(previousMessages, botMessage)
-      );
+      setTimeout(() => {
+        setMessages((previousMessages) =>
+          GiftedChat.append(previousMessages, botMessage)
+        );
+        setIsTyping(false); // Desativar o indicador de digitação
+      }, 2000); // Simula 2 segundos de digitação
     } catch (error) {
       const errorMessage = {
         _id: Math.random().toString(),
@@ -49,6 +57,7 @@ export default function Skinbot() {
       setMessages((previousMessages) =>
         GiftedChat.append(previousMessages, errorMessage)
       );
+      setIsTyping(false); // Desativar o indicador em caso de erro
     }
   };
 
@@ -108,6 +117,7 @@ export default function Skinbot() {
         renderInputToolbar={renderInputToolbar}
         placeholder="Digite sua mensagem..."
         placeholderTextColor="#5e5f61"
+        isTyping={isTyping}
       />
     </View>
   );
