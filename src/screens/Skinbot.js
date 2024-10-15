@@ -34,7 +34,8 @@ export default function Skinbot() {
         createdAt: new Date(),
         user: {
           _id: 2,
-          name: "SkinBot",
+          name: "AI Health",
+          avatar: require("../../assets/images/bot.png"),
         },
       };
 
