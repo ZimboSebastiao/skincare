@@ -209,6 +209,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textoImagem: {
+    // backgroundColor: "red",
     fontSize: 16,
   },
   viewPaginas: {
