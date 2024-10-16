@@ -37,9 +37,12 @@ export default function Home({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.viewMenu}>
+        <View style={styles.viewNotificacao}>
         <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
           Hoje é, {currentDate}
         </Text>
+        <Badge>3</Badge>
+        </View>
         <View style={styles.viewImagem}>
           <CustomAvatar imageUri={selectedImage} size={70} />
           <View>
@@ -199,6 +202,7 @@ const styles = StyleSheet.create({
   textoMenu: {
     fontSize: 15,
     color: "#a6a2a2",
+    backgroundColor: "red"
   },
   viewImagem: {
     width: "50%",
