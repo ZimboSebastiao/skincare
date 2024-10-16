@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   viewNotificacao: {
-    backgroundColor: "red",
+    // backgroundColor: "red",
     flexDirection: "row",
     justifyContent: "space-between"
   },
