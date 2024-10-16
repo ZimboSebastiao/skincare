@@ -191,35 +191,37 @@ export default function Home({ navigation }) {
           </Pressable>
         </View>
       </View>
-
-      <Swiper
-      style={styles.wrapper}
-      showsButtons={false}    
-      autoplay={true}        // Ativa a navegação automática
-      autoplayTimeout={7}    // Tempo entre as transições automáticas (em segundos)
-    >
-      <View style={styles.slide}>
-        <Image
-          source={require("../../assets/images/sun.png")}
-          style={styles.image}
-        />
-        <Text style={styles.text}>Imagem 1</Text>
+      <View style={styles.wrapperContainer}>
+        <Swiper
+          style={styles.wrapper}
+          showsButtons={false}    
+          autoplay={true}        
+          autoplayTimeout={7}    
+          
+        >
+          <View style={styles.slide}>
+            <Image
+              source={require("../../assets/images/sun.png")}
+              style={styles.image}
+            />
+            <Text style={styles.text}>Imagem 1</Text>
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require("../../assets/images/sun.png")}
+              style={styles.image}
+            />
+            <Text style={styles.text}>Imagem 2</Text>
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require("../../assets/images/sun.png")}
+              style={styles.image}
+            />
+            <Text style={styles.text}>Imagem 3</Text>
+          </View>
+        </Swiper>
       </View>
-      <View style={styles.slide}>
-        <Image
-          source={require("../../assets/images/sun.png")}
-          style={styles.image}
-        />
-        <Text style={styles.text}>Imagem 2</Text>
-      </View>
-      <View style={styles.slide}>
-        <Image
-          source={require("../../assets/images/sun.png")}
-          style={styles.image}
-        />
-        <Text style={styles.text}>Imagem 3</Text>
-      </View>
-    </Swiper>
     </ScrollView>
   );
 }
@@ -337,23 +339,37 @@ const styles = StyleSheet.create({
     backgroundColor: 'red', 
     color: 'white', 
   },
-  wrapper: {
-    height: 250, // Altura do carrossel
+  wrapperContainer: {
+    width: '90%',
+    height: 150,
+    margin: 20,
+    borderRadius: 20,
+    overflow: 'hidden',
+    backgroundColor: 'transparent', 
+  },
+  swiper: {
+    borderRadius: 20, 
   },
   slide: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#9DD6EB',
+    backgroundColor: "red"
   },
   image: {
     width: '100%',
-    height: 200,
+    height: '100%',
     resizeMode: 'cover',
   },
   text: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+    position: 'absolute',
+    bottom: 10,
+    backgroundColor: 'rgba(0, 0, 255, 0.5)',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 10,
   },
 });
