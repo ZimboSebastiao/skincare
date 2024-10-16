@@ -201,21 +201,21 @@ export default function Home({ navigation }) {
           autoplayTimeout={7}    
           
         >
-          <View style={styles.slide}>
+          <View style={styles.slide1}>
             <Image
               source={require("../../assets/images/sun.png")}
               style={styles.image}
             />
-            <Text style={styles.text}>Imagem 1</Text>
+            <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
           </View>
-          <View style={styles.slide}>
+          <View style={styles.slide2}>
             <Image
               source={require("../../assets/images/sun.png")}
               style={styles.image}
             />
             <Text style={styles.text}>Imagem 2</Text>
           </View>
-          <View style={styles.slide}>
+          <View style={styles.slide3}>
             <Image
               source={require("../../assets/images/sun.png")}
               style={styles.image}
@@ -357,15 +357,27 @@ const styles = StyleSheet.create({
   swiper: {
     borderRadius: 20, 
   },
-  slide: {
+  slide1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "red"
+  },
+  slide2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "red"
+  },
+  slide3: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: "red"
   },
   image: {
-    width: '100%',
-    height: '100%',
+    width: '50%',
+    height: '50%',
     resizeMode: 'cover',
   },
   text: {
@@ -373,10 +385,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     position: 'absolute',
-    bottom: 10,
-    backgroundColor: 'rgba(0, 0, 255, 0.5)',
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    borderRadius: 10,
+    // bottom: 10,
+    // backgroundColor: 'rgba(0, 0, 255, 0.5)',
+    // paddingHorizontal: 10,
+    // paddingVertical: 5,
+    // borderRadius: 10,
   },
 });
