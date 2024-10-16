@@ -302,5 +302,16 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     flexDirection: "row",
     justifyContent: "space-between"
-  }
+  },
+  bellContainer: {
+    position: 'relative',
+    padding: 5,
+  },
+  badge: {
+    position: 'absolute',
+    top: -5,
+    right: -10,
+    backgroundColor: 'red', 
+    color: 'white', 
+  },
 });
