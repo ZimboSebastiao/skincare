@@ -42,15 +42,15 @@ export default function Home({ navigation }) {
         <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
           Hoje é, {currentDate}
         </Text>
-        <View style={styles.bellContainer}>
-        <Bell color="#121212" size={30} />
-        <Badge
-          style={styles.badge}
-          size={20}
-        >
-          3
-        </Badge>
-      </View>
+        <Pressable style={styles.bellContainer}>
+          <Bell color="#121212" size={30} />
+          <Badge
+            style={styles.badge}
+            size={20}
+          >
+            3
+          </Badge>
+        </Pressable>
         </View>
         <View style={styles.viewImagem}>
           <CustomAvatar imageUri={selectedImage} size={70} />
