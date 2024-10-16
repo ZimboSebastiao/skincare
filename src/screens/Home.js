@@ -222,7 +222,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textoImagem: {
-    // backgroundColor: "red",
     fontSize: 16,
   },
   viewPaginas: {
@@ -299,7 +298,6 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   viewNotificacao: {
-    // backgroundColor: "red",
     flexDirection: "row",
     justifyContent: "space-between"
   },
