@@ -116,11 +116,6 @@ export default function Home({ navigation }) {
             </Svg>
 
             <View style={styles.buttonContent}>
-              {/* <MaterialCommunityIcons
-                name="clipboard-check-outline"
-                size={45}
-                color={"#2D2D2D"}
-              /> */}
               <Image
                 source={require("../../assets/images/docum.png")}
                 style={styles.produtoImage}
