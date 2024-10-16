@@ -194,27 +194,27 @@ export default function Home({ navigation }) {
 
       <Swiper
       style={styles.wrapper}
-      showsButtons={true}    // Exibe botões de navegação
+      showsButtons={false}    
       autoplay={true}        // Ativa a navegação automática
-      autoplayTimeout={3}    // Tempo entre as transições automáticas (em segundos)
+      autoplayTimeout={7}    // Tempo entre as transições automáticas (em segundos)
     >
       <View style={styles.slide}>
         <Image
-          source={{ uri: 'https://example.com/image1.jpg' }}
+          source={require("../../assets/images/sun.png")}
           style={styles.image}
         />
         <Text style={styles.text}>Imagem 1</Text>
       </View>
       <View style={styles.slide}>
         <Image
-          source={{ uri: 'https://example.com/image2.jpg' }}
+          source={require("../../assets/images/sun.png")}
           style={styles.image}
         />
         <Text style={styles.text}>Imagem 2</Text>
       </View>
       <View style={styles.slide}>
         <Image
-          source={{ uri: 'https://example.com/image3.jpg' }}
+          source={require("../../assets/images/sun.png")}
           style={styles.image}
         />
         <Text style={styles.text}>Imagem 3</Text>
@@ -336,5 +336,24 @@ const styles = StyleSheet.create({
     right: -10,
     backgroundColor: 'red', 
     color: 'white', 
+  },
+  wrapper: {
+    height: 250, // Altura do carrossel
+  },
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+  },
+  image: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
