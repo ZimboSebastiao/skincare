@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
   textoMenu: {
     fontSize: 15,
     color: "#a6a2a2",
-    backgroundColor: "red"
+   
   },
   viewImagem: {
     width: "50%",
@@ -289,4 +289,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     backgroundColor: "transparent",
   },
+  viewNotificacao: {
+
+  }
 });
