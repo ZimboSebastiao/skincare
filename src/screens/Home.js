@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffff",
   },
   viewMenu: {
-    marginVertical: 30,
+    marginVertical: 20,
     padding: 15,
   },
   textoMenu: {
