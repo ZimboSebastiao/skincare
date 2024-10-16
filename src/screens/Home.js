@@ -15,7 +15,7 @@ import CustomAvatar from "../components/CustomAvatar";
 import { ImageContext } from "../context/ImageContext";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Svg, { Path } from "react-native-svg";
-import { Checkbox } from "react-native-paper";
+import { Badge } from "react-native-paper";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 
 export default function Home({ navigation }) {
