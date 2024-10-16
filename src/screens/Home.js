@@ -191,6 +191,35 @@ export default function Home({ navigation }) {
           </Pressable>
         </View>
       </View>
+
+      <Swiper
+      style={styles.wrapper}
+      showsButtons={true}    // Exibe botões de navegação
+      autoplay={true}        // Ativa a navegação automática
+      autoplayTimeout={3}    // Tempo entre as transições automáticas (em segundos)
+    >
+      <View style={styles.slide}>
+        <Image
+          source={{ uri: 'https://example.com/image1.jpg' }}
+          style={styles.image}
+        />
+        <Text style={styles.text}>Imagem 1</Text>
+      </View>
+      <View style={styles.slide}>
+        <Image
+          source={{ uri: 'https://example.com/image2.jpg' }}
+          style={styles.image}
+        />
+        <Text style={styles.text}>Imagem 2</Text>
+      </View>
+      <View style={styles.slide}>
+        <Image
+          source={{ uri: 'https://example.com/image3.jpg' }}
+          style={styles.image}
+        />
+        <Text style={styles.text}>Imagem 3</Text>
+      </View>
+    </Swiper>
     </ScrollView>
   );
 }
