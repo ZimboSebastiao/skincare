@@ -18,6 +18,7 @@ import Svg, { Path } from "react-native-svg";
 import { Badge } from "react-native-paper";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 import { Bell } from 'lucide-react-native';
+import Swiper from 'react-native-swiper';
 
 export default function Home({ navigation }) {
   const { selectedImage } = useContext(ImageContext);
