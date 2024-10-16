@@ -115,7 +115,7 @@ export default function App() {
           width: 70,
           height: 70,
           borderRadius: 35,
-          bottom: 25,
+          bottom: 20,
           zIndex: 2,
         }}
       >
@@ -146,7 +146,7 @@ export default function App() {
                   tabBarStyle: {
                     backgroundColor: "#121212",
                     borderTopColor: "#121212",
-                    height: "8%",
+                    height: "7%",
                   },
                 }}
               >
@@ -158,7 +158,7 @@ export default function App() {
                     tabBarIcon: ({ focused }) => (
                       <AnimatedIcon focused={focused} IconComponent={House} />
                     ),
-                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarLabelStyle: { fontSize: 10 },
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
                   }}
@@ -174,7 +174,7 @@ export default function App() {
                         IconComponent={ShoppingBag}
                       />
                     ),
-                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarLabelStyle: { fontSize: 10 },
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
                   }}
@@ -187,7 +187,7 @@ export default function App() {
                     tabBarIcon: ({ focused }) => (
                       <AnimatedIcon focused={focused} IconComponent={Clock} />
                     ),
-                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarLabelStyle: { fontSize: 10 },
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
                     // tabBarStyle: { display: "none" },
@@ -205,7 +205,7 @@ export default function App() {
                         IconComponent={BotMessageSquare}
                       />
                     ),
-                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarLabelStyle: { fontSize: 10 },
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
                     // tabBarStyle: { display: "none" },
@@ -222,7 +222,7 @@ export default function App() {
                         IconComponent={UserRound}
                       />
                     ),
-                    tabBarLabelStyle: { fontSize: 11 },
+                    tabBarLabelStyle: { fontSize: 10 },
                     tabBarActiveTintColor: "#ff80c3",
                     tabBarInactiveTintColor: "#ffff",
                   }}
