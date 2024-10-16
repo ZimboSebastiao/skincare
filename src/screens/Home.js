@@ -43,7 +43,7 @@ export default function Home({ navigation }) {
           Hoje é, {currentDate}
         </Text>
         <View style={styles.bellContainer}>
-        <Bell color="black" size={30} />
+        <Bell color="#121212" size={30} />
         <Badge
           style={styles.badge}
           size={20}
