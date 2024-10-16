@@ -37,7 +37,8 @@ export default function Home({ navigation }) {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <>
+
       <View style={styles.viewMenu}>
         <View style={styles.viewNotificacao}>
         <Text style={[styles.textoMenu, globalStyles.semiBoldText]}>
@@ -65,6 +66,7 @@ export default function Home({ navigation }) {
           </View>
         </View>
       </View>
+    <ScrollView style={styles.container}>
 
       <View style={styles.viewPaginas}>
         <View style={styles.viewPagina}>
@@ -223,17 +225,21 @@ export default function Home({ navigation }) {
         </Swiper>
       </View>
     </ScrollView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#ffff",
+    flex: 1,
   },
   viewMenu: {
-    marginVertical: 20,
+    paddingTop: 40,
+    backgroundColor: "#ffff",
     padding: 15,
+    paddingBottom: 0,
+    marginBottom: 0
   },
   textoMenu: {
     fontSize: 15,
@@ -252,6 +258,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   viewPaginas: {
+    marginTop: 30,
     flexDirection: "row",
     justifyContent: "space-around",
   },
