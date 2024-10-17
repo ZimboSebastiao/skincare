@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar } from "react-native-paper";
 
-const CustomAvatar = ({ imageUri, size = 120 }) => {
+const CustomAvatar = ({ imageUri, size = 70 }) => {
   return imageUri ? (
     <Avatar.Image size={size} source={{ uri: imageUri }} />
   ) : (

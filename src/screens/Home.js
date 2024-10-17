@@ -386,9 +386,11 @@ const styles = StyleSheet.create({
   avatarContainer: {
     width: 70,
     height: 70,
-    borderRadius: 60,
+    borderRadius: 35,
     borderWidth: 2,
-    borderColor: "#0076FD",
+    borderColor: "#ff80c3",
     overflow: "hidden",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
