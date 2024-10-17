@@ -355,11 +355,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   slide1: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#DCE6FF",
-    elevation: 1,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   slide2: {
     flex: 1,
