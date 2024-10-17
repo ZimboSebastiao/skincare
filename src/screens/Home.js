@@ -201,7 +201,7 @@ export default function Home({ navigation }) {
           >
             <View style={styles.slide1}>
               <Image
-                source={require("../../assets/images/share.png")}
+                source={require("../../assets/images/share.jpg")}
                 style={styles.image}
               />
               <View style={styles.textContainer}>
@@ -369,11 +369,11 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 100,
-    height: 140,
+    height: 110,
   },
   textContainer: {
     flexDirection: "column",
-    marginLeft: 4,
+    marginLeft: 6,
     justifyContent: "space-evenly",
     alignItems: "flex-start",
     padding: 0,
@@ -381,7 +381,6 @@ const styles = StyleSheet.create({
   },
   text: {
     margin: 0,
-    flex: 1,
     padding: 0,
     textAlign: "right",
     fontSize: 14,
@@ -400,11 +399,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "red",
   },
-  // image: {
-  //   width: "65%",
-  //   height: "85%",
-  //   resizeMode: "cover",
-  // },
+  textDescription: {
+    backgroundColor: "yellow",
+  },
 
   avatarContainer: {
     width: 70,
