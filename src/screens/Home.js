@@ -470,12 +470,12 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   sugestao1: {
-    backgroundColor: "yellow",
+    backgroundColor: "#e0cffc",
     padding: 10,
     borderRadius: 20,
   },
   sugestao2: {
-    backgroundColor: "blue",
+    backgroundColor: "#c6f7c7",
     padding: 10,
     borderRadius: 20,
   },
