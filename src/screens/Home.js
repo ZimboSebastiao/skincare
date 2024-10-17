@@ -191,6 +191,13 @@ export default function Home({ navigation }) {
             </Pressable>
           </View>
         </View>
+
+        <View>
+          <Text style={[globalStyles.mediumText, styles.textoSugestao]}>
+            O que você quer fazer hoje?
+          </Text>
+        </View>
+
         <View style={styles.wrapperContainer}>
           <Swiper
             style={styles.wrapper}
@@ -423,7 +430,6 @@ const styles = StyleSheet.create({
   textDescription: {
     width: "45%",
   },
-
   avatarContainer: {
     width: 70,
     height: 70,
@@ -433,5 +439,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
+  },
+  textoSugestao: {
+    textAlign: "center",
+    fontSize: 17,
+    fontWeight: "bold",
   },
 });
