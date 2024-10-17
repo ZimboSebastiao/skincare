@@ -112,9 +112,9 @@ export default function App() {
           padding: 5,
           alignSelf: "center",
           backgroundColor: "#fff",
-          width: 70,
-          height: 70,
-          borderRadius: 35,
+          width: 60,
+          height: 60,
+          borderRadius: 30,
           bottom: 20,
           zIndex: 2,
         }}
@@ -129,9 +129,9 @@ export default function App() {
           onPress={navigateToRotina}
           buttonStyle={{
             backgroundColor: "#ff80c3",
-            width: 60,
-            height: 60,
-            borderRadius: 30,
+            width: 50,
+            height: 50,
+            borderRadius: 25,
           }}
           containerViewStyle={{ alignSelf: "center" }}
         />
