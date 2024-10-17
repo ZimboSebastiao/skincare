@@ -214,7 +214,7 @@ export default function Home({ navigation }) {
                 <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
                 <Text style={styles.textDescription}>
                   Ajude seus amigos a conhecer o melhor app de cuidados com a
-                  pele
+                  pele 😍
                 </Text>
               </View>
             </View>
@@ -234,7 +234,7 @@ export default function Home({ navigation }) {
                 style={styles.image}
               />
               <View style={styles.textContainer}>
-                <Text style={styles.text}>Alerta de Irritação!</Text>
+                <Text style={styles.text}>Alerta de Irritação! 📢</Text>
                 <Text style={styles.textDescription}>
                   Sinais de irritação? Use nossa IA para descobrir as possíveis
                   causas
@@ -421,7 +421,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textDescription: {
-    width: "50%",
+    width: "45%",
   },
 
   avatarContainer: {
