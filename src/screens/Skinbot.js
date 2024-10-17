@@ -43,7 +43,7 @@ export default function Skinbot() {
         setMessages((previousMessages) =>
           GiftedChat.append(previousMessages, botMessage)
         );
-        setIsTyping(false); // Desativar o indicador de digitação
+        setIsTyping(false);
       }, 2000); // Simula 2 segundos de digitação
     } catch (error) {
       const errorMessage = {
