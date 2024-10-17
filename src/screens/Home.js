@@ -198,21 +198,21 @@ export default function Home({ navigation }) {
           </Text>
 
           <View style={styles.viewSugestoes}>
-            <View style={styles.sugestao1}>
+            <Pressable style={styles.sugestao1}>
               <Image
                 source={require("../../assets/images/lupa.png")}
                 style={styles.imagemSugestao}
               />
               <Text style={styles.textoProcurar}>Procurar Produtos</Text>
-            </View>
+            </Pressable>
 
-            <View style={styles.sugestao2}>
+            <Pressable style={styles.sugestao2}>
               <Image
                 source={require("../../assets/images/scan-code.png")}
                 style={styles.imagemSugestao}
               />
               <Text style={styles.textoScanear}>Scanear Produtos</Text>
-            </View>
+            </Pressable>
           </View>
         </View>
 
