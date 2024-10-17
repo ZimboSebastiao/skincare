@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
   },
   textDescription: {
-    backgroundColor: "yellow",
+    width: "60%",
   },
 
   avatarContainer: {
