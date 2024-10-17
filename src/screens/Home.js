@@ -201,7 +201,7 @@ export default function Home({ navigation }) {
           >
             <View style={styles.slide1}>
               <Image
-                source={require("../../assets/images/sun.png")}
+                source={require("../../assets/images/share.png")}
                 style={styles.image}
               />
               <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
@@ -358,7 +358,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "red",
+    backgroundColor: "#DCE6FF",
+    elevation: 1,
   },
   slide2: {
     flex: 1,
@@ -373,8 +374,8 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
   },
   image: {
-    width: "50%",
-    height: "50%",
+    width: "65%",
+    height: "85%",
     resizeMode: "cover",
   },
   text: {
