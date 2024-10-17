@@ -405,7 +405,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    paddingHorizontal: 2,
   },
   slide3: {
     flex: 1,
@@ -413,7 +412,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    paddingHorizontal: 2,
   },
   textDescription: {
     width: "50%",
