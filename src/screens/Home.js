@@ -464,20 +464,24 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   viewSugestoes: {
-    backgroundColor: "red",
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
+    marginTop: 30,
   },
   sugestao1: {
     backgroundColor: "yellow",
+    padding: 10,
+    borderRadius: 20,
   },
   sugestao2: {
     backgroundColor: "blue",
+    padding: 10,
+    borderRadius: 20,
   },
   imagemSugestao: {
-    width: 130,
-    height: 130,
+    width: 110,
+    height: 110,
     resizeMode: "contain",
   },
 });
