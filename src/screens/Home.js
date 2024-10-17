@@ -198,6 +198,12 @@ export default function Home({ navigation }) {
             showsButtons={false}
             autoplay={true}
             autoplayTimeout={1117}
+            paginationStyle={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+            }}
           >
             <View style={styles.slide1}>
               <Image
