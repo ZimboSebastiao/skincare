@@ -346,18 +346,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  // tabBar: {
-  //   backgroundColor: '#6200ee', // Cor de fundo da Tab Bar
-  //   height: 70, // Altura da Tab Bar
-  //   borderTopWidth: 0, // Remover borda superior
-  //   elevation: 5, // Sombra
-  // },
-  // fab: {
-  //   position: 'absolute',
-  //   bottom: 30, // Posiciona o FAB acima da Tab Bar
-  //   left: '50%', // Centraliza horizontalmente
-  //   marginLeft: -28, // Metade da largura do FAB para centralizá-lo
-  //   backgroundColor: '#ff4081', // Cor do FAB
-  // },
-});
+const styles = StyleSheet.create({});
