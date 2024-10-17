@@ -51,7 +51,6 @@ export default function Home({ navigation }) {
           </Pressable>
         </View>
         <View style={styles.viewImagem}>
-          {/* <CustomAvatar imageUri={selectedImage} size={70} /> */}
           <View style={styles.avatarContainer}>
             <CustomAvatar imageUri={selectedImage} size={70} />
           </View>
