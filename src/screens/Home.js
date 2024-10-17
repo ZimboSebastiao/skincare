@@ -206,7 +206,7 @@ export default function Home({ navigation }) {
               />
               <View style={styles.textContainer}>
                 <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
-                <Text style={styles.text}>
+                <Text style={styles.textDescription}>
                   Ajude seus amigos a descobrir o melhor app de skincare
                 </Text>
               </View>
