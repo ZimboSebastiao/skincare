@@ -375,10 +375,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    paddingHorizontal: 2,
+    padding: 0,
+    margin: 0,
   },
   image: {
-    width: 100,
+    width: 110,
     height: 112,
     borderTopLeftRadius: 20,
     borderBottomLeftRadius: 20,
