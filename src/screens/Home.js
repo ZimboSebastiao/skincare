@@ -365,7 +365,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: "hidden",
     backgroundColor: "transparent",
-    borderWidth: 3,
+    borderWidth: 1,
+    borderColor: "#ffff",
+    elevation: 2,
   },
   slide1: {
     flex: 1,
