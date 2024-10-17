@@ -203,7 +203,7 @@ export default function Home({ navigation }) {
                 source={require("../../assets/images/lupa.png")}
                 style={styles.imagemSugestao}
               />
-              <Text>Procurar Produtos</Text>
+              <Text style={styles.textoProcurar}>Procurar Produtos</Text>
             </View>
 
             <View style={styles.sugestao2}>
@@ -211,7 +211,7 @@ export default function Home({ navigation }) {
                 source={require("../../assets/images/scan-code.png")}
                 style={styles.imagemSugestao}
               />
-              <Text>Scanear Produtos</Text>
+              <Text style={styles.textoScanear}>Scanear Produtos</Text>
             </View>
           </View>
         </View>
@@ -475,13 +475,25 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   sugestao2: {
-    backgroundColor: "#c6f7c7",
+    backgroundColor: "#d5e9f2",
     padding: 10,
     borderRadius: 20,
   },
   imagemSugestao: {
-    width: 110,
-    height: 110,
+    width: 150,
+    height: 100,
     resizeMode: "contain",
+  },
+  textoProcurar: {
+    color: "#7a60a3",
+    fontSize: 14,
+    padding: 5,
+    fontWeight: "black",
+  },
+  textoScanear: {
+    color: "#54798a",
+    fontSize: 14,
+    padding: 5,
+    fontWeight: "black",
   },
 });
