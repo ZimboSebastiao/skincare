@@ -196,6 +196,24 @@ export default function Home({ navigation }) {
           <Text style={[globalStyles.mediumText, styles.textoSugestao]}>
             O que você quer fazer hoje?
           </Text>
+
+          <View style={styles.viewSugestoes}>
+            <View style={styles.sugestao1}>
+              <Image
+                source={require("../../assets/images/lupa.png")}
+                style={styles.imagemSugestao}
+              />
+              <Text>Procurar Produtos</Text>
+            </View>
+
+            <View style={styles.sugestao2}>
+              <Image
+                source={require("../../assets/images/scan-code.png")}
+                style={styles.imagemSugestao}
+              />
+              <Text>Scanear Produtos</Text>
+            </View>
+          </View>
         </View>
 
         <View style={styles.wrapperContainer}>
@@ -444,5 +462,22 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 17,
     fontWeight: "bold",
+  },
+  viewSugestoes: {
+    backgroundColor: "red",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  sugestao1: {
+    backgroundColor: "yellow",
+  },
+  sugestao2: {
+    backgroundColor: "blue",
+  },
+  imagemSugestao: {
+    width: 130,
+    height: 130,
+    resizeMode: "contain",
   },
 });
