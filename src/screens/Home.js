@@ -207,23 +207,35 @@ export default function Home({ navigation }) {
               <View style={styles.textContainer}>
                 <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
                 <Text style={styles.textDescription}>
-                  Ajude seus amigos a descobrir o melhor app de skincare
+                  Ajude seus amigos a conhecer o melhor app de cuidados com a
+                  pele
                 </Text>
               </View>
             </View>
             <View style={styles.slide2}>
               <Image
-                source={require("../../assets/images/sun.png")}
+                source={require("../../assets/images/solar.jpg")}
                 style={styles.image}
               />
-              <Text style={styles.text}>Imagem 2</Text>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>Faça Parte da Nossa Jornada</Text>
+                <Text style={styles.textDescription}>
+                  Deixe sua pele radiante
+                </Text>
+              </View>
             </View>
             <View style={styles.slide3}>
               <Image
-                source={require("../../assets/images/sun.png")}
+                source={require("../../assets/images/bell2.jpg")}
                 style={styles.image}
               />
-              <Text style={styles.text}>Imagem 3</Text>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>Alerta de Irritação!</Text>
+                <Text style={styles.textDescription}>
+                  Sinais de irritação? Use nossa IA para descobrir as possíveis
+                  causas
+                </Text>
+              </View>
             </View>
           </Swiper>
         </View>
@@ -360,8 +372,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   slide1: {
-    backgroundColor: "#DCE6FF",
     flex: 1,
+    backgroundColor: "#DCE6FF",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
@@ -369,7 +381,9 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 100,
-    height: 110,
+    height: 112,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
   },
   textContainer: {
     flexDirection: "column",
@@ -385,19 +399,22 @@ const styles = StyleSheet.create({
     textAlign: "right",
     fontSize: 14,
     fontWeight: "bold",
-    backgroundColor: "red",
   },
   slide2: {
     flex: 1,
-    justifyContent: "center",
+    backgroundColor: "#EC71A8",
+    flexDirection: "row",
+    justifyContent: "flex-start",
     alignItems: "center",
-    backgroundColor: "red",
+    paddingHorizontal: 2,
   },
   slide3: {
     flex: 1,
-    justifyContent: "center",
+    backgroundColor: "#F7E790",
+    flexDirection: "row",
+    justifyContent: "flex-start",
     alignItems: "center",
-    backgroundColor: "red",
+    paddingHorizontal: 2,
   },
   textDescription: {
     width: "60%",
