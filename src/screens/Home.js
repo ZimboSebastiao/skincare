@@ -1,3 +1,4 @@
+import React, { useState, useContext } from "react";
 import {
   View,
   Text,
@@ -7,7 +8,6 @@ import {
   ScrollView,
   Animated,
 } from "react-native";
-import React, { useContext } from "react";
 import { getCurrentDate } from "../utils/dateUtils";
 import { getGreeting } from "../utils/greetingUtils";
 import { globalStyles } from "../utils/globalStyles";
@@ -22,7 +22,6 @@ import Swiper from "react-native-swiper";
 
 export default function Home({ navigation }) {
   const { selectedImage } = useContext(ImageContext);
-  const [checked, setChecked] = React.useState(false);
 
   const currentDate = getCurrentDate();
   const greeting = getGreeting();
