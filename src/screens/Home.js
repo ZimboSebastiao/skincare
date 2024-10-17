@@ -203,6 +203,7 @@ export default function Home({ navigation }) {
               bottom: 0,
               left: 0,
               right: 0,
+              alignItems: "center",
             }}
           >
             <View style={styles.slide1}>
@@ -374,6 +375,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ffff",
     elevation: 2,
+    marginBottom: 50,
   },
   slide1: {
     flex: 1,
