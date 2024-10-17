@@ -206,7 +206,9 @@ export default function Home({ navigation }) {
               />
               <View style={styles.textContainer}>
                 <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
-                <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
+                <Text style={styles.text}>
+                  Ajude seus amigos a descobrir o melhor app de skincare
+                </Text>
               </View>
             </View>
             <View style={styles.slide2}>
@@ -369,12 +371,22 @@ const styles = StyleSheet.create({
     width: 100,
     height: 140,
   },
+  textContainer: {
+    flexDirection: "column",
+    marginLeft: 4,
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
+    padding: 0,
+    margin: 0,
+  },
   text: {
+    margin: 0,
     flex: 1,
-    marginLeft: 10,
-    // textAlign : "right",
+    padding: 0,
+    textAlign: "right",
     fontSize: 14,
     fontWeight: "bold",
+    backgroundColor: "red",
   },
   slide2: {
     flex: 1,
