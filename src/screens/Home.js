@@ -219,9 +219,7 @@ export default function Home({ navigation }) {
               />
               <View style={styles.textContainer}>
                 <Text style={styles.text}>Faça Parte da Nossa Jornada</Text>
-                <Text style={styles.textDescription}>
-                  Deixe sua pele radiante
-                </Text>
+                <Text>Deixe sua pele radiante</Text>
               </View>
             </View>
             <View style={styles.slide3}>
@@ -417,7 +415,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 2,
   },
   textDescription: {
-    width: "60%",
+    width: "50%",
   },
 
   avatarContainer: {
