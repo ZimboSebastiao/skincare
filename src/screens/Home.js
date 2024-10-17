@@ -197,14 +197,17 @@ export default function Home({ navigation }) {
             style={styles.wrapper}
             showsButtons={false}
             autoplay={true}
-            autoplayTimeout={7}
+            autoplayTimeout={1117}
           >
             <View style={styles.slide1}>
               <Image
                 source={require("../../assets/images/share.png")}
                 style={styles.image}
               />
-              <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
+                <Text style={styles.text}>Compartilhe o Skincare Routine</Text>
+              </View>
             </View>
             <View style={styles.slide2}>
               <Image
@@ -345,7 +348,7 @@ const styles = StyleSheet.create({
   },
   wrapperContainer: {
     width: "90%",
-    height: 150,
+    height: 110,
     margin: 20,
     borderRadius: 20,
     overflow: "hidden",
@@ -358,7 +361,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#DCE6FF",
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingHorizontal: 2,
+  },
+  image: {
+    width: 100,
+    height: 140,
+  },
+  text: {
+    flex: 1,
+    marginLeft: 10,
+    // textAlign : "right",
+    fontSize: 14,
+    fontWeight: "bold",
   },
   slide2: {
     flex: 1,
@@ -372,17 +388,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "red",
   },
-  image: {
-    width: "65%",
-    height: "85%",
-    resizeMode: "cover",
-  },
-  text: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-    position: "absolute",
-  },
+  // image: {
+  //   width: "65%",
+  //   height: "85%",
+  //   resizeMode: "cover",
+  // },
+
   avatarContainer: {
     width: 70,
     height: 70,
